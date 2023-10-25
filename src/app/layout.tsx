@@ -9,12 +9,12 @@ const description = 'Pagina de jhangmez'
 
 export const metadata: Metadata = {
   title,
-  description,
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description
-  }
+  description
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   title,
+  //   description
+  // }
 }
 
 export default function RootLayout({

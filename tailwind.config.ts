@@ -113,6 +113,11 @@ const config: Config = {
           surfaceBright: '#373A36',
           surfaceDim: '#111411'
         }
+      },
+      opacity: {
+        '8': '.08',
+        '12': '.12',
+        '16': '.16'
       }
     }
   },
