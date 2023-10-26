@@ -49,16 +49,14 @@ export default function Home() {
       <div className='bg-light-surface dark:bg-dark-surface'>
         <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab}>
           <TabContent key='1' id='1' activeTab={activeTab}>
-            <div>
-              <h1 style={{ fontSize: '24px', textTransform: 'uppercase' }}>
-                Experiencia Profesional
+            <div className='text-light-onSurface dark:text-dark-onSurface'>
+              <h1 className='text-2xl font-bold '>
+                Experiencia como Profesional
               </h1>
-              <h2 style={{ fontSize: '20px', fontWeight: 'bold' }}>Bartebi</h2>
-              <p style={{ fontSize: '16px', fontStyle: 'italic' }}>
-                Posición: React Developer
-              </p>
-              <p style={{ fontSize: '16px' }}>Responsabilidades:</p>
-              <ul style={{ fontSize: '16px' }}>
+              <h2 className='text-lg font-bold '>Bartebi</h2>
+              <p className='text-sm font-medium '>Posición: React Developer</p>
+              <p className='text-sm font-medium '>Responsabilidades:</p>
+              <ul className='list-disc list-inside text-sm font-medium '>
                 <li>Desarrollo de aplicaciones web</li>
                 <li>Mantenimiento de la base de código</li>
                 <li>
@@ -68,16 +66,14 @@ export default function Home() {
             </div>
           </TabContent>
           <TabContent key='2' id='2' activeTab={activeTab}>
-            <div>
-              <h1 style={{ fontSize: '24px', textTransform: 'uppercase' }}>
+            <div className='text-light-onSurface dark:text-dark-onSurface'>
+              <h1 className='text-2xl font-bold '>
                 Experiencia como Freelancer
               </h1>
-              <h2 style={{ fontSize: '20px', fontWeight: 'bold' }}>Limby</h2>
-              <p style={{ fontSize: '16px', fontStyle: 'italic' }}>
-                Posición: React Developer
-              </p>
-              <p style={{ fontSize: '16px' }}>Responsabilidades:</p>
-              <ul style={{ fontSize: '16px' }}>
+              <h2 className='text-lg font-bold '>Limby</h2>
+              <p className='text-sm font-medium '>Posición: React Developer</p>
+              <p className='text-sm font-medium '>Responsabilidades:</p>
+              <ul className='list-disc list-inside text-sm font-medium '>
                 <li>Desarrollo de aplicaciones web</li>
                 <li>Mantenimiento de la base de código</li>
                 <li>
@@ -87,18 +83,14 @@ export default function Home() {
             </div>
           </TabContent>
           <TabContent key='3' id='3' activeTab={activeTab}>
-            <div>
-              <h1 style={{ fontSize: '24px', textTransform: 'uppercase' }}>
-                Experiencia como Voluntariado
+            <div className='text-light-onSurface dark:text-dark-onSurface'>
+              <h1 className='text-2xl font-bold '>
+                Experiencia como Voluntario
               </h1>
-              <h2 style={{ fontSize: '20px', fontWeight: 'bold' }}>
-                HarkaySoft
-              </h2>
-              <p style={{ fontSize: '16px', fontStyle: 'italic' }}>
-                Posición: React Developer
-              </p>
-              <p style={{ fontSize: '16px' }}>Responsabilidades:</p>
-              <ul style={{ fontSize: '16px' }}>
+              <h2 className='text-lg font-bold '>HarkaySoft</h2>
+              <p className='text-sm font-medium '>Posición: React Developer</p>
+              <p className='text-sm font-medium '>Responsabilidades:</p>
+              <ul className='list-disc list-inside text-sm font-medium '>
                 <li>Desarrollo de aplicaciones web</li>
                 <li>Mantenimiento de la base de código</li>
                 <li>

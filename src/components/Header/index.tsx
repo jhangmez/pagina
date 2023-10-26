@@ -20,7 +20,7 @@ export default function Header() {
               icon='material-symbols:sentiment-excited-outline'
               width='28'
               height='28'
-              className='text-light-onSurface dark:text-dark-onSurface '
+              className='text-light-onSurface dark:text-dark-onSurface'
             />
             <div>
               <span className='text-light-onSurface dark:text-dark-onSurface text-2xl font-bold leading-[44px]'>
