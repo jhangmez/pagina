@@ -48,7 +48,7 @@ export default function Home() {
       </Tabs> */}
       <div className='bg-light-surface dark:bg-dark-surface'>
         <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab}>
-          <TabContent id='1' activeTab={activeTab}>
+          <TabContent key='1' id='1' activeTab={activeTab}>
             <div>
               <h1 style={{ fontSize: '24px', textTransform: 'uppercase' }}>
                 Experiencia Profesional
@@ -67,7 +67,7 @@ export default function Home() {
               </ul>
             </div>
           </TabContent>
-          <TabContent id='2' activeTab={activeTab}>
+          <TabContent key='2' id='2' activeTab={activeTab}>
             <div>
               <h1 style={{ fontSize: '24px', textTransform: 'uppercase' }}>
                 Experiencia como Freelancer
@@ -86,7 +86,7 @@ export default function Home() {
               </ul>
             </div>
           </TabContent>
-          <TabContent id='3' activeTab={activeTab}>
+          <TabContent key='3' id='3' activeTab={activeTab}>
             <div>
               <h1 style={{ fontSize: '24px', textTransform: 'uppercase' }}>
                 Experiencia como Voluntariado

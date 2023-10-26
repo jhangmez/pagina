@@ -24,6 +24,7 @@ const Tabs: React.FC<TabsProps> = ({
       <div className='flex '>
         {tabs.map((tab) => (
           <Tab
+            key={tab.id}
             id={tab.id}
             title={tab.title}
             isActive={tab.id === activeTab}
