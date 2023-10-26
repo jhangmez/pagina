@@ -4,7 +4,7 @@ import './globals.css'
 
 const myFont = localFont({ src: './PlusJakartaSans-VariableFont_wght.ttf' })
 
-const title = 'Jhangmez'
+const title = 'jhangmez | Página'
 const description = 'Pagina de jhangmez'
 
 export const metadata: Metadata = {
