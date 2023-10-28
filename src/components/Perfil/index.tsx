@@ -11,7 +11,7 @@ export default function CardWithActionButton() {
       <div className='flex h-full flex-col justify-center px-3 lg:px-0'>
         <div className='flex flex-col lg:flex-row justify-between items-center inline-flex py-10 gap-5'>
           <div className='lg:w-4/12 w-11/12 h-auto py-3 bg-light-surfaceContainer dark:bg-dark-surfaceContainer rounded-[20px] shadow flex-col justify-start items-center gap-2 inline-flex'>
-            <div className='px-2 h-auto text-2xl text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant font-bold'>
+            <div className='px-2 h-auto text-2xl text-light-primary dark:text-dark-primary font-bold'>
               Jhan Gómez P.
             </div>
 
@@ -37,7 +37,10 @@ export default function CardWithActionButton() {
           </div>
           <div className='lg:w-7/12 grid flex-col text-light-onSurface dark:text-dark-onSurface gap-5'>
             <div className='text-4xl lg:text-5xl font-bold '>
-              React Junior Frontend Developer
+              <span className='text-light-tertiary dark:text-dark-tertiary'>
+                React
+              </span>{' '}
+              Junior Frontend Developer
             </div>
             <div className='text-2xl lg:text-3x1 font-semibold'>
               Objetivos profesionales
