@@ -12,40 +12,42 @@ export default function Experiencia() {
   ]
   const [activeTab, setActiveTab] = useState(tabs[0].id)
   return (
-    <div className='text-light-onSurface dark:text-dark-onSurface'>
-      <h1 className='text-2xl font-bold '>Experiencia</h1>
-      <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab}>
-        <TabContent key='1' id='1' activeTab={activeTab}>
-          <h2 className='text-lg font-bold '>Bartebi</h2>
-          <p className='text-sm font-medium '>Posición: React Developer</p>
-          <p className='text-sm font-medium '>Responsabilidades:</p>
-          <ul className='list-disc list-inside text-sm font-medium '>
-            <li>Desarrollo de aplicaciones web</li>
-            <li>Mantenimiento de la base de código</li>
-            <li>Colaboración en el diseño de la arquitectura del software</li>
-          </ul>
-        </TabContent>
-        <TabContent key='2' id='2' activeTab={activeTab}>
-          <h2 className='text-lg font-bold '>Limby</h2>
-          <p className='text-sm font-medium '>Posición: React Developer</p>
-          <p className='text-sm font-medium '>Responsabilidades:</p>
-          <ul className='list-disc list-inside text-sm font-medium '>
-            <li>Desarrollo de aplicaciones web</li>
-            <li>Mantenimiento de la base de código</li>
-            <li>Colaboración en el diseño de la arquitectura del software</li>
-          </ul>
-        </TabContent>
-        <TabContent key='3' id='3' activeTab={activeTab}>
-          <h2 className='text-lg font-bold '>HarkaySoft</h2>
-          <p className='text-sm font-medium '>Posición: React Developer</p>
-          <p className='text-sm font-medium '>Responsabilidades:</p>
-          <ul className='list-disc list-inside text-sm font-medium '>
-            <li>Desarrollo de aplicaciones web</li>
-            <li>Mantenimiento de la base de código</li>
-            <li>Colaboración en el diseño de la arquitectura del software</li>
-          </ul>
-        </TabContent>
-      </Tabs>
+    <div className='container mx-auto px-[20px]'>
+      <div className='text-light-onSurface dark:text-dark-onSurface'>
+        <h1 className='text-2xl font-bold '>Experiencia</h1>
+        <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab}>
+          <TabContent key='1' id='1' activeTab={activeTab}>
+            <h2 className='text-lg font-bold '>Bartebi</h2>
+            <p className='text-sm font-medium '>Posición: React Developer</p>
+            <p className='text-sm font-medium '>Responsabilidades:</p>
+            <ul className='list-disc list-inside text-sm font-medium '>
+              <li>Desarrollo de aplicaciones web</li>
+              <li>Mantenimiento de la base de código</li>
+              <li>Colaboración en el diseño de la arquitectura del software</li>
+            </ul>
+          </TabContent>
+          <TabContent key='2' id='2' activeTab={activeTab}>
+            <h2 className='text-lg font-bold '>Limby</h2>
+            <p className='text-sm font-medium '>Posición: React Developer</p>
+            <p className='text-sm font-medium '>Responsabilidades:</p>
+            <ul className='list-disc list-inside text-sm font-medium '>
+              <li>Desarrollo de aplicaciones web</li>
+              <li>Mantenimiento de la base de código</li>
+              <li>Colaboración en el diseño de la arquitectura del software</li>
+            </ul>
+          </TabContent>
+          <TabContent key='3' id='3' activeTab={activeTab}>
+            <h2 className='text-lg font-bold '>HarkaySoft</h2>
+            <p className='text-sm font-medium '>Posición: React Developer</p>
+            <p className='text-sm font-medium '>Responsabilidades:</p>
+            <ul className='list-disc list-inside text-sm font-medium '>
+              <li>Desarrollo de aplicaciones web</li>
+              <li>Mantenimiento de la base de código</li>
+              <li>Colaboración en el diseño de la arquitectura del software</li>
+            </ul>
+          </TabContent>
+        </Tabs>
+      </div>
     </div>
   )
 }

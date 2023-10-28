@@ -13,8 +13,8 @@ import { Icon } from '@iconify/react'
 export default function Header() {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   return (
-    <nav className='relative flex flex-wrap items-center justify-between px-[20px]'>
-      <div className='container mx-auto flex flex-wrap items-center justify-between'>
+    <nav className='relative flex flex-wrap items-center justify-between '>
+      <div className='container mx-auto flex flex-wrap items-center justify-between px-[20px]'>
         <div className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <Link
             href='/'

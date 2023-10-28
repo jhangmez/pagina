@@ -72,7 +72,7 @@ export default function FooterWithSocialMediaIcons() {
                     target='_blank'
                   >
                     <span
-                      className={`${myFont.className} self-center text-1xl whitespace-nowrap dark:text-white pb-3`}
+                      className={`${myFont.className} self-center text-1xl whitespace-nowrap pb-3`}
                     >
                       Harkay
                       <span

@@ -39,6 +39,10 @@ export default function Home() {
       </div> */}
 
       <div className='bg-light-surface dark:bg-dark-surface'>
+        <Experiencia />
+      </div>
+
+      <div className='bg-light-surface dark:bg-dark-surface'>
         <Footer />
       </div>
     </main>
