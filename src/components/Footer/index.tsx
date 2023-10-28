@@ -1,8 +1,11 @@
 'use client'
 
-import { GithubJhan, LinkedinJhan, VercelJhan } from '@routes'
+import { GithubJhan, LinkedinJhan, VercelHarkaysoft } from '@routes'
 import { Icon } from '@iconify/react'
+import localFont from 'next/font/local'
 import Link from 'next/link'
+
+const myFont = localFont({ src: './Poppins-SemiBold.ttf' })
 
 export default function FooterWithSocialMediaIcons() {
   return (
@@ -59,17 +62,26 @@ export default function FooterWithSocialMediaIcons() {
             </div>
             <div>
               <h2 className='mb-6 text-sm font-semibold uppercase text-light-onSurface dark:text-dark-onSurface'>
-                Legal
+                Proyectos
               </h2>
               <ul className='text-gray-500 dark:text-gray-400 font-medium'>
                 <li className='mb-4'>
-                  <Link href='/' className='hover:underline' target='_blank'>
-                    Pol&iacute;tica de privacidad
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/' className='hover:underline' target='_blank'>
-                    T&eacute;rms & Condiciones
+                  <Link
+                    href={VercelHarkaysoft}
+                    className='hover:underline'
+                    target='_blank'
+                  >
+                    <span
+                      className={`${myFont.className} self-center text-1xl whitespace-nowrap dark:text-white pb-3`}
+                    >
+                      Harkay
+                      <span
+                        className={`${myFont.className} text-2xl text-[0.8em]`}
+                      >
+                        {' '}
+                        S O F T
+                      </span>
+                    </span>
                   </Link>
                 </li>
               </ul>
