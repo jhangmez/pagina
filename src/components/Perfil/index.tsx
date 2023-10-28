@@ -9,7 +9,7 @@ export default function CardWithActionButton() {
   return (
     <div className='container mx-auto px-[20px]'>
       <div className='flex flex-col lg:flex-row justify-between items-center inline-flex py-10 gap-5 '>
-        <div className='lg:w-3/12 md:w-7/12 h-auto py-3 bg-light-surfaceContainer dark:bg-dark-surfaceContainer rounded-[20px] shadow flex-col justify-start items-center gap-2 inline-flex'>
+        <div className='lg:w-3/12 w-11/12 h-auto py-3 bg-light-surfaceContainer dark:bg-dark-surfaceContainer rounded-[20px] shadow flex-col justify-start items-center gap-2 inline-flex'>
           <div className='px-2 h-auto text-2xl text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant font-bold'>
             Jhan Gómez P.
           </div>
@@ -32,7 +32,7 @@ export default function CardWithActionButton() {
         </div>
 
         <div className='lg:w-7/12 text-5xl font-bold text-light-onSurface dark:text-dark-onSurface'>
-          React Junior Developer
+          React Junior Frontend Developer
         </div>
       </div>
     </div>
