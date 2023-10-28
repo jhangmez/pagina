@@ -35,7 +35,7 @@ export default function CardWithActionButton() {
               <Navitem label='Github' icon='mdi:github' href={GithubJhan} />
             </div>
           </div>
-          <div className=' text-4xl font-bold order-1 lg:order-2 text-light-onSurface dark:text-dark-onSurface'>
+          <div className='text-4xl lg:text-5xl font-bold order-1 lg:order-2 text-light-onSurface dark:text-dark-onSurface'>
             React Junior Frontend Developer
           </div>
         </div>
