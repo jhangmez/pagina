@@ -18,24 +18,13 @@ export default function Home() {
     <main className='w-screen h-screen '>
       <div
         className={`${
-          componente3InView
-            ? 'bg-light-surface dark:bg-dark-surface sticky top-0'
-            : 'bg-light-surface dark:bg-dark-surface'
-        }`}
+          componente3InView ? 'sticky top-0' : ''
+        } bg-light-surface dark:bg-dark-surface`}
       >
         <Header />
       </div>
 
-      <div className='bg-light-surface dark:bg-dark-surface'>
-        <Experiencia />
-      </div>
-      <div className='bg-light-surface dark:bg-dark-surface'>
-        <Experiencia />
-      </div>
-      <div className='bg-light-surface dark:bg-dark-surface'>
-        <Experiencia />
-      </div>
-      <div
+      {/* <div
         className={`h-full flex items-center justify-center transition-colors duration-500 ease-in-out ${
           featureInView
             ? 'bg-light-secondaryContainer'
@@ -47,13 +36,8 @@ export default function Home() {
       </div>
       <div className='bg-light-surface dark:bg-dark-surface' ref={featureRef}>
         <Experiencia />
-      </div>
-      <div className='bg-light-surface dark:bg-dark-surface'>
-        <Experiencia />
-      </div>
-      <div className='bg-light-surface dark:bg-dark-surface'>
-        <Experiencia />
-      </div>
+      </div> */}
+
       <div className='bg-light-surface dark:bg-dark-surface'>
         <Footer />
       </div>

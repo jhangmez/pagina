@@ -48,7 +48,7 @@ export default function Header() {
           }
           id='navbar'
         >
-          <ul className='flex flex-col lg:flex-row list-none lg:ml-auto gap-2'>
+          <ul className='flex flex-col lg:flex-row list-none lg:ml-auto gap-2 mb-2'>
             <li className='nav-item'>
               <Link href='/skills'>
                 <Textbutton label='Skills' />
@@ -57,26 +57,6 @@ export default function Header() {
             <li className='nav-item'>
               <Link href='/experiencia'>
                 <Textbutton label='Experiencia' />
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link href='/experiencia'>
-                <Filledbutton label='Label' />
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link href='/experiencia'>
-                <Outlinedbutton label='Label' />
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link href='/experiencia'>
-                <Tonalbutton label='Label' />
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link href='/experiencia'>
-                <Elevatedbutton label='Label' />
               </Link>
             </li>
           </ul>
