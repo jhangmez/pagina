@@ -4,6 +4,10 @@ import React from 'react'
 import Link from 'next/link'
 import Textbutton from '@Buttons/Text'
 import Iconbutton from '@Buttons/Icon'
+import Filledbutton from '@Buttons/Filled'
+import Outlinedbutton from '@Buttons/Outlined'
+import Tonalbutton from '@Buttons/Tonal'
+import Elevatedbutton from '@Buttons/Elevated'
 import { Icon } from '@iconify/react'
 
 export default function Header() {
@@ -44,7 +48,7 @@ export default function Header() {
           }
           id='navbar'
         >
-          <ul className='flex flex-col lg:flex-row list-none lg:ml-auto'>
+          <ul className='flex flex-col lg:flex-row list-none lg:ml-auto gap-2'>
             <li className='nav-item'>
               <Link href='/skills'>
                 <Textbutton label='Skills' />
@@ -53,6 +57,26 @@ export default function Header() {
             <li className='nav-item'>
               <Link href='/experiencia'>
                 <Textbutton label='Experiencia' />
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/experiencia'>
+                <Filledbutton label='Label' />
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/experiencia'>
+                <Outlinedbutton label='Label' />
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/experiencia'>
+                <Tonalbutton label='Label' />
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/experiencia'>
+                <Elevatedbutton label='Label' />
               </Link>
             </li>
           </ul>
