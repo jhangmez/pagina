@@ -4,6 +4,8 @@ import React from 'react'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 import Experiencia from '@components/Experiencia'
+import Perfil from '@components/Perfil'
+
 import { useInView } from 'react-intersection-observer'
 
 export default function Home() {
@@ -37,6 +39,10 @@ export default function Home() {
       <div className='bg-light-surface dark:bg-dark-surface' ref={featureRef}>
         <Experiencia />
       </div> */}
+
+      <div className='bg-light-surface dark:bg-dark-surface'>
+        <Perfil />
+      </div>
 
       <div className='bg-light-surface dark:bg-dark-surface'>
         <Experiencia />
