@@ -45,7 +45,7 @@ export default function CardWithActionButton() {
             <div className='text-2xl lg:text-3x1 font-semibold'>
               Objetivos profesionales
             </div>
-            <div className='text-1xl lg:text-3x1 font-normal'>
+            <div className='text-1xl lg:text-3x1 font-medium'>
               Desarrollar mis habilidades y conocimientos como desarrollador{' '}
               <span className='text-light-primary dark:text-dark-primary'>
                 front-end
@@ -61,7 +61,7 @@ export default function CardWithActionButton() {
               y{' '}
               <span className='text-light-primary dark:text-dark-primary'>
                 Angular
-              </span>{' '}
+              </span>
               . En el corto plazo, me centraré en desarrollar una aplicación web
               escalable y de alto rendimiento utilizando{' '}
               <span className='text-light-primary dark:text-dark-primary'>
@@ -82,10 +82,10 @@ export default function CardWithActionButton() {
               y{' '}
               <span className='text-light-primary dark:text-dark-primary'>
                 escalables
-              </span>{' '}
-              , para contribuir al desarrollo profesional de la comunidad. Creo
-              que mis habilidades y experiencia me hacen un candidato ideal para
-              apoyar como{' '}
+              </span>
+              , para contribuir al desarrollo profesional de la comunidad.
+              <br></br> Creo que mis habilidades y experiencia me hacen un
+              candidato ideal para apoyar como{' '}
               <span className='text-light-primary dark:text-dark-primary'>
                 Junior Developer
               </span>{' '}
@@ -96,7 +96,7 @@ export default function CardWithActionButton() {
               de desarrollo{' '}
               <span className='text-light-primary dark:text-dark-primary'>
                 front-end
-              </span>{' '}
+              </span>
               , tengo experiencia trabajando en equipos de{' '}
               <span className='text-light-primary dark:text-dark-primary'>
                 desarrollo ágiles
