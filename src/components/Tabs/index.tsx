@@ -20,8 +20,8 @@ const Tabs: React.FC<TabsProps> = ({
   children
 }) => {
   return (
-    <div>
-      <div className='flex '>
+    <div className='lg:container md:container lg:flex md:flex gap-5'>
+      <div className='lg:flex md:flex lg:flex-col md:flex-col sm:flex-row  mb-5'>
         {tabs.map((tab) => (
           <Tab
             key={tab.id}

@@ -2,7 +2,8 @@
 
 import Navitem from '@components/Nav/Itemnav'
 import Image from 'next/image'
-
+import Link from 'next/link'
+import Tonalbutton from '@Buttons/Tonal'
 import { GithubJhan, LinkedinJhan, VercelHarkaysoft } from '@routes'
 
 export default function CardWithActionButton() {
@@ -106,6 +107,11 @@ export default function CardWithActionButton() {
                 desarrollo profesional continuo
               </span>
               .
+            </div>
+            <div className='container flex h-full flex-row gap-5'>
+              <Link href='mailto:jhangmez.pe@gmail.com' className='w-fit'>
+                <Tonalbutton label='Contacto' />
+              </Link>
             </div>
           </div>
         </div>

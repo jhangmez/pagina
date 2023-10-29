@@ -1,7 +1,7 @@
 export default function Tab2() {
   return (
     <div>
-      <h2 className='text-lg font-bold '>Bartebi</h2>
+      <h2 className='text-lg font-bold '>Limby</h2>
       <p className='text-sm font-medium '>Posición: React Developer</p>
       <p className='text-sm font-medium '>Responsabilidades:</p>
       <ul className='list-disc list-inside text-sm font-medium '>

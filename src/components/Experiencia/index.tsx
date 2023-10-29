@@ -15,9 +15,9 @@ export default function Experiencia() {
   ]
   const [activeTab, setActiveTab] = useState(tabs[0].id)
   return (
-    <div className='container mx-auto px-[20px]'>
+    <div className='container  mx-auto lg:px-16 px-[20px]'>
       <div className='text-light-onSurface dark:text-dark-onSurface'>
-        <h1 className='text-2xl font-bold '>Experiencia</h1>
+        <h1 className='text-2xl font-bold mb-5'>Experiencia</h1>
         <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab}>
           <TabContent key='1' id='1' activeTab={activeTab}>
             <Tab1 />
