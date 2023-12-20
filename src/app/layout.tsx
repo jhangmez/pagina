@@ -67,20 +67,20 @@ export default function RootLayout({
                 <Button
                   as={Link}
                   className='text-light-onSurface dark:text-dark-onSurface font-semibold'
-                  href='/skills'
+                  href='/experiencia'
                   variant='light'
                 >
-                  Skills
+                  Experiencia
                 </Button>
               </NavbarItem>
               <NavbarItem>
                 <Button
                   as={Link}
                   className='bg-light-primary dark:bg-dark-primary font-semibold'
-                  href='/experiencia'
+                  href='/skills'
                   variant='flat'
                 >
-                  Experiencia
+                  Skills
                 </Button>
               </NavbarItem>
             </NavbarContent>
