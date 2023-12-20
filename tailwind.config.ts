@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { nextui } from '@nextui-org/react'
 
 const config: Config = {
   content: [
@@ -6,12 +7,31 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{ts,tsx}',
-    './public/**/*.html'
+    './public/**/*.html',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
       colors: {
         light: {
+          graphql: '#b30083',
+          onGraphql: '#FFFFFF',
+          react: '#006684',
+          onReact: '#ffffff',
+          typescript: '#2D79C7',
+          onTypescript: '#ffffff',
+          node: '#2d6b27',
+          onNode: '#ffffff',
+          next: '#000000',
+          onNext: '#ffffff',
+          nexus: '#006783',
+          onNexus: '#ffffff',
+          prisma: '#4c51bf',
+          onPrisma: '#ffffff',
+          jira: '#005cbd',
+          onJira: '#ffffff',
+          s3: '#2c6c00',
+          onS3: '#ffffff',
           primary: '#1A6C30',
           onPrimary: '#FFFFFF',
           primaryContainer: '#A3F6AA',
@@ -121,6 +141,6 @@ const config: Config = {
       }
     }
   },
-  plugins: []
+  plugins: [nextui()]
 }
 export default config

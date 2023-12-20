@@ -1,29 +1,44 @@
-import Header from '@components/Header'
-import Footer from '@components/Footer'
-import type { Metadata } from 'next'
+import {
+  Graphql,
+  React,
+  Typescript,
+  API,
+  Autentificacion,
+  Documentacion,
+  Jira,
+  Nextjs,
+  Nexusjs,
+  Nodejs,
+  Planificacion,
+  Prisma,
+  ReactNative,
+  S3AWS
+} from '@components/Chips'
 
-const title = 'jhangmez | Skills'
-const description = 'Pagina de jhangmez'
-
-export const metadata: Metadata = {
-  title,
-  description
-  // twitter: {
-  //   card: 'summary_large_image',
-  //   title,
-  //   description
-  // }
-}
 export default function Skills() {
   return (
-    <main className='w-screen h-screen'>
-      <div className='bg-light-surface dark:bg-dark-surface '>
-        <Header />
+    <section className='bg-light-surface dark:bg-dark-surface h-screen'>
+      <div className='container mx-auto px-[20px]'>
+        <p className='text-light-onSurface dark:text-dark-onSurface font-semibold text-2xl mb-5'>
+          Hola estas son mis skills :D
+        </p>
+        <div className='grid gap-2 grid-cols-2'>
+          <Graphql />
+          <API />
+          <Autentificacion />
+          <Documentacion />
+          <Jira />
+          <Nextjs />
+          <Nodejs />
+          <Prisma />
+          <ReactNative />
+          <Planificacion />
+          <Nexusjs />
+          <S3AWS />
+          <React />
+          <Typescript />
+        </div>
       </div>
-      Hola estas son mis skills :D
-      <div className='bg-light-surface dark:bg-dark-surface'>
-        <Footer />
-      </div>
-    </main>
+    </section>
   )
 }
