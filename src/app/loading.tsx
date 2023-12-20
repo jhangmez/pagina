@@ -5,7 +5,7 @@ import { Spinner } from '@nextui-org/react'
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
   return (
-    <main className='w-screen h-screen'>
+    <main className='min-w-screen min-h-screen'>
       <div className='flex flex-col justify-center items-center h-screen  bg-light-surface dark:bg-dark-surface'>
         <section className='w-fit h-14 justify-start items-center gap-[5px] inline-flex'>
           <div>

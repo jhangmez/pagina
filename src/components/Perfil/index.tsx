@@ -10,7 +10,7 @@ import { Button } from '@nextui-org/react'
 export default function PerfilPrueba() {
   return (
     <section className='container mx-auto lg:px-16'>
-      <div className='flex h-full flex-col justify-center px-3'>
+      <div className='flex h-full flex-col justify-center px-3 lg:px-0'>
         <div className='flex flex-col lg:flex-row justify-between items-center inline-flex py-10 gap-5'>
           <Card className='lg:w-4/12 w-11/12 bg-light-surfaceContainer dark:bg-dark-surfaceContainer'>
             <CardHeader className='text-2xl font-bold text-light-primary dark:text-dark-primary justify-center'>
