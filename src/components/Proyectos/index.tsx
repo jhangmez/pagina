@@ -1,5 +1,5 @@
 import { Divider } from '@nextui-org/react'
-import { Image } from '@nextui-org/image'
+import {} from '@nextui-org/image'
 import NextImage from 'next/image'
 import Link from 'next/link'
 

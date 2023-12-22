@@ -1,11 +1,10 @@
 'use Client'
 
 import { useState } from 'react'
-import { Card, CardHeader, CardBody, CardFooter } from '@nextui-org/card'
+import { Card, CardBody, CardFooter } from '@nextui-org/card'
 import { Listbox, ListboxItem } from '@nextui-org/listbox'
 import { Image } from '@nextui-org/image'
 import { GithubJhan, LinkedinJhan } from '@routes'
-import { Snippet } from '@nextui-org/snippet'
 import NextImage from 'next/image'
 import Link from 'next/link'
 import { Button } from '@nextui-org/react'
@@ -28,6 +27,7 @@ export default function PerfilPrueba() {
               <Image
                 as={NextImage}
                 isBlurred
+                priority={true}
                 src='https://media.licdn.com/dms/image/D4E03AQHqh7Y4agbE7g/profile-displayphoto-shrink_800_800/0/1679802304766?e=1703721600&v=beta&t=OUnXeS6zL5SbszflBOsF0DQ6UeabJn2_a_wgRh3buY8'
                 alt='Jhangmez Picture'
                 className='self-stretch grow shrink basis-0 rounded-xl'
