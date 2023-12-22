@@ -1,7 +1,7 @@
 import { Divider } from '@nextui-org/react'
 import { Image } from '@nextui-org/image'
 import NextImage from 'next/image'
-import Link from 'next/link'
+import { Link } from '@nextui-org/link'
 import data from './data.json'
 
 export default function Experiencia() {
@@ -27,25 +27,27 @@ export default function Experiencia() {
                   </div>
                 </div>
                 <div className='flex flex-col w-full self-center space-y-4'>
-                  <div className='flex justify-between'>
+                  <div className='flex flex-col'>
                     <Link
+                      underline='hover'
+                      isExternal
                       href={experiencia.enlace}
-                      className='flex flex-col w-fit'
+                      className='flex flex-col w-fit font-bold text-dark-onPrimary'
                     >
                       <div className='flex items-center'>
                         <div className='flex w-full'>
-                          <div className='flex items-center mr-1 hover:underline font-bold text-dark-onPrimary'>
+                          <div className='flex items-center mr-1 font-bold text-dark-onPrimary'>
                             {experiencia.empresa}
                           </div>
                         </div>
                       </div>
-                      <span className='font-sm font-normal'>
-                        {experiencia.duracion}
-                      </span>
-                      <span className='font-sm font-normal'>
-                        {experiencia.ubicacion}
-                      </span>
                     </Link>
+                    <span className='font-sm font-normal'>
+                      {experiencia.duracion}
+                    </span>
+                    <span className='font-sm font-normal'>
+                      {experiencia.ubicacion}
+                    </span>
                   </div>
                   <ul className='flex flex-col space-y-5'>
                     {experiencia.roles.map((role, index) => (

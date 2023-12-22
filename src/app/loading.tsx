@@ -18,7 +18,7 @@ export default function Loading() {
           </div>
         </section>
         <div className='container flex flex-col items-center'>
-          <Spinner />
+          <Spinner color='success' />
           <p className='text-light-onBackground dark:text-dark-onBackground mt-4'>
             Cargando página...
           </p>

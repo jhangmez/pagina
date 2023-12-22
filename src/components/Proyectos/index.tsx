@@ -1,7 +1,7 @@
 import { Divider } from '@nextui-org/react'
 import { Image } from '@nextui-org/image'
 import NextImage from 'next/image'
-import Link from 'next/link'
+import { Link } from '@nextui-org/link'
 import data from './data.json'
 import { skillsMap } from '@utils/skillList'
 
@@ -30,6 +30,8 @@ export default function Proyectos() {
                 <div className='flex flex-col w-full self-start space-y-4 md:space-x-4'>
                   <div className='flex justify-between md:ml-4'>
                     <Link
+                      underline='hover'
+                      isExternal
                       href={proyectos.enlace}
                       className='flex flex-col w-fit '
                     >

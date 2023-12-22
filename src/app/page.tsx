@@ -25,6 +25,12 @@ export default function Home() {
       <div className='container mx-auto px-[20px] pt-10'>
         <Proyectos />
       </div>
+      <div className='container mx-auto px-[20px] pt-10'>
+        <Educacion />
+      </div>
+      <div className='container mx-auto px-[20px] pt-10'>
+        <Idiomas />
+      </div>
     </main>
   )
 }
