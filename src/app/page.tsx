@@ -4,6 +4,8 @@ import React from 'react'
 import Experiencia from '@components/Experiencia'
 import Perfil from '@components/Perfil'
 import Proyectos from '@components/Proyectos'
+import Educacion from '@components/Educacion'
+import Idiomas from '@components/Idiomas'
 import InfiniteVertical from '@components/InfiniteVertical'
 import Head from 'next/head'
 

@@ -36,11 +36,12 @@ export default function PerfilPrueba() {
               />
             </CardBody>
             <CardFooter>
-              <Listbox>
+              <Listbox aria-hidden='true' aria-label='Listbox'>
                 <ListboxItem
                   key='LinkedIn'
                   href={LinkedinJhan}
                   as={Link}
+                  aria-label='Linkedin'
                   startContent={
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -62,6 +63,7 @@ export default function PerfilPrueba() {
                   key='Github'
                   href={GithubJhan}
                   as={Link}
+                  aria-label='Github'
                   startContent={
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -81,6 +83,7 @@ export default function PerfilPrueba() {
                 </ListboxItem>
                 <ListboxItem
                   key='mail'
+                  aria-label='Mail'
                   onPress={handleCopy}
                   startContent={
                     <svg
