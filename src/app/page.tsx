@@ -8,7 +8,7 @@ import InfiniteVertical from '@components/InfiniteVertical'
 export default function Home() {
   return (
     <main className='min-h-screen bg-light-surface dark:bg-dark-surface'>
-      <section className='flex flex-col justify-center items-center min-h-screen -mt-20 space-y-10'>
+      <section className='flex flex-col justify-center items-center min-h-screen -mt-12 space-y-10'>
         <Perfil />
         <InfiniteVertical />
       </section>
