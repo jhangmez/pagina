@@ -21,13 +21,27 @@ const title = 'jhangmez | Página'
 const description = 'Pagina de jhangmez'
 
 export const metadata: Metadata = {
-  title,
-  description
-  // twitter: {
-  //   card: 'summary_large_image',
-  //   title,
-  //   description
-  // }
+  openGraph: {
+    title: title,
+    description: description,
+    url: 'https://jhangmez.vercel.app',
+    siteName: 'Jhan Gomez',
+    images: [
+      {
+        url: '/jhan_image.png',
+        width: 800,
+        height: 600
+      },
+      {
+        url: '/jhan_image.png',
+        width: 1800,
+        height: 1600,
+        alt: 'My custom alt'
+      }
+    ],
+    locale: 'es_US',
+    type: 'website'
+  }
 }
 
 export default function RootLayout({

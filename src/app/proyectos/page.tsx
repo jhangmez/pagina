@@ -1,23 +1,23 @@
 import type { Metadata } from 'next'
-import ExperienciaList from '@components/Experiencia'
+import ProyectosList from '@components/Proyectos'
 import Head from 'next/head'
 
-const title = 'jhangmez | Experiencia'
-const description = 'Experiencia de jhangmez'
+const title = 'jhangmez | Proyectos'
+const description = 'Proyectos de jhangmez'
 
 export const metadata: Metadata = {
   title,
   description
 }
 
-export default function Experiencia() {
+export default function Proyectos() {
   return (
     <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
       <Head>
-        <title>Experiencia</title>
+        <title>Proyectos Personales</title>
       </Head>
       <div className='container mx-auto px-[20px]'>
-        <ExperienciaList />
+        <ProyectosList />
       </div>
     </section>
   )
