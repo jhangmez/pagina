@@ -21,6 +21,7 @@ const title = 'jhangmez | Página'
 const description = 'Pagina de jhangmez'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jhangmez.vercel.app'),
   openGraph: {
     title: title,
     description: description,
