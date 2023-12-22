@@ -1,39 +1,4 @@
-import {
-  Graphql,
-  React,
-  Typescript,
-  API,
-  Autentificacion,
-  Documentacion,
-  Jira,
-  Nextjs,
-  Nexusjs,
-  Nodejs,
-  Planificacion,
-  Prisma,
-  ReactNative,
-  S3AWS,
-  Koyeb,
-  Postgresql
-} from '@components/Chips'
-
-const skillsComponents = [
-  Graphql,
-  API,
-  Autentificacion,
-  ReactNative,
-  Documentacion,
-  Jira,
-  Nextjs,
-  Prisma,
-  Planificacion,
-  Nexusjs,
-  Postgresql,
-  Koyeb,
-  S3AWS,
-  React,
-  Typescript
-]
+import { skillsComponents } from '@utils/skillList'
 
 export default function Skills() {
   return (

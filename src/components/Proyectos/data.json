@@ -1,0 +1,30 @@
+{
+  "proyectos": [
+    {
+      "empresa": "quaTu",
+      "imagen": "/quatu.webp",
+      "enlace": "https://quatu.vercel.app",
+      "status": true,
+      "roles": [
+        {
+          "descripcion": "Este proyecto forma parte de una iniciativa personal, para brindar tiendas virtuales según el tráfico y peso de tu tienda.",
+          "aptitudes": " React Native · Expo",
+          "stack": [1, 4, 8, 9, 10, 11, 12, 13, 15, 16, 14, 2]
+        }
+      ]
+    },
+    {
+      "empresa": "InDeportiva",
+      "imagen": "/indeportiva.webp",
+      "enlace": "https://deporte.vercel.app",
+      "status": false,
+      "roles": [
+        {
+          "descripcion": "Este proyecto forma parte de una iniciativa grupal por desarrollar y apoyar el talento infantil en la industria deportiva. Actualmente se está planificando y realizando el prototipado del producto.",
+          "aptitudes": "React.js · Planificación de proyectos · Dirección y desarrollo de equipos de trabajo · Desarrollo de software",
+          "stack": [1, 4, 8, 9, 10, 11, 12, 13, 15, 16]
+        }
+      ]
+    }
+  ]
+}
