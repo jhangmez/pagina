@@ -1,6 +1,5 @@
-import Header from '@components/Header'
-import Footer from '@components/Footer'
 import type { Metadata } from 'next'
+import ExperienciaList from '@components/Experiencia'
 
 const title = 'jhangmez | Experiencia'
 const description = 'Pagina de jhangmez'
@@ -8,23 +7,14 @@ const description = 'Pagina de jhangmez'
 export const metadata: Metadata = {
   title,
   description
-  // twitter: {
-  //   card: 'summary_large_image',
-  //   title,
-  //   description
-  // }
 }
 
 export default function Experiencia() {
   return (
-    <main className='w-screen h-screen'>
-      <div className='bg-light-surface dark:bg-dark-surface '>
-        <Header />
+    <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
+      <div className='container mx-auto px-[20px]'>
+        <ExperienciaList />
       </div>
-      Hola estas son mis experiencias :D
-      <div className='bg-light-surface dark:bg-dark-surface'>
-        <Footer />
-      </div>
-    </main>
+    </section>
   )
 }

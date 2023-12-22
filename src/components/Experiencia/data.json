@@ -1,0 +1,66 @@
+{
+  "experiencias": [
+    {
+      "empresa": "Bartebi",
+      "imagen": "/nonfoundCompany.svg",
+      "enlace": "https://www.linkedin.com/search/results/all/?keywords=Bartebi",
+      "duracion": "Jornada parcial · 5 meses",
+      "ubicacion": "En remoto",
+      "roles": [
+        {
+          "titulo": "React native developer",
+          "periodo": "may. 2023 - jun. 2023 · 2 meses",
+          "ubicacion": "Lima, Perú",
+          "descripcion": "",
+          "aptitudes": " React Native · Expo"
+        },
+        {
+          "titulo": "React developer",
+          "periodo": "feb. 2023 - jun. 2023 · 5 meses",
+          "ubicacion": "Lima, Perú",
+          "descripcion": "Realizamos un software para solucionar problemática de transportes para una empresa Agroindustrial, con tecnologías como React y Node.js.",
+          "aptitudes": "Web Services API · React.js · Node.js · Trabajo en equipo"
+        }
+      ]
+    },
+    {
+      "empresa": "Limby",
+      "imagen": "/nonfoundCompany.svg",
+      "enlace": "https://www.linkedin.com/search/results/all/?keywords=Limby",
+      "duracion": "Jornada parcial · 5 meses",
+      "ubicacion": "En remoto",
+      "roles": [
+        {
+          "titulo": "React Fronted Developer",
+          "periodo": "nov. 2022 - mar. 2023 · 5 meses",
+          "ubicacion": "Chiclayo, Lambayeque, Perú",
+          "descripcion": "https://limby.vercel.app",
+          "aptitudes": "React.js · Planificación de proyectos · Dirección y desarrollo de equipos de trabajo · Desarrollo de software"
+        }
+      ]
+    },
+    {
+      "empresa": "Agencia Consigue Ventas Online",
+      "imagen": "/consigueventasonline_logo.webp",
+      "enlace": "https://www.linkedin.com/company/65487718/",
+      "duracion": "Jornada parcial · 8 meses",
+      "ubicacion": "Lima, Perú · En remoto",
+      "roles": [
+        {
+          "titulo": "Líder: Analista de documentación",
+          "periodo": "dic. 2022 - feb. 2023 · 3 meses",
+          "ubicacion": "Contrato de formación",
+          "descripcion": "",
+          "aptitudes": "Tester · Gestión de equipos con miembros de diferentes oficinas · Trello · Resolución de problemas · Resolución creativa de problemas · Gestión de proyectos colaborativa · Trabajo en equipo · Google Docs · Hojas de cálculo de Google"
+        },
+        {
+          "titulo": "Colaborador: Analista de documentación",
+          "periodo": "ago. 2022 - dic. 2022 · 5 meses",
+          "ubicacion": "Contrato de prácticas",
+          "descripcion": "",
+          "aptitudes": "Microsoft Word · Scrum · Documentación de programas informáticos · Documentación del flujo de procesos · Documentación de proyectos · Prácticas de documentación · Microsoft Excel"
+        }
+      ]
+    }
+  ]
+}

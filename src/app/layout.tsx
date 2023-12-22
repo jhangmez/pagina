@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { Providers } from './Providers'
+import { Suspense } from 'react'
+import Loading from './loading'
 import {
   Navbar,
   NavbarBrand,
@@ -67,29 +69,28 @@ export default function RootLayout({
                 <Button
                   as={Link}
                   className='text-light-onSurface dark:text-dark-onSurface font-semibold'
-                  href='/experiencia'
+                  href='/skills'
                   variant='light'
                 >
-                  Experiencia
+                  Skills
                 </Button>
               </NavbarItem>
               <NavbarItem>
                 <Button
                   as={Link}
-                  className='bg-light-primary dark:bg-dark-primary font-semibold'
-                  href='/skills'
+                  className='bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary font-semibold'
+                  href='/experiencia'
                   variant='flat'
                 >
-                  Skills
+                  Experiencia
                 </Button>
               </NavbarItem>
             </NavbarContent>
           </Navbar>
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
           <footer className='bg-light-surface dark:bg-dark-surface'>
             <div className='container mx-auto py-6 px-[20px] '>
               <hr className='my-6 border-gray-200 dark:border-gray-700 lg:my-8' />
-
               <div className='w-full relative md:flex md:justify-between'>
                 <div className='mb-6 md:mb-0'>
                   <Link
@@ -137,7 +138,7 @@ export default function RootLayout({
                     <h2 className='mb-6 text-sm font-semibold uppercase text-light-onSurface dark:text-dark-onSurface'>
                       Proyectos
                     </h2>
-                    <ul className=' font-medium'>
+                    <ul className=''>
                       <li className='mb-4'>
                         <Link
                           href={VercelHarkaysoft}

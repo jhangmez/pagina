@@ -14,6 +14,10 @@ const config: Config = {
     extend: {
       colors: {
         light: {
+          postgresql: '#00639a',
+          onPostgresql: '#ffffff',
+          koyeb: '#2b6b28',
+          onKoyeb: '#ffffff',
           graphql: '#b30083',
           onGraphql: '#FFFFFF',
           react: '#006684',
@@ -138,6 +142,15 @@ const config: Config = {
         '8': '.08',
         '12': '.12',
         '16': '.16'
+      },
+      animation: {
+        'infinite-scroll': 'infinite-scroll 95s linear infinite'
+      },
+      keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' }
+        }
       }
     }
   },

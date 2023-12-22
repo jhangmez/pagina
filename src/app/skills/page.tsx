@@ -12,9 +12,19 @@ import {
   Planificacion,
   Prisma,
   ReactNative,
-  S3AWS
+  S3AWS,
+  Koyeb,
+  Postgresql
 } from '@components/Chips'
+import type { Metadata } from 'next'
 
+const title = 'jhangmez | Skills'
+const description = 'Pagina de jhangmez'
+
+export const metadata: Metadata = {
+  title,
+  description
+}
 export default function Skills() {
   return (
     <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
@@ -26,14 +36,16 @@ export default function Skills() {
           <Graphql />
           <API />
           <Autentificacion />
+          <ReactNative />
           <Documentacion />
           <Jira />
           <Nextjs />
           <Nodejs />
           <Prisma />
-          <ReactNative />
           <Planificacion />
           <Nexusjs />
+          <Postgresql />
+          <Koyeb />
           <S3AWS />
           <React />
           <Typescript />

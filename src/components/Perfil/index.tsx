@@ -1,22 +1,29 @@
+'use Client'
+
+import { useState } from 'react'
 import { Card, CardHeader, CardBody, CardFooter } from '@nextui-org/card'
 import { Listbox, ListboxItem } from '@nextui-org/listbox'
 import { Image } from '@nextui-org/image'
 import { GithubJhan, LinkedinJhan } from '@routes'
-
+import { Snippet } from '@nextui-org/snippet'
 import NextImage from 'next/image'
 import Link from 'next/link'
 import { Button } from '@nextui-org/react'
 
 export default function PerfilPrueba() {
+  const [copied, setCopied] = useState(false)
+  const email = 'jhangmez.pe@gmail.com'
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 1000) // Reset after 2 seconds
+  }
   return (
     <section className='container mx-auto lg:px-16'>
       <div className='flex h-full flex-col justify-center px-3 lg:px-0'>
         <div className='flex flex-col lg:flex-row justify-between items-center inline-flex py-10 gap-5'>
           <Card className='lg:w-4/12 w-11/12 bg-light-surfaceContainer dark:bg-dark-surfaceContainer'>
-            <CardHeader className='text-2xl font-bold text-light-primary dark:text-dark-primary justify-center'>
-              Jhan Gómez P.
-            </CardHeader>
-
             <CardBody className='px-2 rounded-xl justify-center items-center flex'>
               <Image
                 as={NextImage}
@@ -72,86 +79,83 @@ export default function PerfilPrueba() {
                 >
                   Github
                 </ListboxItem>
+                <ListboxItem
+                  key='mail'
+                  onPress={handleCopy}
+                  startContent={
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        fill='currentColor'
+                        d='M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z'
+                      />
+                    </svg>
+                  }
+                  endContent={
+                    copied ? (
+                      <>
+                        <span className='text-sm'>Copiado</span>{' '}
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='24'
+                          height='24'
+                          viewBox='0 0 24 24'
+                        >
+                          <path
+                            fill='currentColor'
+                            d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'
+                          />
+                        </svg>
+                      </>
+                    ) : (
+                      <>
+                        <span className='text-sm'>Copiar</span>{' '}
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='24'
+                          height='24'
+                          viewBox='0 0 24 24'
+                        >
+                          <path
+                            fill='none'
+                            stroke='currentColor'
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M9 9V6.2c0-1.12 0-1.68.218-2.108c.192-.377.497-.682.874-.874C10.52 3 11.08 3 12.2 3h5.6c1.12 0 1.68 0 2.108.218a2 2 0 0 1 .874.874C21 4.52 21 5.08 21 6.2v5.6c0 1.12 0 1.68-.218 2.108a2.002 2.002 0 0 1-.874.874C19.48 15 18.92 15 17.803 15H15M9 9H6.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C3 10.52 3 11.08 3 12.2v5.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h5.607c1.117 0 1.676 0 2.104-.218a2 2 0 0 0 .874-.874c.218-.428.218-.987.218-2.105V15M9 9h2.8c1.12 0 1.68 0 2.108.218a2 2 0 0 1 .874.874c.218.427.218.987.218 2.105V15'
+                          />
+                        </svg>
+                      </>
+                    )
+                  }
+                  className='text-light-onSurface dark:text-dark-onSurface'
+                >
+                  {email}
+                </ListboxItem>
               </Listbox>
             </CardFooter>
           </Card>
           <div className='lg:w-7/12 grid flex-col text-light-onSurface dark:text-dark-onSurface gap-5'>
-            <div className='text-4xl lg:text-5xl font-bold '>
-              <span className='text-light-tertiary dark:text-dark-tertiary'>
-                React
-              </span>{' '}
-              Junior Frontend Developer
+            <div className='text-4xl lg:text-5xl font-bold flex-nowrap'>
+              Hola, soy{' '}
+              <span className='text-light-primary dark:text-dark-primary whitespace-nowrap'>
+                Jhan Gómez{' '}
+                <span className='hidden lg:inline md:inline'> P. </span>
+              </span>
             </div>
-            <div className='text-2xl lg:text-3x1 font-semibold'>
-              Objetivos profesionales
-            </div>
-            <div className='text-1xl lg:text-3x1 font-medium'>
-              Desarrollar mis habilidades y conocimientos como desarrollador{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                front-end
-              </span>{' '}
-              en{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                React
-              </span>
-              ,{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                Vue
-              </span>{' '}
-              y{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                Angular
-              </span>
-              . En el corto plazo, me centraré en desarrollar una aplicación web
-              escalable y de alto rendimiento utilizando{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                React
-              </span>{' '}
-              con{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                Next.js
-              </span>
-              . En el mediano plazo, espero convertirme en un desarrollador{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                Front-end Senior
-              </span>{' '}
-              y apoyar a nuevos programadores en tecnologías{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                nuevas
-              </span>{' '}
-              y{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                escalables
-              </span>
-              , para contribuir al desarrollo profesional de la comunidad.
-              <br></br> Creo que mis habilidades y experiencia me hacen un
-              candidato ideal para apoyar como{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                Junior Developer
-              </span>{' '}
-              en empresas que requieran, ya que estoy familiarizado con las{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                mejores prácticas
-              </span>{' '}
-              de desarrollo{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                front-end
-              </span>
-              , tengo experiencia trabajando en equipos de{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                desarrollo ágiles
-              </span>{' '}
-              y estoy comprometido con el{' '}
-              <span className='text-light-primary dark:text-dark-primary'>
-                desarrollo profesional continuo
-              </span>
-              .
-            </div>
+            <h2 className='text-2xl lg:text-3x1 font-semibold'>
+              Estudiante de Ingeniería de Sistemas y Desarrollador.
+            </h2>
+
             <div className='container flex h-full flex-row gap-5'>
               <Button
                 as={Link}
                 variant='flat'
-                className='bg-light-primary/20 dark:bg-dark-primary/80 text-light-onPrimary dark:text-dark-onPrimary text-bold'
+                className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
                 href='mailto:jhangmez.pe@gmail.com'
               >
                 Contacto
