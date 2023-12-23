@@ -1,25 +1,7 @@
-import {
-  Graphql,
-  React,
-  Typescript,
-  API,
-  Autentificacion,
-  Documentacion,
-  Jira,
-  Nextjs,
-  Nexusjs,
-  Nodejs,
-  Planificacion,
-  Prisma,
-  ReactNative,
-  S3AWS,
-  Koyeb,
-  Postgresql
-} from '@components/Chips'
 import type { Metadata } from 'next'
 
 const title = 'jhangmez | Skills'
-const description = 'Pagina de jhangmez'
+const description = 'Skills de jhangmez'
 
 export const metadata: Metadata = {
   title,
@@ -32,24 +14,6 @@ export default function Skills() {
         <p className='text-light-onSurface dark:text-dark-onSurface font-semibold text-2xl mb-5'>
           Hola estas son mis skills :D
         </p>
-        <div className='grid gap-2 grid-cols-2'>
-          <Graphql />
-          <API />
-          <Autentificacion />
-          <ReactNative />
-          <Documentacion />
-          <Jira />
-          <Nextjs />
-          <Nodejs />
-          <Prisma />
-          <Planificacion />
-          <Nexusjs />
-          <Postgresql />
-          <Koyeb />
-          <S3AWS />
-          <React />
-          <Typescript />
-        </div>
       </div>
     </section>
   )

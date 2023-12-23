@@ -84,6 +84,16 @@ export default function RootLayout({
                 <Button
                   as={Link}
                   className='text-light-onSurface dark:text-dark-onSurface font-semibold'
+                  href='/skills'
+                  variant='light'
+                >
+                  Skills
+                </Button>
+              </NavbarItem>
+              <NavbarItem className='hidden lg:flex'>
+                <Button
+                  as={Link}
+                  className='text-light-onSurface dark:text-dark-onSurface font-semibold'
                   href='/proyectos'
                   variant='light'
                 >
