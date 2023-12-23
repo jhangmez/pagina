@@ -6,7 +6,7 @@ import data from './data.json'
 export default function Idiomas() {
   return (
     <>
-      <div className='dark:bg-light-secondaryContainer border rounded-xl shadow-md p-4'>
+      <div className='bg-light-surfaceContainer dark:bg-light-secondaryContainer border rounded-xl shadow-md p-4 w-full'>
         <h1 className='font-bold text-2xl mb-4'>Idiomas</h1>
         <ul>
           {data.idiomas.map((idioma, index) => (

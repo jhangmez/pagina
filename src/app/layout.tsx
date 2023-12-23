@@ -21,28 +21,8 @@ const title = 'jhangmez | Página'
 const description = 'Pagina de jhangmez'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jhangmez.vercel.app'),
-  openGraph: {
-    title: title,
-    description: description,
-    url: 'https://jhangmez.vercel.app',
-    siteName: 'Jhan Gomez',
-    images: [
-      {
-        url: '/jhan_image.png',
-        width: 800,
-        height: 600
-      },
-      {
-        url: '/jhan_image.png',
-        width: 1800,
-        height: 1600,
-        alt: 'My custom alt'
-      }
-    ],
-    locale: 'es_US',
-    type: 'website'
-  }
+  title,
+  description
 }
 
 export default function RootLayout({
@@ -80,6 +60,16 @@ export default function RootLayout({
               </Link>
             </NavbarBrand>
             <NavbarContent justify='end' className='gap-1'>
+              <NavbarItem className='hidden lg:flex'>
+                <Button
+                  as={Link}
+                  className='text-light-onSurface dark:text-dark-onSurface font-semibold'
+                  href='/educacion'
+                  variant='light'
+                >
+                  Educación
+                </Button>
+              </NavbarItem>
               <NavbarItem className='hidden lg:flex'>
                 <Button
                   as={Link}

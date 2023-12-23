@@ -6,12 +6,14 @@ import Perfil from '@components/Perfil'
 import Proyectos from '@components/Proyectos'
 import Educacion from '@components/Educacion'
 import Idiomas from '@components/Idiomas'
+import Objetivos from '@components/Objetivos'
+import Skills from '@components/Skills'
 import InfiniteVertical from '@components/InfiniteVertical'
 import Head from 'next/head'
 
 export default function Home() {
   return (
-    <main className='min-h-screen bg-light-surface dark:bg-dark-surface'>
+    <main className='min-h-screen bg-light-surface dark:bg-dark-surface space-y-10'>
       <Head>
         <title>Home</title>
       </Head>
@@ -19,17 +21,19 @@ export default function Home() {
         <Perfil />
         <InfiniteVertical />
       </section>
-      <div className='container mx-auto px-[20px] pt-10'>
+      <div className='container mx-auto px-[20px]'>
         <Experiencia />
       </div>
-      <div className='container mx-auto px-[20px] pt-10'>
+      <div className='container mx-auto px-[20px]'>
         <Proyectos />
       </div>
-      <div className='container mx-auto px-[20px] pt-10'>
+      <div className='container mx-auto px-[20px] flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
         <Educacion />
-      </div>
-      <div className='container mx-auto px-[20px] pt-10'>
         <Idiomas />
+      </div>
+      <div className='container mx-auto px-[20px] flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
+        <Objetivos />
+        <Skills />
       </div>
     </main>
   )

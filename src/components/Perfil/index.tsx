@@ -8,6 +8,7 @@ import { GithubJhan, LinkedinJhan } from '@routes'
 import NextImage from 'next/image'
 import Link from 'next/link'
 import { Button } from '@nextui-org/react'
+import data from './data.json'
 
 export default function PerfilPrueba() {
   const [copied, setCopied] = useState(false)
@@ -151,7 +152,7 @@ export default function PerfilPrueba() {
               </span>
             </div>
             <h2 className='text-2xl lg:text-3x1 font-semibold'>
-              Estudiante de Ingeniería de Sistemas y Desarrollador.
+              Estudiante de Ingeniería de Sistemas y Desarrollador software.
             </h2>
 
             <div className='container flex h-full flex-row gap-5'>
@@ -160,6 +161,19 @@ export default function PerfilPrueba() {
                 variant='flat'
                 className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
                 href='mailto:jhangmez.pe@gmail.com'
+                startContent={
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      fill='currentColor'
+                      d='M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z'
+                    />
+                  </svg>
+                }
               >
                 Contacto
               </Button>
