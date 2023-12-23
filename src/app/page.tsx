@@ -27,11 +27,11 @@ export default function Home() {
       <div className='container mx-auto px-[20px]'>
         <Proyectos />
       </div>
-      <div className='container mx-auto px-[20px] flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
+      <div className='container mx-auto px-[20px] space-y-10 flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
         <Educacion />
         <Idiomas />
       </div>
-      <div className='container mx-auto px-[20px] flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
+      <div className='container mx-auto px-[20px] space-y-10 flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
         <Objetivos />
         <Skills />
       </div>
