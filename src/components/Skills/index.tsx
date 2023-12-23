@@ -21,7 +21,7 @@ export default function Skills() {
             return <Component key={num} />
           })}
         </ul>
-        <h2 className='font-bold text-1xl mb-2'>API's integrations</h2>
+        <h2 className='font-bold text-1xl mb-2'>APIs integrations</h2>
         <ul className='space-x-2'>
           {skills.api.map((num) => {
             const Component = skillsMap[num]
