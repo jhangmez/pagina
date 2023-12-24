@@ -16,6 +16,7 @@ import { Logo } from './Logo'
 import { GithubJhan, LinkedinJhan, VercelHarkaysoft } from '@routes'
 
 const myFont = localFont({ src: './PlusJakartaSans-VariableFont_wght.ttf' })
+const HarkaySoftFont = localFont({ src: './Poppins-SemiBold.ttf' })
 
 const title = 'jhangmez | Página'
 const description = 'Pagina de jhangmez'
@@ -64,7 +65,7 @@ export default function RootLayout({
                 <Button
                   as={Link}
                   className='text-light-onSurface dark:text-dark-onSurface font-semibold'
-                  href='/educacion'
+                  href='/education'
                   variant='light'
                 >
                   Educación
@@ -84,7 +85,7 @@ export default function RootLayout({
                 <Button
                   as={Link}
                   className='text-light-onSurface dark:text-dark-onSurface font-semibold'
-                  href='/proyectos'
+                  href='/projects'
                   variant='light'
                 >
                   Proyectos
@@ -94,7 +95,7 @@ export default function RootLayout({
                 <Button
                   as={Link}
                   className='bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary font-semibold'
-                  href='/experiencia'
+                  href='/experience'
                   variant='flat'
                 >
                   Experiencia
@@ -161,11 +162,11 @@ export default function RootLayout({
                           isExternal
                         >
                           <span
-                            className={`${myFont.className} self-center text-1xl whitespace-nowrap pb-3`}
+                            className={`${HarkaySoftFont.className} self-center text-1xl whitespace-nowrap pb-3`}
                           >
                             Harkay
                             <span
-                              className={`${myFont.className} text-2xl text-[0.8em]`}
+                              className={`${HarkaySoftFont.className} text-2xl text-[0.8em]`}
                             >
                               {' '}
                               S O F T
