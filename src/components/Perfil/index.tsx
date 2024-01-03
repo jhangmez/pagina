@@ -29,7 +29,7 @@ export default function PerfilPrueba() {
                 as={NextImage}
                 isBlurred
                 priority={true}
-                src='https://media.licdn.com/dms/image/D4E03AQHqh7Y4agbE7g/profile-displayphoto-shrink_800_800/0/1679802304766?e=1703721600&v=beta&t=OUnXeS6zL5SbszflBOsF0DQ6UeabJn2_a_wgRh3buY8'
+                src='/jhan_image.webp'
                 alt='Jhangmez Picture'
                 className='self-stretch grow shrink basis-0 rounded-xl'
                 width={300}
@@ -170,12 +170,34 @@ export default function PerfilPrueba() {
                   >
                     <path
                       fill='currentColor'
-                      d='M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z'
+                      d='M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z'
                     />
                   </svg>
                 }
               >
                 Contacto
+              </Button>
+              <Button
+                as={Link}
+                target='_blank'
+                variant='flat'
+                className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
+                href='https://drive.google.com/file/d/1EhgzQjL0BTLLSeQZHuyGcNp4jwPfj8C1/view'
+                startContent={
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      fill='currentColor'
+                      d='m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z'
+                    />
+                  </svg>
+                }
+              >
+                Descargar CV
               </Button>
             </div>
           </div>

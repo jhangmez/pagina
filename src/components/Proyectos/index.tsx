@@ -17,6 +17,7 @@ export default function Proyectos() {
                 <div className='flex flex-col items-center mb-4 '>
                   <Image
                     as={NextImage}
+                    isBlurred
                     width={400}
                     height={200}
                     priority={true}

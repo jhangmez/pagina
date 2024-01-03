@@ -15,6 +15,7 @@ export default function Educacion() {
                 <Image
                   as={NextImage}
                   width={100}
+                  isBlurred
                   height={100}
                   priority={true}
                   src={educacion.logo}

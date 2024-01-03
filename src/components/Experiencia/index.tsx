@@ -16,6 +16,7 @@ export default function Experiencia() {
                 <div className='flex flex-col items-center'>
                   <Image
                     as={NextImage}
+                    isBlurred
                     width={80}
                     height={80}
                     priority={true}
