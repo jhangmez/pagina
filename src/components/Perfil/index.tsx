@@ -13,6 +13,8 @@ import data from './data.json'
 export default function PerfilPrueba() {
   const [copied, setCopied] = useState(false)
   const email = 'jhangmez.pe@gmail.com'
+  const cvURL =
+    'https://drive.google.com/file/d/1MMUWCt510bWWJw3RKxolH6OnsTE7Hy6O/view'
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email)
@@ -182,7 +184,7 @@ export default function PerfilPrueba() {
                 target='_blank'
                 variant='flat'
                 className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
-                href='https://drive.google.com/file/d/1EhgzQjL0BTLLSeQZHuyGcNp4jwPfj8C1/view'
+                href={cvURL}
                 startContent={
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
