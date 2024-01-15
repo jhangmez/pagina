@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Card, CardBody, CardFooter } from '@nextui-org/card'
 import { Listbox, ListboxItem } from '@nextui-org/listbox'
 import { Image } from '@nextui-org/image'
-import { GithubJhan, LinkedinJhan } from '@routes'
+import { GithubJhan, LinkedinJhan, URLCV } from '@routes'
 import NextImage from 'next/image'
 import Link from 'next/link'
 import { Button } from '@nextui-org/react'
@@ -13,8 +13,6 @@ import data from './data.json'
 export default function PerfilPrueba() {
   const [copied, setCopied] = useState(false)
   const email = 'jhangmez.pe@gmail.com'
-  const cvURL =
-    'https://drive.google.com/file/d/1MMUWCt510bWWJw3RKxolH6OnsTE7Hy6O/view'
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email)
@@ -184,7 +182,7 @@ export default function PerfilPrueba() {
                 target='_blank'
                 variant='flat'
                 className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
-                href={cvURL}
+                href={URLCV}
                 startContent={
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
