@@ -85,7 +85,7 @@ export default function PublicLayout({
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent justify='end' className='gap-1'>
-          <NavbarItem className='hidden lg:flex'>
+          <NavbarItem className='hidden lg:flex md:flex'>
             <Button
               as={Link}
               className='text-light-onSurface dark:text-dark-onSurface font-semibold'
