@@ -71,6 +71,7 @@ export default function PublicLayout({
             <Link
               href='/'
               className='gap-1 text-light-onSurface dark:text-dark-onSurface'
+              onClick={() => setIsMenuOpen(false)}
             >
               <Logo />
               <div>
@@ -145,6 +146,7 @@ export default function PublicLayout({
               className='bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary font-semibold'
               href='/experience'
               variant='flat'
+              onClick={() => setIsMenuOpen(false)}
             >
               Experiencia
             </Button>
