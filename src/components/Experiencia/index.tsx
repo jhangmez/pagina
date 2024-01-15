@@ -32,6 +32,7 @@ export default function Experiencia() {
                     <Link
                       underline='hover'
                       isExternal
+                      showAnchorIcon
                       href={experiencia.enlace}
                       className='flex flex-col w-fit font-bold text-dark-onPrimary'
                     >
