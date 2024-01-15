@@ -25,6 +25,7 @@ export default function Educacion() {
                   <Link
                     underline='hover'
                     isExternal
+                    showAnchorIcon
                     href={educacion.url}
                     className='font-bold text-dark-onPrimary'
                   >

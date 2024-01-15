@@ -7,3 +7,5 @@ export const VercelHarkaysoft = 'https://harkaysoft.vercel.app/'
 export const VercelHanpy = 'https://hanpy.vercel.app/'
 export const VercelJhan = 'https://jhangmez.vercel.app/'
 export const URLCV = process.env.NEXT_PUBLIC_URLCV
+export const MediumJhan = 'https://medium.com/@jhangmez'
+export const HugginFaceJhan = 'https://medium.com/@jhangmez'

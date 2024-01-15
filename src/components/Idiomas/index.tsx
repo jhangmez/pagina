@@ -28,6 +28,7 @@ export default function Idiomas() {
                   <Link
                     underline='hover'
                     isExternal
+                    showAnchorIcon
                     href={idioma.url}
                     className='font-bold text-dark-onPrimary'
                   >

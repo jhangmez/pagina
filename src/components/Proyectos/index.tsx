@@ -13,7 +13,7 @@ export default function Proyectos() {
         <ul>
           {data.proyectos.map((proyectos, index) => (
             <li key={index}>
-              <div className='flex sm:flex-row flex-col p-4 lg:space-x-4'>
+              <div className='flex sm:flex-row flex-col p-4 lg:space-x-4 space-x-2 md:space-x-0'>
                 <div className='flex flex-col items-center mb-4 '>
                   <Image
                     as={NextImage}

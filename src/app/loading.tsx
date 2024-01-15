@@ -4,7 +4,7 @@ export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
   return (
     <main className='min-w-screen min-h-screen'>
-      <div className='flex flex-col justify-center items-center h-screen  bg-light-surface dark:bg-dark-surface'>
+      <div className='flex flex-col justify-center items-center h-screen bg-light-surface dark:bg-dark-surface'>
         <section className='w-fit h-14 justify-start items-center gap-[5px] inline-flex'>
           <div>
             <span className='text-light-onSurface dark:text-dark-onSurface text-2xl font-bold leading-[44px]'>

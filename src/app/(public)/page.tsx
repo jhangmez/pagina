@@ -12,11 +12,11 @@ import InfiniteVertical from '@components/InfiniteVertical'
 
 export default function Home() {
   return (
-    <main className='min-h-screen bg-light-surface dark:bg-dark-surface space-y-10'>
-      <section className='flex flex-col justify-center items-center min-h-screen -mt-12 space-y-10'>
+    <section className='space-y-4'>
+      <div className='flex flex-col justify-center items-center min-h-screen -mt-10 space-y-10'>
         <Perfil />
         <InfiniteVertical />
-      </section>
+      </div>
       <div className='container mx-auto px-[20px]'>
         <Experiencia />
       </div>
@@ -31,6 +31,6 @@ export default function Home() {
         <Objetivos />
         <Skills />
       </div>
-    </main>
+    </section>
   )
 }
