@@ -36,7 +36,7 @@ export default function Experiencia() {
                       className='w-fit'
                       href={experiencia.enlace}
                     >
-                      <p className='flex items-center mr-1 font-bold text-dark-onPrimary'>
+                      <p className='font-bold text-dark-onPrimary'>
                         {experiencia.empresa}
                       </p>
                     </Link>

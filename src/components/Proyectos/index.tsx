@@ -34,15 +34,12 @@ export default function Proyectos() {
                       underline='hover'
                       isExternal
                       href={proyectos.enlace}
-                      className='flex flex-col w-fit '
+                      className='w-fit'
+                      showAnchorIcon
                     >
-                      <div className='flex items-center'>
-                        <div className='flex w-full'>
-                          <div className='flex items-center mr-1 hover:underline font-bold text-dark-onPrimary'>
-                            {proyectos.empresa} {'  '} ({proyectos.enlace})
-                          </div>
-                        </div>
-                      </div>
+                      <p className='hover:underline font-bold text-dark-onPrimary'>
+                        {proyectos.empresa} {'  '} ({proyectos.enlace})
+                      </p>
                     </Link>
                   </div>
                   <ul className='flex flex-col space-y-5'>
