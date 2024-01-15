@@ -176,7 +176,7 @@ export default function PerfilPrueba() {
             </CardFooter>
           </Card>
           <div className='lg:w-7/12 grid flex-col text-light-onSurface dark:text-dark-onSurface gap-5'>
-            <div className='text-4xl lg:text-5xl font-bold flex-nowrap'>
+            <div className='text-3xl lg:text-5xl font-bold flex-nowrap'>
               Hola, soy{' '}
               <span className='text-light-primary dark:text-dark-primary whitespace-nowrap'>
                 Jhan Gómez{' '}
