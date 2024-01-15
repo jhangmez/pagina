@@ -57,7 +57,7 @@ export default function PublicLayout({
   return (
     <main className='min-h-screen bg-light-surface dark:bg-dark-surface'>
       <Navbar
-        className='bg-transparent text-light-onSurface dark:text-dark-onSurface'
+        className='bg-light-surface/50 dark:bg-dark-surface/50 text-light-onSurface dark:text-dark-onSurface'
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
         shouldHideOnScroll
