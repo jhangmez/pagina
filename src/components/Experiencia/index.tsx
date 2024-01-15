@@ -33,16 +33,12 @@ export default function Experiencia() {
                       underline='hover'
                       isExternal
                       showAnchorIcon
+                      className='w-fit'
                       href={experiencia.enlace}
-                      className='flex flex-col w-fit font-bold text-dark-onPrimary'
                     >
-                      <div className='flex items-center'>
-                        <div className='flex w-full'>
-                          <div className='flex items-center mr-1 font-bold text-dark-onPrimary'>
-                            {experiencia.empresa}
-                          </div>
-                        </div>
-                      </div>
+                      <p className='flex items-center mr-1 font-bold text-dark-onPrimary'>
+                        {experiencia.empresa}
+                      </p>
                     </Link>
                     <span className='font-sm font-normal'>
                       {experiencia.duracion}
