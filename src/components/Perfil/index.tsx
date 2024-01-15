@@ -42,7 +42,7 @@ export default function PerfilPrueba() {
                 aria-label='Listbox'
                 itemClasses={{
                   base: 'p-2',
-                  title: 'text-lg font-medium'
+                  title: 'sm:text-lg font-medium'
                 }}
               >
                 <ListboxItem
