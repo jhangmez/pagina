@@ -150,11 +150,11 @@ export default function PublicLayout({
             </Button>
           </NavbarItem>
         </NavbarContent>
-        <NavbarMenu className='bg-transparent'>
+        <NavbarMenu className='bg-light-surface/50 dark:bg-dark-surface/50'>
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={item.key}>
               <Link
-                className='w-full text-white/70'
+                className='w-full font-medium text-light-onSurface dark:text-dark-onSurface'
                 href={item.href}
                 isExternal={item.isExternal}
                 onClick={() => setIsMenuOpen(false)}
