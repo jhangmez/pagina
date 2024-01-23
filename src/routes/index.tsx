@@ -9,3 +9,4 @@ export const VercelJhan = 'https://jhangmez.vercel.app/'
 export const URLCV = process.env.NEXT_PUBLIC_URLCV
 export const MediumJhan = 'https://medium.com/@jhangmez'
 export const HugginFaceJhan = 'https://medium.com/@jhangmez'
+export const CoffeeJhan = 'https://www.buymeacoffee.com/jhangmez'
