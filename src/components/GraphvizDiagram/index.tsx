@@ -75,7 +75,6 @@ const GraphvizDiagram: React.FC<GraphvizDiagramProps> = ({ dot }) => {
   return (
     <section className='bg-light-surfaceVariant overflow-x-auto rounded-xl'>
       <div ref={graphvizRef} />
-
       <Dropdown>
         <DropdownTrigger>
           <Button
