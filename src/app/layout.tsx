@@ -4,7 +4,6 @@ import { Providers } from './Providers'
 import { Suspense } from 'react'
 import Loading from './loading'
 import localFont from 'next/font/local'
-
 const myFont = localFont({ src: './PlusJakartaSans-VariableFont_wght.ttf' })
 
 const title = 'jhangmez | Página'

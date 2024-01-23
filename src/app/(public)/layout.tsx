@@ -20,6 +20,12 @@ import {
   MediumJhan,
   HugginFaceJhan
 } from '@routes'
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem
+} from '@nextui-org/dropdown'
 import { Suspense } from 'react'
 import Loading from '../loading'
 import localFont from 'next/font/local'
@@ -52,6 +58,11 @@ export default function PublicLayout({
       label: 'Blog',
       href: MediumJhan,
       isExternal: true
+    },
+    {
+      key: 'generadormapamental',
+      label: 'Mapa mental',
+      href: '/mapamental'
     }
   ]
   return (
@@ -86,6 +97,23 @@ export default function PublicLayout({
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent justify='end' className='gap-1'>
+          <NavbarItem className='hidden lg:flex'>
+            <Dropdown>
+              <DropdownTrigger>
+                <Button
+                  className='text-light-onSurface dark:text-dark-onSurface font-semibold'
+                  variant='light'
+                >
+                  Generadores
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu aria-label='ver'>
+                <DropdownItem key='mapamental' as={Link} href='/mapamental'>
+                  Mapa mental
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </NavbarItem>
           <NavbarItem className='hidden lg:flex md:flex'>
             <Button
               as={Link}
