@@ -85,7 +85,10 @@ export default function MapaMental() {
 
   return (
     <section className='min-h-screen'>
-      <div className='container mx-auto px-[20px] pt-10 space-y-3'>
+      <div className='container mx-auto px-[20px] pt-5 space-y-3'>
+        <p className='sm:text-3xl text-2xl font-semibold text-light-onSurface dark:text-dark-onSurface'>
+          Generador de mapa mental
+        </p>
         <section className='flex flex-wrap gap-5'>
           <Textarea
             label='Título en inglés'
