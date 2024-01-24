@@ -64,6 +64,11 @@ export default function PublicLayout({
       key: 'generadormapamental',
       label: 'Mapa mental',
       href: '/mapamental'
+    },
+    {
+      key: 'generadormapaconceptual',
+      label: 'Mapa conceptual',
+      href: '/mapaconceptual'
     }
   ]
   return (
@@ -111,6 +116,13 @@ export default function PublicLayout({
               <DropdownMenu aria-label='ver'>
                 <DropdownItem key='mapamental' as={Link} href='/mapamental'>
                   Mapa mental
+                </DropdownItem>
+                <DropdownItem
+                  key='mapaconceptual'
+                  as={Link}
+                  href='/mapamentalconceptual'
+                >
+                  Mapa conceptual
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>

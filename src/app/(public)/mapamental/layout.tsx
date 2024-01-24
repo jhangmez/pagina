@@ -1,22 +1,22 @@
 export const metadata = {
-  title: 'Mapa conceptual | jhangmez',
-  description: 'Generador de mapas conceptuales',
+  title: 'Mapa mental | jhangmez',
+  description: 'Generador de mapas mentales',
   openGraph: {
-    title: 'Mapa conceptual | jhangmez',
-    description: 'Generador de mapas conceptuales',
+    title: 'Mapa mental | jhangmez',
+    description: 'Generador de mapas mentales',
     type: 'article',
-    url: 'https://jhangmez.vercel.app/mapamental',
+    url: 'https://jhangmez.xyz/mapamental',
     images: [
       {
-        url: 'https://jhangmez.vercel.app/api/og?title=Mapa conceptual'
+        url: 'https://jhangmez.vercel.app/api/og?title=Mapa mental'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Generador de mapas conceptuales',
-    description: 'Generador de mapas conceptuales',
-    images: ['https://jhangmez.vercel.app/api/og?title=Mapa conceptual']
+    title: 'Generador de mapas mentales',
+    description: 'Generador de mapas mentales',
+    images: ['https://jhangmez.vercel.app/api/og?title=Mapa mental']
   }
 }
 
