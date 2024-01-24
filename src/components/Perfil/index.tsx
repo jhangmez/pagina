@@ -1,4 +1,4 @@
-'use Client'
+'use client'
 
 import { useState } from 'react'
 import { Card, CardBody, CardFooter } from '@nextui-org/card'

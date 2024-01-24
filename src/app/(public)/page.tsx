@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import Experiencia from '@components/Experiencia'
 import Perfil from '@components/Perfil'
@@ -9,6 +7,28 @@ import Idiomas from '@components/Idiomas'
 import Objetivos from '@components/Objetivos'
 import Skills from '@components/Skills'
 import InfiniteVertical from '@components/InfiniteVertical'
+
+export const metadata = {
+  title: 'Portafolio | jhangmez',
+  description: 'Bienvenidos a mi portafolio',
+  openGraph: {
+    title: 'Portafolio | jhangmez',
+    description: 'Bienvenidos a mi portafolio',
+    type: 'article',
+    url: 'https://jhangmez.xyz/',
+    images: [
+      {
+        url: 'https://jhangmez.vercel.app/api/og?title=Portafolio'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portafolio',
+    description: 'Bienvenidos a mi portafolio',
+    images: ['https://jhangmez.vercel.app/api/og?title=Portafolio']
+  }
+}
 
 export default function Home() {
   return (
