@@ -14,7 +14,12 @@ export async function GET(request: Request) {
     const hasTitle = searchParams.has('title')
     const title = hasTitle
       ? searchParams.get('title')?.slice(0, 100)
-      : 'Default title'
+      : 'Título por defecto'
+
+    const hasDescription = searchParams.has('title')
+    const description = hasDescription
+      ? searchParams.get('Description')?.slice(0, 100)
+      : 'Descripción por defecto'
 
     return new ImageResponse(
       (
@@ -68,7 +73,7 @@ export async function GET(request: Request) {
               margin: '0 42px',
               fontSize: 64,
               width: 'auto',
-              maxWidth: 550,
+              maxWidth: 700,
               textAlign: 'center',
               backgroundColor: '#002108',
               color: '#FFFFFF',
@@ -76,6 +81,18 @@ export async function GET(request: Request) {
             }}
           >
             {title}
+          </div>
+          <div
+            style={{
+              left: 42,
+              top: 520,
+              position: 'absolute',
+              display: 'flex',
+              alignItems: 'center',
+              fontSize: 32
+            }}
+          >
+            {description}
           </div>
         </div>
       ),
