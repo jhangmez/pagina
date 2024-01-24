@@ -120,7 +120,7 @@ export default function PublicLayout({
                 <DropdownItem
                   key='mapaconceptual'
                   as={Link}
-                  href='/mapamentalconceptual'
+                  href='/mapaconceptual'
                 >
                   Mapa conceptual
                 </DropdownItem>
