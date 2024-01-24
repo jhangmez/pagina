@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback, useRef } from 'react'
+import { useState, useCallback } from 'react'
 import { Textarea } from '@nextui-org/input'
 import { Button } from '@nextui-org/button'
 import GraphvizDiagram from '@components/GraphvizDiagram'
