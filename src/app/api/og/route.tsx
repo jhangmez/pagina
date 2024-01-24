@@ -5,6 +5,9 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'edge'
 
 export async function GET(request: Request) {
+  const fontData = await fetch(
+    new URL('/public/PlusJakartaSans-Bold.ttf', import.meta.url)
+  ).then((res) => res.arrayBuffer())
   try {
     const { searchParams } = new URL(request.url)
 
@@ -38,10 +41,9 @@ export async function GET(request: Request) {
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='28'
-              height='28'
+              width='64'
+              height='64'
               viewBox='0 0 24 24'
-              color='#1A1C19'
             >
               <path
                 fill='currentColor'
@@ -51,7 +53,7 @@ export async function GET(request: Request) {
             <span
               style={{
                 marginLeft: 8,
-                fontSize: 20
+                fontSize: 48
               }}
             >
               jhangmez.xyz
@@ -64,7 +66,7 @@ export async function GET(request: Request) {
               justifyContent: 'center',
               padding: '20px 50px',
               margin: '0 42px',
-              fontSize: 40,
+              fontSize: 64,
               width: 'auto',
               maxWidth: 550,
               textAlign: 'center',
@@ -77,10 +79,16 @@ export async function GET(request: Request) {
           </div>
         </div>
       ),
-
       {
         width: 1200,
-        height: 630
+        height: 630,
+        fonts: [
+          {
+            name: 'PlusJakartaSans',
+            data: fontData,
+            style: 'normal'
+          }
+        ]
       }
     )
   } catch (e: any) {

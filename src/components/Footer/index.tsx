@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react'
 import localFont from 'next/font/local'
 import Link from 'next/link'
 
-const myFont = localFont({ src: './Poppins-SemiBold.ttf' })
+const myFont = localFont({ src: '/Poppins-SemiBold.ttf' })
 
 export default function FooterWithSocialMediaIcons() {
   return (

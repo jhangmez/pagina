@@ -30,7 +30,7 @@ import {
 import { Suspense } from 'react'
 import Loading from '../loading'
 import localFont from 'next/font/local'
-const HarkaySoftFont = localFont({ src: './Poppins-SemiBold.ttf' })
+const HarkaySoftFont = localFont({ src: '/Poppins-SemiBold.ttf' })
 
 export default function PublicLayout({
   children
