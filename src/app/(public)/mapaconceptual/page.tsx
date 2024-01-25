@@ -5,33 +5,46 @@ import { Textarea } from '@nextui-org/input'
 import { Button } from '@nextui-org/button'
 import GraphvizDiagram from '@components/GraphvizDiagram'
 import { FormData } from './types'
+import { HexColorPicker } from 'react-colorful'
+import { Popover, PopoverTrigger, PopoverContent } from '@nextui-org/popover'
 
 const INITIAL_DATA: FormData = {
   ingles: '',
   espanol: '',
+  color: '',
   subtitle1: '',
   text1: '',
+  color1: '',
   subtitle2: '',
   text2: '',
+  color2: '',
   subtitle3: '',
   text3: '',
+  color3: '',
   subtitle4: '',
   text4: '',
+  color4: '',
   subtitle5: '',
   text5: '',
+  color5: '',
   subtitle6: '',
   text6: '',
+  color6: '',
   subtitle7: '',
   text7: '',
+  color7: '',
   subtitle8: '',
   text8: '',
+  color8: '',
   subtitle9: '',
-  text9: ''
+  text9: '',
+  color9: ''
 }
 
 export default function MapaConceptual() {
   const [dataINITIAL, setDataINITIAL] = useState(INITIAL_DATA)
   const [activePair, setActivePair] = useState(1)
+  const [color, setColor] = useState('#aabbcc')
 
   const updateFields = useCallback((fields: Partial<FormData>) => {
     setDataINITIAL((prev) => {
@@ -64,86 +77,128 @@ export default function MapaConceptual() {
       <br/>`
       }
       >
-      ,shape=box ,fillcolor="#f0ffff" pos="0,1!"]
+      ,shape=box ,fillcolor=${
+        dataINITIAL.color ? `"${dataINITIAL.color}"` : `"#f0ffff"`
+      } pos="0,1!"]
 
       B [label=<<b>${
         dataINITIAL.subtitle1
-      }</b>>, shape=box, style="rounded,filled", fillcolor="#ffcf98" pos="-8,-1!"]
-      b[label="${insertNewlines(
-        dataINITIAL.text1
-      )}",fillcolor="#ffd08b", shape=box, style="rounded,filled", pos="-8,-2.5!"]
+      }</b>>, shape=box, style="rounded,filled", fillcolor=${
+      dataINITIAL.color1 ? `"${dataINITIAL.color1}"` : `"#ffcf98"`
+    } pos="-8,-1!"]
+      b[label="${insertNewlines(dataINITIAL.text1)}",fillcolor=${
+      dataINITIAL.color1 ? `"${dataINITIAL.color1}"` : `"#ffcf98"`
+    }, shape=box, style="rounded,filled", pos="-8,-2.5!"]
       ${
         dataINITIAL.subtitle2 &&
         `C [label=<<b>${
           dataINITIAL.subtitle2
-        }</b>>, shape=box, style="rounded,filled",fillcolor="#98ff98" pos="-8,-4.5!"]
+        }</b>>, shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color2 ? `"${dataINITIAL.color2}"` : `"#98ff98"`
+        } pos="-8,-4.5!"]
       c [label="${insertNewlines(
         dataINITIAL.text2
-      )}",shape=box, style="rounded,filled",fillcolor="#8bff8b" pos="-8,-6!"]`
+      )}",shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color2 ? `"${dataINITIAL.color2}"` : `"#98ff98"`
+        } pos="-8,-6!"]`
       }
+
       ${
         dataINITIAL.subtitle3 &&
         `D [label=<<b>${
           dataINITIAL.subtitle3
-        }</b>>, shape=box, style="rounded,filled",fillcolor="#e5ccc9" pos="-4,-1!"]
+        }</b>>, shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color3 ? `"${dataINITIAL.color3}"` : `"#e5ccc9"`
+        } pos="-4,-1!"]
         d [label="${insertNewlines(
           dataINITIAL.text3
-        )}",shape=box, style="rounded,filled",fillcolor="#e9c9c5" pos="-4,-2!"]`
+        )}",shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color3 ? `"${dataINITIAL.color3}"` : `"#e5ccc9"`
+        } pos="-4,-2!"]`
       }
+
       ${
         dataINITIAL.subtitle4 &&
         `E [label=<<b>${
           dataINITIAL.subtitle4
-        }</b>>, shape=box, style="rounded,filled",fillcolor="#ff98de" pos="-4,-4.5!"]
+        }</b>>, shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color4 ? `"${dataINITIAL.color4}"` : `"#ff98de"`
+        } pos="-4,-4.5!"]
         e [label="${insertNewlines(
           dataINITIAL.text4
-        )}",shape=box, style="rounded,filled",fillcolor="#ff8be3" pos="-4,-6!"]`
+        )}",shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color4 ? `"${dataINITIAL.color4}"` : `"#ff98de"`
+        } pos="-4,-6!"]`
       }
 
       ${
         dataINITIAL.subtitle5 &&
         `F [label=<<b>${
           dataINITIAL.subtitle5
-        }</b>>, shape=box, style="rounded,filled",fillcolor="#fff8dc" pos="0,-1!"]
+        }</b>>, shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color5 ? `"${dataINITIAL.color5}"` : `"#fff8dc"`
+        } pos="0,-1!"]
         f [label="${insertNewlines(
           dataINITIAL.text5
-        )}",shape=box, style="rounded,filled",fillcolor="#fffbd8" pos="0,-2.5!"]`
+        )}",shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color5 ? `"${dataINITIAL.color5}"` : `"#fff8dc"`
+        } pos="0,-2.5!"]`
       }
+
       ${
         dataINITIAL.subtitle6 &&
         `G [label=<<b>${
           dataINITIAL.subtitle6
-        }</b>>, shape=box, style="rounded,filled",fillcolor="#f0fff0" pos="4,-4.5!"]
+        }</b>>, shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color6 ? `"${dataINITIAL.color6}"` : `"#f0fff0"`
+        } pos="4,-4.5!"]
         g [label="${insertNewlines(
           dataINITIAL.text6
-        )}",shape=box, style="rounded,filled",fillcolor="#eeffee" pos="4,-6!"]`
+        )}",shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color6 ? `"${dataINITIAL.color6}"` : `"#f0fff0"`
+        } pos="4,-6!"]`
       }
+
       ${
         dataINITIAL.subtitle7 &&
         `H [label=<<b>${
           dataINITIAL.subtitle7
-        }</b>>, shape=box, style="rounded,filled",fillcolor="#fff0f5" pos="4,-1!"]
+        }</b>>, shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color7 ? `"${dataINITIAL.color7}"` : `"#fff0f5"`
+        } pos="4,-1!"]
       h [label="${insertNewlines(
         dataINITIAL.text7
-      )}",shape=box, style="rounded,filled",fillcolor="#ffeef4" pos="4,-2.5!"]`
+      )}",shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color7 ? `"${dataINITIAL.color7}"` : `"#fff0f5"`
+        } pos="4,-2.5!"]`
       }
+
       ${
         dataINITIAL.subtitle8 &&
         `I [label=<<b>${
           dataINITIAL.subtitle8
-        }</b>>, shape=box, style="rounded,filled",fillcolor="#faf0e6" pos="8,-4.5!"]
+        }</b>>, shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color8 ? `"${dataINITIAL.color8}"` : `"#faf0e6"`
+        } pos="8,-4.5!"]
       i [label="${insertNewlines(
         dataINITIAL.text8
-      )}",shape=box, style="rounded,filled",fillcolor="#fdf0e3" pos="8,-6!"]`
+      )}",shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color8 ? `"${dataINITIAL.color8}"` : `"#faf0e6"`
+        } pos="8,-6!"]`
       }
+
       ${
         dataINITIAL.subtitle9 &&
         `J [label=<<b>${
           dataINITIAL.subtitle9
-        }</b>>,shape=box, style="rounded,filled",fillcolor="#fdcfca" pos="8,-1!"]
+        }</b>>,shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color9 ? `"${dataINITIAL.color9}"` : `"#fdcfca"`
+        } pos="8,-1!"]
       j [label="${insertNewlines(
         dataINITIAL.text9
-      )}",shape=box, style="rounded,filled",fillcolor="#ffcac4" pos="8,-2.5!"]`
+      )}",shape=box, style="rounded,filled",fillcolor=${
+          dataINITIAL.color9 ? `"${dataINITIAL.color9}"` : `"#fdcfca"`
+        } pos="8,-2.5!"]`
       }
 
       A -> B
@@ -211,6 +266,30 @@ export default function MapaConceptual() {
         <section className='flex flex-wrap gap-5'>
           <Textarea
             label='Título en español'
+            startContent={
+              <>
+                <Popover placement='right'>
+                  <PopoverTrigger>
+                    <Button
+                      style={{
+                        backgroundColor: dataINITIAL.color ?? color
+                      }}
+                      size='sm'
+                      className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                    ></Button>
+                  </PopoverTrigger>
+                  <PopoverContent>
+                    <HexColorPicker
+                      color={dataINITIAL.color ?? color}
+                      onChange={(newColor) => {
+                        setColor(newColor)
+                        updateFields({ color: newColor })
+                      }}
+                    />
+                  </PopoverContent>
+                </Popover>
+              </>
+            }
             disableAnimation
             isRequired
             disableAutosize
@@ -237,6 +316,30 @@ export default function MapaConceptual() {
           <Textarea
             label='Subtitulo 1'
             disableAnimation
+            startContent={
+              <>
+                <Popover placement='right'>
+                  <PopoverTrigger>
+                    <Button
+                      style={{
+                        backgroundColor: dataINITIAL.color1 ?? color
+                      }}
+                      size='sm'
+                      className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                    ></Button>
+                  </PopoverTrigger>
+                  <PopoverContent>
+                    <HexColorPicker
+                      color={dataINITIAL.color1 ?? color}
+                      onChange={(newColor) => {
+                        setColor(newColor)
+                        updateFields({ color1: newColor })
+                      }}
+                    />
+                  </PopoverContent>
+                </Popover>
+              </>
+            }
             isRequired
             disableAutosize
             value={dataINITIAL.subtitle1}
@@ -267,6 +370,30 @@ export default function MapaConceptual() {
                 disableAnimation
                 disableAutosize
                 value={dataINITIAL.subtitle2}
+                startContent={
+                  <>
+                    <Popover placement='right'>
+                      <PopoverTrigger>
+                        <Button
+                          style={{
+                            backgroundColor: dataINITIAL.color2 ?? color
+                          }}
+                          size='sm'
+                          className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                        ></Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <HexColorPicker
+                          color={dataINITIAL.color2 ?? color}
+                          onChange={(newColor) => {
+                            setColor(newColor)
+                            updateFields({ color2: newColor })
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </>
+                }
                 onChange={(e) => updateFields({ subtitle2: e.target.value })}
                 classNames={{
                   base: 'max-w-full sm:max-w-xs',
@@ -295,6 +422,30 @@ export default function MapaConceptual() {
                 disableAnimation
                 disableAutosize
                 value={dataINITIAL.subtitle3}
+                startContent={
+                  <>
+                    <Popover placement='right'>
+                      <PopoverTrigger>
+                        <Button
+                          style={{
+                            backgroundColor: dataINITIAL.color3 ?? color
+                          }}
+                          size='sm'
+                          className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                        ></Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <HexColorPicker
+                          color={dataINITIAL.color3 ?? color}
+                          onChange={(newColor) => {
+                            setColor(newColor)
+                            updateFields({ color3: newColor })
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </>
+                }
                 onChange={(e) => updateFields({ subtitle3: e.target.value })}
                 classNames={{
                   base: 'max-w-full sm:max-w-xs',
@@ -323,6 +474,30 @@ export default function MapaConceptual() {
                 disableAnimation
                 disableAutosize
                 value={dataINITIAL.subtitle4}
+                startContent={
+                  <>
+                    <Popover placement='right'>
+                      <PopoverTrigger>
+                        <Button
+                          style={{
+                            backgroundColor: dataINITIAL.color4 ?? color
+                          }}
+                          size='sm'
+                          className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                        ></Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <HexColorPicker
+                          color={dataINITIAL.color4 ?? color}
+                          onChange={(newColor) => {
+                            setColor(newColor)
+                            updateFields({ color4: newColor })
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </>
+                }
                 onChange={(e) => updateFields({ subtitle4: e.target.value })}
                 classNames={{
                   base: 'max-w-full sm:max-w-xs',
@@ -350,6 +525,30 @@ export default function MapaConceptual() {
                 label='Subtitulo 5'
                 disableAnimation
                 disableAutosize
+                startContent={
+                  <>
+                    <Popover placement='right'>
+                      <PopoverTrigger>
+                        <Button
+                          style={{
+                            backgroundColor: dataINITIAL.color5 ?? color
+                          }}
+                          size='sm'
+                          className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                        ></Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <HexColorPicker
+                          color={dataINITIAL.color5 ?? color}
+                          onChange={(newColor) => {
+                            setColor(newColor)
+                            updateFields({ color5: newColor })
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </>
+                }
                 value={dataINITIAL.subtitle5}
                 onChange={(e) => updateFields({ subtitle5: e.target.value })}
                 classNames={{
@@ -379,6 +578,30 @@ export default function MapaConceptual() {
                 disableAnimation
                 disableAutosize
                 value={dataINITIAL.subtitle6}
+                startContent={
+                  <>
+                    <Popover placement='right'>
+                      <PopoverTrigger>
+                        <Button
+                          style={{
+                            backgroundColor: dataINITIAL.color6 ?? color
+                          }}
+                          size='sm'
+                          className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                        ></Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <HexColorPicker
+                          color={dataINITIAL.color6 ?? color}
+                          onChange={(newColor) => {
+                            setColor(newColor)
+                            updateFields({ color6: newColor })
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </>
+                }
                 onChange={(e) => updateFields({ subtitle6: e.target.value })}
                 classNames={{
                   base: 'max-w-full sm:max-w-xs',
@@ -407,6 +630,30 @@ export default function MapaConceptual() {
                 disableAnimation
                 disableAutosize
                 value={dataINITIAL.subtitle7}
+                startContent={
+                  <>
+                    <Popover placement='right'>
+                      <PopoverTrigger>
+                        <Button
+                          style={{
+                            backgroundColor: dataINITIAL.color7 ?? color
+                          }}
+                          size='sm'
+                          className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                        ></Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <HexColorPicker
+                          color={dataINITIAL.color7 ?? color}
+                          onChange={(newColor) => {
+                            setColor(newColor)
+                            updateFields({ color7: newColor })
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </>
+                }
                 onChange={(e) => updateFields({ subtitle7: e.target.value })}
                 classNames={{
                   base: 'max-w-full sm:max-w-xs',
@@ -435,6 +682,30 @@ export default function MapaConceptual() {
                 disableAnimation
                 disableAutosize
                 value={dataINITIAL.subtitle8}
+                startContent={
+                  <>
+                    <Popover placement='right'>
+                      <PopoverTrigger>
+                        <Button
+                          style={{
+                            backgroundColor: dataINITIAL.color8 ?? color
+                          }}
+                          size='sm'
+                          className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                        ></Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <HexColorPicker
+                          color={dataINITIAL.color8 ?? color}
+                          onChange={(newColor) => {
+                            setColor(newColor)
+                            updateFields({ color8: newColor })
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </>
+                }
                 onChange={(e) => updateFields({ subtitle8: e.target.value })}
                 classNames={{
                   base: 'max-w-full sm:max-w-xs',
@@ -463,6 +734,30 @@ export default function MapaConceptual() {
                 disableAnimation
                 disableAutosize
                 value={dataINITIAL.subtitle9}
+                startContent={
+                  <>
+                    <Popover placement='right'>
+                      <PopoverTrigger>
+                        <Button
+                          style={{
+                            backgroundColor: dataINITIAL.color9 ?? color
+                          }}
+                          size='sm'
+                          className='min-h-unit-1 min-w-unit-1 max-h-5 max-w-5 gap-unit-0'
+                        ></Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <HexColorPicker
+                          color={dataINITIAL.color9 ?? color}
+                          onChange={(newColor) => {
+                            setColor(newColor)
+                            updateFields({ color9: newColor })
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </>
+                }
                 onChange={(e) => updateFields({ subtitle9: e.target.value })}
                 classNames={{
                   base: 'max-w-full sm:max-w-xs',
