@@ -16,9 +16,9 @@ export async function GET(request: Request) {
       ? searchParams.get('title')?.slice(0, 100)
       : 'Título por defecto'
 
-    const hasDescription = searchParams.has('title')
+    const hasDescription = searchParams.has('description')
     const description = hasDescription
-      ? searchParams.get('Description')?.slice(0, 100)
+      ? searchParams.get('description')?.slice(0, 100)
       : 'Descripción por defecto'
 
     return new ImageResponse(

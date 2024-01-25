@@ -1,22 +1,22 @@
+const title = 'Mapa conceptual | jhangmez'
+const description = 'Generador de mapas conceptuales'
+const imageUrl = `https://jhangmez.vercel.app/api/og?title=Mapa conceptual&description=${description}`
+
 export const metadata = {
-  title: 'Mapa conceptual | jhangmez',
-  description: 'Generador de mapas conceptuales',
+  title,
+  description,
   openGraph: {
-    title: 'Mapa conceptual | jhangmez',
-    description: 'Generador de mapas conceptuales',
+    title,
+    description,
     type: 'article',
     url: 'https://jhangmez.xyz/mapamental',
-    images: [
-      {
-        url: 'https://jhangmez.vercel.app/api/og?title=Mapa conceptual'
-      }
-    ]
+    images: [{ url: imageUrl }]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Generador de mapas conceptuales',
-    description: 'Generador de mapas conceptuales',
-    images: ['https://jhangmez.vercel.app/api/og?title=Mapa conceptual']
+    title,
+    description,
+    images: [imageUrl]
   }
 }
 

@@ -8,25 +8,25 @@ import Objetivos from '@components/Objetivos'
 import Skills from '@components/Skills'
 import InfiniteVertical from '@components/InfiniteVertical'
 
+const title = 'Portafolio | jhangmez'
+const description = 'Bienvenidos a mi portafolio'
+const imageUrl = `https://jhangmez.vercel.app/api/og?title=Portafolio&description=${description}`
+
 export const metadata = {
-  title: 'Portafolio | jhangmez',
-  description: 'Bienvenidos a mi portafolio',
+  title,
+  description,
   openGraph: {
-    title: 'Portafolio | jhangmez',
-    description: 'Bienvenidos a mi portafolio',
+    title,
+    description,
     type: 'article',
     url: 'https://jhangmez.xyz/',
-    images: [
-      {
-        url: 'https://jhangmez.vercel.app/api/og?title=Portafolio'
-      }
-    ]
+    images: [{ url: imageUrl }]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portafolio',
-    description: 'Bienvenidos a mi portafolio',
-    images: ['https://jhangmez.vercel.app/api/og?title=Portafolio']
+    title,
+    description,
+    images: [imageUrl]
   }
 }
 
