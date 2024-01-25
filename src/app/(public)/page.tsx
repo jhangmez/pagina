@@ -8,7 +8,8 @@ import Objetivos from '@components/Objetivos'
 import Skills from '@components/Skills'
 import InfiniteVertical from '@components/InfiniteVertical'
 
-const title = 'Portafolio | jhangmez'
+const jhangmez = ' | jhangmez'
+const title = `Portafolio${jhangmez}`
 const description = 'Bienvenidos a mi portafolio'
 const imageUrl = `https://jhangmez.vercel.app/api/og?title=Portafolio&description=${description}`
 

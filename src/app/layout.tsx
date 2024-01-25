@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Providers } from './Providers'
+import { Analytics } from '@vercel/analytics/react'
 import { Suspense } from 'react'
 import Loading from './loading'
 import localFont from 'next/font/local'
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Providers>
           <noscript>Página realizada por Jhan Gómez P.</noscript>
           <Suspense fallback={<Loading />}>{children}</Suspense>
+          <Analytics />
         </Providers>
       </body>
     </html>
