@@ -60,11 +60,11 @@ export default function PublicLayout({
       href: MediumJhan,
       isExternal: true
     },
-    {
-      key: 'generadormapamental',
-      label: 'Mapa mental',
-      href: '/mapamental'
-    },
+    // {
+    //   key: 'generadormapamental',
+    //   label: 'Mapa mental',
+    //   href: '/mapamental'
+    // },
     {
       key: 'generadormapaconceptual',
       label: 'Mapa conceptual',
@@ -114,10 +114,11 @@ export default function PublicLayout({
                 </Button>
               </DropdownTrigger>
               <DropdownMenu aria-label='ver'>
-                <DropdownItem key='mapamental' as={Link} href='/mapamental'>
+                {/* <DropdownItem aria-label='mapamental' key='mapamental' as={Link} href='/mapamental'>
                   Mapa mental
-                </DropdownItem>
+                </DropdownItem> */}
                 <DropdownItem
+                  aria-label='mapaconceptual'
                   key='mapaconceptual'
                   as={Link}
                   href='/mapaconceptual'
