@@ -30,6 +30,7 @@ import {
 import { Suspense } from 'react'
 import Loading from '../loading'
 import localFont from 'next/font/local'
+import { isExternal } from 'util/types'
 const HarkaySoftFont = localFont({ src: '/Poppins-SemiBold.ttf' })
 
 export default function PublicLayout({
@@ -52,14 +53,15 @@ export default function PublicLayout({
     {
       key: 'proyectos',
       label: 'Proyectos',
-      href: '/projects'
+      href: '/projects',
+      isExternal: false
     },
-    {
-      key: 'blog',
-      label: 'Blog',
-      href: MediumJhan,
-      isExternal: true
-    },
+    // {
+    //   key: 'blog',
+    //   label: 'Blog',
+    //   href: MediumJhan,
+    //   isExternal: true
+    // },
     // {
     //   key: 'generadormapamental',
     //   label: 'Mapa mental',
@@ -109,6 +111,21 @@ export default function PublicLayout({
                 <Button
                   className='text-light-onSurface dark:text-dark-onSurface font-semibold'
                   variant='light'
+                  startContent={
+                    <>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='18'
+                        height='18'
+                        viewBox='0 0 24 24'
+                      >
+                        <path
+                          fill='currentColor'
+                          d='m12 13.171l4.95-4.95l1.414 1.415L12 16L5.636 9.636L7.05 8.222z'
+                        />
+                      </svg>
+                    </>
+                  }
                 >
                   Generadores
                 </Button>
@@ -128,7 +145,7 @@ export default function PublicLayout({
               </DropdownMenu>
             </Dropdown>
           </NavbarItem>
-          <NavbarItem className='hidden lg:flex md:flex'>
+          {/* <NavbarItem className='hidden lg:flex md:flex'>
             <Button
               as={Link}
               className='text-light-onSurface dark:text-dark-onSurface font-semibold'
@@ -151,7 +168,7 @@ export default function PublicLayout({
             >
               Blog
             </Button>
-          </NavbarItem>
+          </NavbarItem> */}
           <NavbarItem className='hidden lg:flex md:flex'>
             <Button
               as={Link}
