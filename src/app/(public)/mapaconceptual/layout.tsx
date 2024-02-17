@@ -1,6 +1,8 @@
-const title = 'Mapa conceptual | jhangmez'
+const shortTitle = 'Mapas conceptuales'
 const description = 'Generador de mapas conceptuales'
-const imageUrl = `https://jhangmez.vercel.app/api/og?title=Mapa conceptual&description=${description}`
+const jhangmez = ' | jhangmez'
+const title = `${shortTitle}${jhangmez}`
+const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
 
 export const metadata = {
   title,
@@ -9,7 +11,7 @@ export const metadata = {
     title,
     description,
     type: 'article',
-    url: 'https://jhangmez.xyz/mapamental',
+    url: 'https://jhangmez.xyz/',
     images: [{ url: imageUrl }]
   },
   twitter: {

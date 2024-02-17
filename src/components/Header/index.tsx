@@ -1,27 +1,81 @@
 'use client'
 
-import React from 'react'
-import Link from 'next/link'
-import Textbutton from '@Buttons/Text'
-import Iconbutton from '@Buttons/Icon'
-import { Icon } from '@iconify/react'
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarItem,
+  NavbarMenuItem
+} from '@nextui-org/navbar'
+import { useState } from 'react'
+import { Button } from '@nextui-org/button'
+import { Logo } from '@logo'
+import { Link } from '@nextui-org/link'
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem
+} from '@nextui-org/dropdown'
+import { isExternal } from 'util/types'
 
 export default function Header() {
-  const [navbarOpen, setNavbarOpen] = React.useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuItems = [
+    {
+      key: 'educacion',
+      label: 'Educación',
+      href: '/education'
+    },
+    {
+      key: 'skills',
+      label: 'Skills',
+      href: '/skills'
+    },
+    {
+      key: 'proyectos',
+      label: 'Proyectos',
+      href: '/projects',
+      isExternal: false
+    },
+    // {
+    //   key: 'blog',
+    //   label: 'Blog',
+    //   href: MediumJhan,
+    //   isExternal: true
+    // },
+    // {
+    //   key: 'generadormapamental',
+    //   label: 'Mapa mental',
+    //   href: '/mapamental'
+    // },
+    {
+      key: 'generadormapaconceptual',
+      label: 'Mapa conceptual',
+      href: '/mapaconceptual'
+    }
+  ]
   return (
-    <nav className='relative flex flex-wrap items-center justify-between '>
-      <div className='container mx-auto flex flex-wrap items-center justify-between px-[20px]'>
-        <div className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
+    <Navbar
+      className='bg-light-surface/50 dark:bg-dark-surface/50 text-light-onSurface dark:text-dark-onSurface'
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      shouldHideOnScroll
+    >
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          className='sm:hidden'
+        />
+        <NavbarBrand className='text-light-onSurface dark:text-dark-onSurface'>
           <Link
             href='/'
-            className='w-[230px] h-14 justify-start items-center gap-[5px] inline-flex'
+            className='gap-1 text-light-onSurface dark:text-dark-onSurface'
+            onClick={() => setIsMenuOpen(false)}
           >
-            <Icon
-              icon='material-symbols:sentiment-excited-outline'
-              width='28'
-              height='28'
-              className='text-light-onSurface dark:text-dark-onSurface'
-            />
+            <Logo />
             <div>
               <span className='text-light-onSurface dark:text-dark-onSurface text-2xl font-bold leading-[44px]'>
                 jhan
@@ -31,33 +85,130 @@ export default function Header() {
               </span>
             </div>
           </Link>
-          <div className='lg:hidden flex flex-row items-center gap-2.5'>
-            <div onClick={() => setNavbarOpen(!navbarOpen)}>
-              <Iconbutton icon='material-symbols:menu' />
-            </div>
-          </div>
-        </div>
-        <div
-          className={
-            'lg:flex flex-grow items-center' +
-            (navbarOpen ? ' flex' : ' hidden')
-          }
-          id='navbar'
-        >
-          <ul className='flex flex-col lg:flex-row list-none lg:ml-auto gap-2 mb-2'>
-            <li className='nav-item'>
-              <Link href='/skills'>
-                <Textbutton label='Skills' />
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link href='/experiencia'>
-                <Textbutton label='Experiencia' />
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent justify='end' className='gap-1'>
+        <NavbarItem className='hidden lg:flex'>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button
+                className='text-light-onSurface dark:text-dark-onSurface font-semibold'
+                variant='light'
+                startContent={
+                  <>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='18'
+                      height='18'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        fill='currentColor'
+                        d='m12 13.171l4.95-4.95l1.414 1.415L12 16L5.636 9.636L7.05 8.222z'
+                      />
+                    </svg>
+                  </>
+                }
+              >
+                Generadores
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label='ver'>
+              {/* <DropdownItem aria-label='mapamental' key='mapamental' as={Link} href='/mapamental'>
+                  Mapa mental
+                </DropdownItem> */}
+              <DropdownItem
+                aria-label='mapaconceptual'
+                key='mapaconceptual'
+                as={Link}
+                href='/mapaconceptual'
+              >
+                Mapa conceptual
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
+        {/* <NavbarItem className='hidden lg:flex md:flex'>
+            <Button
+              as={Link}
+              className='text-light-onSurface dark:text-dark-onSurface font-semibold'
+              href={MediumJhan}
+              isExternal
+              variant='light'
+              startContent={
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    fill='currentColor'
+                    d='M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6v2H5v12h12v-6zM13 3v2h4.586l-7.793 7.793l1.414 1.414L19 6.414V11h2V3z'
+                  />
+                </svg>
+              }
+            >
+              Blog
+            </Button>
+          </NavbarItem> */}
+        <NavbarItem className='hidden lg:flex md:flex'>
+          <Button
+            as={Link}
+            className='text-light-onSurface dark:text-dark-onSurface font-semibold'
+            href='/education'
+            variant='light'
+          >
+            Educación
+          </Button>
+        </NavbarItem>
+        <NavbarItem className='hidden lg:flex md:flex'>
+          <Button
+            as={Link}
+            className='text-light-onSurface dark:text-dark-onSurface font-semibold'
+            href='/skills'
+            variant='light'
+          >
+            Skills
+          </Button>
+        </NavbarItem>
+        <NavbarItem className='hidden lg:flex md:flex'>
+          <Button
+            as={Link}
+            className='text-light-onSurface dark:text-dark-onSurface font-semibold'
+            href='/projects'
+            variant='light'
+          >
+            Proyectos
+          </Button>
+        </NavbarItem>
+        <NavbarItem>
+          <Button
+            as={Link}
+            className='bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary font-semibold'
+            href='/experience'
+            variant='flat'
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Experiencia
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarMenu className='bg-light-surface/50 dark:bg-dark-surface/50'>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={item.key}>
+            <Link
+              className='w-full font-medium text-light-onSurface dark:text-dark-onSurface'
+              href={item.href}
+              isExternal={item.isExternal}
+              onClick={() => setIsMenuOpen(false)}
+              size='lg'
+            >
+              {item.label}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   )
 }
