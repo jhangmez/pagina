@@ -25,7 +25,14 @@ export async function GET(request: Request) {
       ? searchParams.get('colorScheme')?.toLowerCase()
       : 'light'
 
-    browser = await puppeteer.launch()
+    browser = await puppeteer.launch({
+      args: [
+        `--no-sandbox`,
+        `--headless`,
+        `--disable-gpu`,
+        `--disable-dev-shm-usage`
+      ]
+    })
     const page = await browser.newPage()
     await page.setViewport({ width: Number(width), height: Number(height) })
     if (colorScheme === 'dark') {
