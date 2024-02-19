@@ -1,6 +1,4 @@
 import { ImageResponse } from 'next/og'
-// App router includes @vercel/og.
-// No need to install it.
 
 export const runtime = 'edge'
 
@@ -110,7 +108,7 @@ export async function GET(request: Request) {
     )
   } catch (e: any) {
     console.log(`${e.message}`)
-    return new Response(`Failed to generate the image`, {
+    return new Response(`Error al generar la imagen`, {
       status: 500
     })
   }

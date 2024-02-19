@@ -37,8 +37,7 @@ export default function Header() {
     {
       key: 'proyectos',
       label: 'Proyectos',
-      href: '/projects',
-      isExternal: false
+      href: '/projects'
     },
     // {
     //   key: 'blog',
@@ -200,7 +199,6 @@ export default function Header() {
             <Link
               className='w-full font-medium text-light-onSurface dark:text-dark-onSurface'
               href={item.href}
-              isExternal={item.isExternal}
               onClick={() => setIsMenuOpen(false)}
               size='lg'
             >
