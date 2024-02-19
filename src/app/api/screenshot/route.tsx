@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer'
 
-export async function GET(request: Request, response: Response) {
+export async function GET(request: Request) {
   let browser
   try {
     // const { searchParams } = new URL(request.url)
@@ -14,9 +14,15 @@ export async function GET(request: Request, response: Response) {
       ? searchParams.get('url')?.slice(0, 100)
       : 'https://www.jhangmez.xyz'
 
+    const hasWidth = searchParams.has('width')
+    const width = hasWidth ? searchParams.get('width')?.slice(0, 100) : 1280
+
+    const hasHeight = searchParams.has('height')
+    const height = hasHeight ? searchParams.get('height')?.slice(0, 100) : 800
+
     browser = await puppeteer.launch()
     const page = await browser.newPage()
-    await page.setViewport({ width: 1280, height: 800 })
+    await page.setViewport({ width: Number(width), height: Number(height) })
     await page.goto(url as string, { waitUntil: 'networkidle0' })
     const screenshotBuffer = await page.screenshot({ type: 'webp' })
     return new Response(screenshotBuffer, {
