@@ -20,9 +20,29 @@ export async function GET(request: Request) {
     const hasHeight = searchParams.has('height')
     const height = hasHeight ? searchParams.get('height')?.slice(0, 100) : 800
 
+    const hasColorScheme = searchParams.has('theme')
+    const colorScheme = hasColorScheme
+      ? searchParams.get('colorScheme')?.toLowerCase()
+      : 'light'
+
     browser = await puppeteer.launch()
     const page = await browser.newPage()
     await page.setViewport({ width: Number(width), height: Number(height) })
+    if (colorScheme === 'dark') {
+      await page.emulateMediaFeatures([
+        {
+          name: 'prefers-color-scheme',
+          value: 'dark'
+        }
+      ])
+    } else if (colorScheme === 'light') {
+      await page.emulateMediaFeatures([
+        {
+          name: 'prefers-color-scheme',
+          value: 'light'
+        }
+      ])
+    }
     await page.goto(url as string, { waitUntil: 'networkidle0' })
     const screenshotBuffer = await page.screenshot({ type: 'webp' })
     return new Response(screenshotBuffer, {
