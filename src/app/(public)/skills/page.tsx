@@ -4,7 +4,8 @@ const shortTitle = 'Skills'
 const description = 'Habilidades desarrolladas'
 const jhangmez = ' | jhangmez'
 const title = `${shortTitle}${jhangmez}`
-const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
+const url = 'https://jhangmez.vercel.app'
+const imageUrl = `${url}/api/og?title=${shortTitle}&description=${description}`
 
 export const metadata = {
   title,

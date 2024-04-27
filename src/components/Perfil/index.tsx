@@ -6,11 +6,13 @@ import { Listbox, ListboxItem } from '@nextui-org/listbox'
 import { Image } from '@nextui-org/image'
 import { GithubJhan, LinkedinJhan, URLCV, HugginFaceJhan } from '@routes'
 import NextImage from 'next/image'
-import Link from 'next/link'
+import { Link } from '@nextui-org/link'
 import { Button } from '@nextui-org/react'
 import data from './data.json'
 
 export default function PerfilPrueba() {
+  const showCV = false
+
   const [copied, setCopied] = useState(false)
   const email = 'jhangmez.pe@gmail.com'
 
@@ -209,28 +211,30 @@ export default function PerfilPrueba() {
               >
                 Contacto
               </Button>
-              <Button
-                as={Link}
-                target='_blank'
-                variant='flat'
-                className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
-                href={URLCV}
-                startContent={
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='24'
-                    height='24'
-                    viewBox='0 0 24 24'
-                  >
-                    <path
-                      fill='currentColor'
-                      d='m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z'
-                    />
-                  </svg>
-                }
-              >
-                Descargar CV
-              </Button>
+              {showCV && (
+                <Button
+                  as={Link}
+                  isExternal
+                  variant='flat'
+                  className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
+                  href={URLCV}
+                  startContent={
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        fill='currentColor'
+                        d='m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z'
+                      />
+                    </svg>
+                  }
+                >
+                  Descargar CV
+                </Button>
+              )}
             </div>
           </div>
         </div>

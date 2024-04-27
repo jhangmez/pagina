@@ -14,7 +14,7 @@ import { Link } from '@nextui-org/link'
 
 const HarkaySoftFont = localFont({ src: '/Poppins-SemiBold.ttf' })
 
-export default function FooterWithSocialMediaIcons() {
+export default function Footer() {
   return (
     <footer className='bg-light-surface dark:bg-dark-surface'>
       <div className='container mx-auto py-6 px-[20px] '>

@@ -184,7 +184,7 @@ export default function Header() {
         <NavbarItem>
           <Button
             as={Link}
-            className='bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary font-semibold'
+            className='bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary font-semibold lg:p-3 md:lg-3 p-2'
             href='/experience'
             variant='flat'
             onClick={() => setIsMenuOpen(false)}
