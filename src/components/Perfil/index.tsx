@@ -45,7 +45,7 @@ export default function PerfilPrueba() {
     onOpenChange: onOpenChange2
   } = useDisclosure()
   return (
-    <div className='min-h-screen space-y-20 pt-24'>
+    <div className='min-h-screen space-y-20 pt-24 p-[20px]'>
       <ul className='flex lg:flex-row flex-col -mt-10 gap-10 justify-center'>
         <li className='flex justify-center items-center lg:max-w-[530px]'>
           <div className='max-w-[530px] w-full'>
