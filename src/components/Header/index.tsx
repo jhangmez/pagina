@@ -58,7 +58,9 @@ export default function Header() {
   ]
   return (
     <Navbar
-      className='bg-light-surface/50 dark:bg-dark-surface/50 text-light-onSurface dark:text-dark-onSurface'
+      classNames={{
+        base: 'bg-light-surface/50 dark:bg-dark-surface/50 text-light-onSurface dark:text-dark-onSurface'
+      }}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       shouldHideOnScroll
@@ -113,9 +115,6 @@ export default function Header() {
               </Button>
             </DropdownTrigger>
             <DropdownMenu aria-label='ver'>
-              {/* <DropdownItem aria-label='mapamental' key='mapamental' as={Link} href='/mapamental'>
-                  Mapa mental
-                </DropdownItem> */}
               <DropdownItem
                 aria-label='mapaconceptual'
                 key='mapaconceptual'
@@ -127,30 +126,6 @@ export default function Header() {
             </DropdownMenu>
           </Dropdown>
         </NavbarItem>
-        {/* <NavbarItem className='hidden lg:flex md:flex'>
-            <Button
-              as={Link}
-              className='text-light-onSurface dark:text-dark-onSurface font-semibold'
-              href={MediumJhan}
-              isExternal
-              variant='light'
-              startContent={
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    fill='currentColor'
-                    d='M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6v2H5v12h12v-6zM13 3v2h4.586l-7.793 7.793l1.414 1.414L19 6.414V11h2V3z'
-                  />
-                </svg>
-              }
-            >
-              Blog
-            </Button>
-          </NavbarItem> */}
         <NavbarItem className='hidden lg:flex md:flex'>
           <Button
             as={Link}

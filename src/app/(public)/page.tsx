@@ -1,4 +1,3 @@
-import React from 'react'
 import Experiencia from '@components/Experiencia'
 import Perfil from '@components/Perfil'
 import Proyectos from '@components/Proyectos'
@@ -6,7 +5,6 @@ import Educacion from '@components/Educacion'
 import Idiomas from '@components/Idiomas'
 import Objetivos from '@components/Objetivos'
 import Skills from '@components/Skills'
-import InfiniteVertical from '@components/InfiniteVertical'
 
 const shortTitle = 'Portafolio'
 const description = 'Bienvenidos a mi portafolio'
@@ -35,10 +33,11 @@ export const metadata = {
 export default function Home() {
   return (
     <section className='space-y-4'>
-      <div className='flex flex-col justify-center items-center min-h-screen -mt-10 space-y-10'>
-        <Perfil />
-        <InfiniteVertical />
-      </div>
+      <Perfil />
+
+      {/*<div className='flex flex-col justify-center items-center min-h-screen -mt-10 space-y-10'>
+         <Perfil />
+      </div>*/}
       <div className='container mx-auto px-[20px]'>
         <Experiencia />
       </div>

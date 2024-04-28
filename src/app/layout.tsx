@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { Suspense } from 'react'
 import Loading from './loading'
 import localFont from 'next/font/local'
+import { Toaster } from 'react-hot-toast'
 const myFont = localFont({ src: '/PlusJakartaSans-VariableFont_wght.ttf' })
 
 const shortTitle = 'Portafolio'
@@ -41,6 +42,11 @@ export default function RootLayout({
         className={`${myFont.className} selection:bg-light-primary selection:text-light-onPrimary dark:selection:bg-dark-primary dark:selection:text-dark-onPrimary`}
       >
         <Providers>
+          <Toaster
+            containerClassName='font-semibold text-light-primary dark:text-dark-primary'
+            position='bottom-right'
+            reverseOrder={false}
+          />
           <noscript>Página realizada por Jhan Gómez P. @jhangmez</noscript>
           <Suspense fallback={<Loading />}>{children}</Suspense>
           <Analytics />
