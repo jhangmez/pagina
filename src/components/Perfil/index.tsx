@@ -18,12 +18,15 @@ import {
   ModalFooter,
   useDisclosure
 } from '@nextui-org/modal'
+import { Input } from '@nextui-org/input'
 import InfiniteVertical from '@components/InfiniteVertical'
 
 export default function PerfilPrueba() {
   const showCV = true
 
   const [copied, setCopied] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const [modalType, setModalType] = useState('')
   const email = 'jhangmez.pe@gmail.com'
 
   const handleCopy = () => {
@@ -33,17 +36,63 @@ export default function PerfilPrueba() {
     toast.success('Correo copiado!')
   }
 
-  const {
-    isOpen: isOpen1,
-    onOpen: onOpen1,
-    onOpenChange: onOpenChange1
-  } = useDisclosure()
+  const onOpen = (type: string) => {
+    setModalType(type)
+    setIsOpen(true)
+  }
 
-  const {
-    isOpen: isOpen2,
-    onOpen: onOpen2,
-    onOpenChange: onOpenChange2
-  } = useDisclosure()
+  const onClose = () => {
+    setIsOpen(false)
+  }
+
+  const submitCorreo = (
+    event: React.FormEvent<HTMLFormElement>,
+    emailType: string
+  ) => {
+    event.preventDefault() // Prevent the default form submission
+
+    const formData = new FormData(event.currentTarget)
+    const email = formData.get('email')
+    const name = formData.get('name')
+
+    if (!email || !name || !emailType || !validateEmail(email.toString())) {
+      // Handle invalid email
+      toast.error('Por favor, introduce valores correctos.')
+      return
+    }
+
+    // Utiliza toast.promise para manejar la promesa de la petición
+    toast.promise(
+      fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email.toString(),
+          name: name.toString(),
+          emailType: emailType
+        })
+      }),
+      {
+        loading: 'Enviando correo...',
+        success: 'Correo enviado exitosamente!',
+        error: (
+          <b>
+            Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.
+          </b>
+        )
+      }
+    )
+  }
+
+  // Función auxiliar para validar el correo electrónico
+  const validateEmail = (email: string) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(String(email).toLowerCase())
+  }
+
   return (
     <div className='min-h-screen space-y-20 pt-24 p-[20px]'>
       <ul className='flex lg:flex-row flex-col -mt-10 gap-10 justify-center'>
@@ -225,8 +274,7 @@ export default function PerfilPrueba() {
               as={Link}
               variant='flat'
               className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
-              // href={`mailto:${email}`}
-              onPress={onOpen1}
+              onPress={() => onOpen('contact')}
               startContent={
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -247,7 +295,7 @@ export default function PerfilPrueba() {
               <Button
                 // as={Link}
                 // isExternal
-                onPress={onOpen2}
+                onPress={() => onOpen('cv')}
                 variant='flat'
                 className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
                 // href={URLCV}
@@ -270,108 +318,82 @@ export default function PerfilPrueba() {
             )}
             <Modal
               motionProps={{}}
-              className='bg-light-surface dark:bg-dark-surface text-light-surface dark:text-dark-surface '
+              className='bg-light-background dark:bg-dark-background'
               classNames={{
                 base: 'lg:min-h-screen md:min-h-screen lg:w-auto lg:rounded-none md:rounded-none rounded-b-none mx-0 sm:mx-0',
                 wrapper: 'flex justify-end',
                 backdrop: 'bg-light-surface/50 dark:bg-dark-surface/50',
-                header: 'text-light-onSurface dark:text-dark-onSurface',
-                body: 'text-light-onSurface dark:text-dark-onSurface'
+                header:
+                  'text-light-onBackground dark:text-dark-onBackground font-bold',
+                body: 'text-light-onBackground dark:text-dark-onBackground'
               }}
-              isOpen={isOpen1}
-              onOpenChange={onOpenChange1}
+              isOpen={isOpen}
+              onOpenChange={onClose}
             >
               <ModalContent>
                 {(onClose) => (
-                  <>
+                  <form onSubmit={(event) => submitCorreo(event, modalType)}>
                     <ModalHeader className='flex flex-col gap-1'>
-                      Contacto
+                      {modalType === 'contact' && <>Contacto</>}
+                      {modalType === 'cv' && <>CV</>}
                     </ModalHeader>
                     <ModalBody>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam pulvinar risus non risus hendrerit venenatis.
-                        Pellentesque sit amet hendrerit risus, sed porttitor
-                        quam.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam pulvinar risus non risus hendrerit venenatis.
-                        Pellentesque sit amet hendrerit risus, sed porttitor
-                        quam.
-                      </p>
-                      <p>
-                        Magna exercitation reprehenderit magna aute tempor
-                        cupidatat consequat elit dolor adipisicing. Mollit dolor
-                        eiusmod sunt ex incididunt cillum quis. Velit duis sit
-                        officia eiusmod Lorem aliqua enim laboris do dolor
-                        eiusmod. Et mollit incididunt nisi consectetur esse
-                        laborum eiusmod pariatur proident Lorem eiusmod et.
-                        Culpa deserunt nostrud ad veniam.
-                      </p>
+                      {/* <p className='font-bold text-white'>{modalType}</p> */}
+                      <Input
+                        isRequired
+                        classNames={{
+                          input: '',
+                          mainWrapper: 'bg-light-primary',
+                          description:
+                            'text-light-primary dark:text-dark-primary select-none'
+                        }}
+                        placeholder='Escribe tu nombre'
+                        name='name'
+                        label='Nombre'
+                      />
+                      <Input
+                        type='email'
+                        label='Email'
+                        name='email'
+                        isRequired
+                        classNames={{
+                          input: '',
+                          mainWrapper: 'bg-light-primary',
+                          description:
+                            'text-light-primary dark:text-dark-primary select-none'
+                        }}
+                        placeholder='Escribe tu correo'
+                        description={
+                          <p>
+                            Al enviar aceptas el{' '}
+                            <Link
+                              href='/terms'
+                              isExternal
+                              className='underline text-[12px] font-light text-light-primary dark:text-dark-primary'
+                            >
+                              tratamiento de tu correo
+                            </Link>
+                            .
+                          </p>
+                        }
+                      />
                     </ModalBody>
                     <ModalFooter>
-                      <Button color='danger' variant='light' onPress={onClose}>
-                        Close
+                      <Button
+                        onPress={onClose}
+                        className='font-semibold text-dark-error bg-dark-onError/50 dark:bg-dark-onError/80'
+                      >
+                        Cancelar
                       </Button>
-                      <Button color='primary' onPress={onClose}>
-                        Action
-                      </Button>
-                    </ModalFooter>
-                  </>
-                )}
-              </ModalContent>
-            </Modal>
-            <Modal
-              className='bg-light-surface dark:bg-dark-surface text-light-surface dark:text-dark-surface '
-              classNames={{
-                base: 'lg:min-h-screen md:min-h-screen lg:w-auto lg:rounded-none md:rounded-none rounded-b-none mx-0 sm:mx-0',
-                wrapper: 'flex justify-end',
-                backdrop: 'bg-light-surface/50 dark:bg-dark-surface/50',
-                header: 'text-light-onSurface dark:text-dark-onSurface',
-                body: 'text-light-onSurface dark:text-dark-onSurface'
-              }}
-              isOpen={isOpen2}
-              onOpenChange={onOpenChange2}
-            >
-              <ModalContent>
-                {(onClose) => (
-                  <>
-                    <ModalHeader className='flex flex-col gap-1'>
-                      Envio de CV
-                    </ModalHeader>
-                    <ModalBody>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam pulvinar risus non risus hendrerit venenatis.
-                        Pellentesque sit amet hendrerit risus, sed porttitor
-                        quam.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam pulvinar risus non risus hendrerit venenatis.
-                        Pellentesque sit amet hendrerit risus, sed porttitor
-                        quam.
-                      </p>
-                      <p>
-                        Magna exercitation reprehenderit magna aute tempor
-                        cupidatat consequat elit dolor adipisicing. Mollit dolor
-                        eiusmod sunt ex incididunt cillum quis. Velit duis sit
-                        officia eiusmod Lorem aliqua enim laboris do dolor
-                        eiusmod. Et mollit incididunt nisi consectetur esse
-                        laborum eiusmod pariatur proident Lorem eiusmod et.
-                        Culpa deserunt nostrud ad veniam.
-                      </p>
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button color='danger' variant='light' onPress={onClose}>
-                        Close
-                      </Button>
-                      <Button color='primary' onPress={onClose}>
-                        Action
+                      <Button
+                        type='submit'
+                        onPress={onClose}
+                        className='font-semibold text-dark-primary bg-dark-onPrimary'
+                      >
+                        Solicitar
                       </Button>
                     </ModalFooter>
-                  </>
+                  </form>
                 )}
               </ModalContent>
             </Modal>
