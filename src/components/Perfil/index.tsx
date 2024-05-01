@@ -293,12 +293,9 @@ export default function PerfilPrueba() {
             </Button>
             {showCV && (
               <Button
-                // as={Link}
-                // isExternal
                 onPress={() => onOpen('cv')}
                 variant='flat'
                 className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
-                // href={URLCV}
                 startContent={
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -317,7 +314,6 @@ export default function PerfilPrueba() {
               </Button>
             )}
             <Modal
-              motionProps={{}}
               className='bg-light-background dark:bg-dark-background'
               classNames={{
                 base: 'lg:min-h-screen md:min-h-screen lg:w-auto lg:rounded-none md:rounded-none rounded-b-none mx-0 sm:mx-0',
@@ -335,7 +331,7 @@ export default function PerfilPrueba() {
                   <form onSubmit={(event) => submitCorreo(event, modalType)}>
                     <ModalHeader className='flex flex-col gap-1'>
                       {modalType === 'contact' && <>Contacto</>}
-                      {modalType === 'cv' && <>CV</>}
+                      {modalType === 'cv' && <>Solicitud de Currículum</>}
                     </ModalHeader>
                     <ModalBody>
                       {/* <p className='font-bold text-white'>{modalType}</p> */}
@@ -388,7 +384,7 @@ export default function PerfilPrueba() {
                       <Button
                         type='submit'
                         onPress={onClose}
-                        className='font-semibold text-dark-primary bg-dark-onPrimary'
+                        className='font-semibold bg-light-primary text-light-onPrimary'
                       >
                         Solicitar
                       </Button>

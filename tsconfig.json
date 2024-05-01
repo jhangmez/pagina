@@ -20,9 +20,11 @@
     ],
     "paths": {
       "@components/*": ["./src/components/*"],
+      "@src/*": ["./src/*"],
       "@public/*": ["./public/*"],
       "@routes": ["./src/routes/index.tsx"],
       "@utils/*": ["./src/utils/*"],
+      "@contexts/*": ["./src/contexts/*"],
       "@logo": ["./src/app/Logo.tsx"]
     }
   },
