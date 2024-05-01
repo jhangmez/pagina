@@ -23,7 +23,7 @@ import {
 import { useUwuMode } from '@contexts/uwu'
 
 export default function Header() {
-  const showJob = true
+  const showJob = false
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuItems = [
     {
