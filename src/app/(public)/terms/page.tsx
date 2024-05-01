@@ -22,11 +22,11 @@ export default function Terms() {
             <p className='font-medium  pt-1'>
               Cuando usted llena un formulario en este sitio web para
               suscribirse a nuestro boletín informativo o para recibir
-              actualizaciones sobre nuestros servicios, podemos solicitarle
-              cierta información personal, como su nombre y dirección de correo
-              electrónico. Esta información se utilizará únicamente para los
-              fines específicos no comerciales y no se compartirá con terceros
-              sin su consentimiento explícito.
+              actualizaciones sobre nuestros servicios o solicitar información,
+              podemos solicitarle cierta información personal, como su nombre y
+              dirección de correo electrónico. Esta información se utilizará
+              únicamente para los fines específicos no comerciales y no se
+              compartirá con terceros sin su consentimiento explícito.
             </p>
           </li>
           <li className='px-2' id='uso'>

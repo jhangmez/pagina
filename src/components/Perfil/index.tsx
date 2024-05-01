@@ -363,7 +363,7 @@ export default function PerfilPrueba() {
                           <p>
                             Al enviar aceptas el{' '}
                             <Link
-                              href='/terms'
+                              href='/terms#correo'
                               isExternal
                               className='underline text-[12px] font-light text-light-primary dark:text-dark-primary'
                             >
