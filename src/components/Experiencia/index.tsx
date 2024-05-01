@@ -40,10 +40,10 @@ export default function Experiencia() {
                         {experiencia.empresa}
                       </p>
                     </Link>
-                    <span className='font-sm font-normal'>
+                    <span className='font-sm font-medium'>
                       {experiencia.duracion}
                     </span>
-                    <span className='font-sm font-normal'>
+                    <span className='font-sm font-medium'>
                       {experiencia.ubicacion}
                     </span>
                   </div>
@@ -53,10 +53,10 @@ export default function Experiencia() {
                         <p className='font-bold  text-dark-onSecondary'>
                           {role.titulo}
                         </p>
-                        <p>{role.periodo}</p>
+                        <p className='font-medium'>{role.periodo}</p>
                         <p>{role.ubicacion}</p>
-                        <p className='mt-2'>{role.descripcion}</p>
-                        <p className='mt-2'>
+                        <p className='mt-2 font-medium'>{role.descripcion}</p>
+                        <p className='mt-2 font-medium'>
                           <span className='font-semibold text-dark-onPrimary'>
                             Aptitudes:
                           </span>
