@@ -197,7 +197,7 @@ export default function Header() {
           }`}
         >
           <h1 className='text-light-onBackground dark:text-dark-onBackground font-semibold text-center'>
-            🚀I'm looking for a job!
+            🚀I&apos;m looking for a job!
           </h1>
         </nav>
       )}
