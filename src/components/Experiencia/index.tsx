@@ -19,7 +19,7 @@ export default function Experiencia() {
                     isBlurred
                     width={80}
                     height={80}
-                    loading='lazy'
+                    priority={true}
                     className='w-full h-full'
                     src={experiencia.imagen}
                     alt={experiencia.empresa}
