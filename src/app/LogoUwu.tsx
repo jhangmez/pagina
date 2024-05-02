@@ -9,7 +9,7 @@ export const LogoUwu = () => (
     height={28}
     removeWrapper
     priority={true}
-    src='/icons/jhangmez_uwu.webp'
+    src='/icons/jhangmez_uwu.svg'
     alt='Imagen de jhangmez alternativa para uwu'
     className='lg:w-7 lg:h-7 md:w-7 md:h-7 w-6 h-6'
   />

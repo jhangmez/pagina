@@ -88,7 +88,13 @@ export default function Header() {
                 <span className='text-light-onSurface dark:text-dark-onSurface text-2xl font-bold leading-[44px]'>
                   jhan
                 </span>
-                <span className='text-light-primary dark:text-dark-primary text-2xl font-bold leading-[44px]'>
+                <span
+                  className={`${
+                    isUwuMode
+                      ? 'text-light-tertiary dark:text-dark-tertiary'
+                      : 'text-light-primary dark:text-dark-primary'
+                  } text-2xl font-bold leading-[44px]`}
+                >
                   gmez
                 </span>
               </div>
@@ -166,7 +172,11 @@ export default function Header() {
           <NavbarItem>
             <Button
               as={Link}
-              className='bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary font-semibold lg:p-3 md:lg-3 p-2'
+              className={`${
+                isUwuMode
+                  ? 'bg-light-tertiary dark:bg-dark-tertiary text-light-onTertiary dark:text-dark-onTertiary'
+                  : 'bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary'
+              }  font-semibold lg:p-3 md:lg-3 p-2`}
               href='/experience'
               variant='flat'
               onClick={() => setIsMenuOpen(false)}

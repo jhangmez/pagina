@@ -21,6 +21,7 @@ import {
 import { Input } from '@nextui-org/input'
 import InfiniteVertical from '@components/InfiniteVertical'
 import { Textarea } from '@nextui-org/react'
+import { useUwuMode } from '@contexts/uwu'
 
 export default function PerfilPrueba() {
   const showCV = true
@@ -33,6 +34,7 @@ export default function PerfilPrueba() {
   const [name, setName] = useState('')
   const [asunto, setAsunto] = useState('')
   const [detalle, setDetalle] = useState('')
+  const { isUwuMode } = useUwuMode()
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email)
@@ -113,7 +115,7 @@ export default function PerfilPrueba() {
   }
 
   return (
-    <div className='min-h-screen space-y-20 lg:pt-24 md:pt-24 pt-12 p-[20px]'>
+    <div className='min-h-screen space-y-20 lg:pt-24 md:pt-16 pt-12 p-[20px]'>
       <ul className='flex lg:flex-row flex-col -mt-10 gap-10 justify-center'>
         <li className='flex justify-center items-center lg:max-w-[530px]'>
           <div className='max-w-[530px] w-full'>
@@ -279,7 +281,13 @@ export default function PerfilPrueba() {
         <li className='space-y-5 flex flex-col justify-center'>
           <h1 className='text-light-onSurface dark:text-dark-onSurface text-3xl lg:text-5xl font-bold flex-nowrap'>
             Hola, soy{' '}
-            <span className='text-light-primary dark:text-dark-primary whitespace-nowrap'>
+            <span
+              className={`${
+                isUwuMode
+                  ? 'text-light-tertiary dark:text-dark-tertiary'
+                  : 'text-light-primary dark:text-dark-primary'
+              } whitespace-nowrap`}
+            >
               Jhan Gómez{' '}
               <span className='hidden lg:inline md:inline'> P. </span>
             </span>
@@ -291,7 +299,11 @@ export default function PerfilPrueba() {
             <Button
               as={Link}
               variant='flat'
-              className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
+              className={`${
+                isUwuMode
+                  ? 'bg-light-tertiary dark:bg-dark-tertiary text-light-onTertiary dark:text-dark-onTertiary'
+                  : 'bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary'
+              } font-semibold`}
               onPress={() => onOpen('contact')}
               startContent={
                 <svg
@@ -313,7 +325,11 @@ export default function PerfilPrueba() {
               <Button
                 onPress={() => onOpen('cv')}
                 variant='flat'
-                className='bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary font-semibold'
+                className={`${
+                  isUwuMode
+                    ? 'bg-light-tertiary dark:bg-dark-tertiary text-light-onTertiary dark:text-dark-onTertiary'
+                    : 'bg-light-secondary dark:bg-dark-secondary text-light-onSecondary dark:text-dark-onSecondary'
+                } font-semibold`}
                 startContent={
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
