@@ -4,6 +4,7 @@ import { Link } from '@nextui-org/link'
 import { Button } from '@nextui-org/button'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
+import { useUwuMode } from '@contexts/uwu'
 
 const shortTitle = 'Portafolio'
 const description = 'Bienvenidos a mi portafolio'
@@ -30,24 +31,35 @@ export const metadata = {
 }
 
 export default function NotFound() {
+  const { isUwuMode } = useUwuMode()
   return (
     <main className='min-h-screen bg-light-surface dark:bg-dark-surface'>
       <Header />
       <section className=' flex justify-center items-center h-screen'>
         <ul className='space-y-2'>
           <li className='text-center space-y-2'>
-            <h1 className='font-bold text-light-primary dark:text-dark-primary lg:text-9xl text-7xl'>
+            <h1
+              className={`${
+                isUwuMode
+                  ? 'text-light-tertiary dark:text-dark-tertiary'
+                  : 'text-light-primary dark:text-dark-primary'
+              } lg:text-9xl text-7xl font-bold`}
+            >
               Oops!
             </h1>
             <h2 className='font-semibold text-light-onSurface dark:text-dark-onSurface lg:text-5xl text-3xl'>
               No encontrado
             </h2>
           </li>
-          <li className='w-full items-center flex justify-center'>
+          <li className='w-full items-center flex justify-center pt-3'>
             <Button
               href='/'
               as={Link}
-              className='text-light-primary dark:text-dark-primary bg-light-onPrimary dark:bg-dark-onPrimary'
+              className={`${
+                isUwuMode
+                  ? 'text-light-tertiary dark:text-dark-tertiary bg-light-tertiaryContainer dark:bg-dark-tertiaryContainer'
+                  : 'text-light-primary dark:text-dark-primary bg-light-primaryContainer dark:bg-dark-primaryContainer'
+              }  text-xl font-semibold p-4`}
               variant='flat'
             >
               Retornar
