@@ -10,6 +10,7 @@ export async function POST(request: Request) {
 
     let subject = ''
     let template = null
+    let attachments = undefined
 
     switch (emailType) {
       case 'contact':
@@ -19,6 +20,12 @@ export async function POST(request: Request) {
       case 'cv':
         subject = 'Envío de CV'
         template = EmailCV({ firstName: name }) as React.ReactElement
+        attachments = [
+          {
+            filename: 'JhanGomezP-CV.pdf',
+            path: 'https://jhangmez.xyz/pdf/JhanGomezP-CV.pdf'
+          }
+        ]
         break
       default:
         return new Response(
@@ -31,12 +38,13 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Jhan Gómez P. <noreplay@jhangmez.xyz>',
+      from: 'Jhan Gómez P. <noreplay-bot@jhangmez.xyz>',
       to: [email],
-
-      bcc: 'jhangomez25@gmail.com',
+      text: 'Hola, este es un correo automatizado de jhangmez.xyz',
+      // bcc: 'jhangomez25@gmail.com',
       subject: subject,
-      react: template
+      react: template,
+      attachments: attachments
     })
 
     if (error) {

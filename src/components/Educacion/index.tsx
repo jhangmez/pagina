@@ -17,6 +17,7 @@ export default function Educacion() {
                   width={100}
                   isBlurred
                   height={100}
+                  className='select-none'
                   priority={true}
                   src={educacion.logo}
                   alt={educacion.institucion}
