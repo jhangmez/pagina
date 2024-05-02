@@ -26,8 +26,7 @@ export default function Experiencia() {
                   />
                   <div
                     className={`flex flex-col items-center h-full ${
-                      index === data.experiencias.length - 1 &&
-                      ' lg:hidden md:hidden'
+                      index === data.experiencias.length - 1 && 'hidden'
                     }`}
                   >
                     <Divider orientation='vertical' />
