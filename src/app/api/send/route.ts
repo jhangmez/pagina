@@ -1,12 +1,12 @@
 import { EmailCV } from '@components/email/CV'
-import { EmailTemplate } from '@components/email/Template'
+import { EmailContacto } from '@components/email/Template'
 import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
-    const { email, name, emailType } = await request.json()
+    const { email, name, emailType, detalle, asunto } = await request.json()
 
     let subject = ''
     let template = null
@@ -16,7 +16,11 @@ export async function POST(request: Request) {
     switch (emailType) {
       case 'contact':
         subject = 'Contacto'
-        template = EmailTemplate({ firstName: name }) as React.ReactElement
+        template = EmailContacto({
+          firstName: name,
+          asunto: asunto,
+          detalle: detalle
+        }) as React.ReactElement
         bcc = 'jhangomez25@gmail.com'
         text =
           'Hola, este es un correo automatizado de jhangmez.xyz para contacto'

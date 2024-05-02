@@ -26,14 +26,18 @@ import {
 } from '@routes'
 interface EmailTemplateProps {
   firstName: string
+  asunto: string
+  detalle: string
 }
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : 'https://jhangmez.vercel.app'
 
-export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
-  firstName
+export const EmailContacto: React.FC<Readonly<EmailTemplateProps>> = ({
+  firstName,
+  asunto,
+  detalle
 }) => (
   <Tailwind
     config={{
@@ -105,7 +109,6 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           <Text className='text-gray-400 text-xs'>
             Chiclayo, Lambayeque, Perú.
           </Text>
-
           <Section>
             <Row cellSpacing={5}>
               <Column>
@@ -163,6 +166,12 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
                 </Link>
               </Column>
             </Row>
+          </Section>
+          <Section>
+            <Text>
+              <p className='font-medium text-xs'>{asunto}</p>
+              <p className='text-xs'>{detalle}</p>
+            </Text>
           </Section>
         </Container>
       </Body>

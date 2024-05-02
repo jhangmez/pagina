@@ -20,6 +20,7 @@ import {
 } from '@nextui-org/modal'
 import { Input } from '@nextui-org/input'
 import InfiniteVertical from '@components/InfiniteVertical'
+import { Textarea } from '@nextui-org/react'
 
 export default function PerfilPrueba() {
   const showCV = true
@@ -28,6 +29,10 @@ export default function PerfilPrueba() {
   const [isOpen, setIsOpen] = useState(false)
   const [modalType, setModalType] = useState('')
   const email = 'jhangmez.pe@gmail.com'
+  const [email1, setEmail1] = useState('')
+  const [name, setName] = useState('')
+  const [asunto, setAsunto] = useState('')
+  const [detalle, setDetalle] = useState('')
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email)
@@ -43,6 +48,10 @@ export default function PerfilPrueba() {
 
   const onClose = () => {
     setIsOpen(false)
+    setAsunto('')
+    setDetalle('')
+    setName('')
+    setEmail1('')
   }
 
   const submitCorreo = (
@@ -54,10 +63,16 @@ export default function PerfilPrueba() {
     const formData = new FormData(event.currentTarget)
     const email = formData.get('email')
     const name = formData.get('name')
+    const detalle = formData.get('detalle')
+    const asunto = formData.get('asunto')
 
     if (!email || !name || !emailType || !validateEmail(email.toString())) {
-      // Handle invalid email
       toast.error('Por favor, introduce valores correctos.')
+      return
+    }
+
+    if (emailType === 'contact' && (!detalle || !asunto)) {
+      toast.error('Por favor, introduce valores completos.')
       return
     }
 
@@ -71,7 +86,11 @@ export default function PerfilPrueba() {
         body: JSON.stringify({
           email: email.toString(),
           name: name.toString(),
-          emailType: emailType
+          emailType: emailType,
+          ...(emailType === 'contact' && {
+            detalle: detalle ? detalle.toString() : '',
+            asunto: asunto ? asunto.toString() : ''
+          })
         })
       }),
       {
@@ -268,7 +287,6 @@ export default function PerfilPrueba() {
           <h2 className='text-2xl md:text-3x1 lg:text-4x1 font-semibold text-light-onSurface dark:text-dark-onSurface'>
             Estudiante de Ingeniería de Sistemas y Desarrollador Front-end.
           </h2>
-
           <div className='flex flex-row gap-5'>
             <Button
               as={Link}
@@ -346,6 +364,7 @@ export default function PerfilPrueba() {
                         placeholder='Escribe tu nombre'
                         name='name'
                         label='Nombre'
+                        onChange={(e) => setName(e.target.value)}
                       />
                       <Input
                         type='email'
@@ -359,6 +378,7 @@ export default function PerfilPrueba() {
                             'text-light-primary dark:text-dark-primary select-none'
                         }}
                         placeholder='Escribe tu correo'
+                        onChange={(e) => setEmail1(e.target.value)}
                         description={
                           <p>
                             Al enviar aceptas el{' '}
@@ -373,6 +393,36 @@ export default function PerfilPrueba() {
                           </p>
                         }
                       />
+                      {modalType === 'contact' && (
+                        <>
+                          <Input
+                            isRequired
+                            classNames={{
+                              input: '',
+                              mainWrapper: 'bg-light-primary',
+                              description:
+                                'text-light-primary dark:text-dark-primary select-none'
+                            }}
+                            placeholder='Escribe el asunto'
+                            onChange={(e) => setAsunto(e.target.value)}
+                            name='asunto'
+                            label='Asunto'
+                          />
+                          <Textarea
+                            isRequired
+                            classNames={{
+                              mainWrapper: 'bg-light-primary',
+                              description:
+                                'text-light-primary dark:text-dark-primary select-none'
+                            }}
+                            label='Detalle'
+                            name='detalle'
+                            onChange={(e) => setDetalle(e.target.value)}
+                            placeholder='Escribe el detalle del asunto.'
+                            className='max-w-xs'
+                          />
+                        </>
+                      )}
                     </ModalBody>
                     <ModalFooter>
                       <Button
@@ -382,6 +432,12 @@ export default function PerfilPrueba() {
                         Cancelar
                       </Button>
                       <Button
+                        isDisabled={
+                          !email1 ||
+                          !name ||
+                          !validateEmail(email) ||
+                          (modalType === 'contact' && (!asunto || !detalle))
+                        }
                         type='submit'
                         onPress={onClose}
                         className='font-semibold bg-light-primary text-light-onPrimary'
