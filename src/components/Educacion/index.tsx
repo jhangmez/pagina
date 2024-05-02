@@ -33,7 +33,7 @@ export default function Educacion() {
                     {educacion.institucion}
                   </Link>
                   <p className='font-semibold'>{educacion.estudio}</p>
-                  <p>{educacion.periodo}</p>
+                  <p className='font-medium'>{educacion.periodo}</p>
                 </div>
               </div>
             </li>

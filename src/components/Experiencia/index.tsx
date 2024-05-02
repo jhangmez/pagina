@@ -12,22 +12,28 @@ export default function Experiencia() {
         <ul>
           {data.experiencias.map((experiencia, index) => (
             <li key={index}>
-              <div className='flex flex-row p-4 space-x-4'>
+              <div className='flex flex-row px-4 space-x-4'>
                 <div className='flex flex-col items-center'>
                   <Image
                     as={NextImage}
                     isBlurred
                     width={80}
                     height={80}
-                    priority={true}
+                    loading='lazy'
+                    className='w-full h-full'
                     src={experiencia.imagen}
                     alt={experiencia.empresa}
                   />
-                  <div className='flex flex-col items-center h-full'>
+                  <div
+                    className={`flex flex-col items-center h-full ${
+                      index === data.experiencias.length - 1 &&
+                      ' lg:hidden md:hidden'
+                    }`}
+                  >
                     <Divider orientation='vertical' />
                   </div>
                 </div>
-                <div className='flex flex-col w-full self-center space-y-4'>
+                <div className='flex flex-col w-full self-center space-y-4 pb-5'>
                   <div className='flex flex-col'>
                     <Link
                       underline='hover'

@@ -34,7 +34,22 @@ export default function Footer() {
               </div>
             </Link>
           </div>
-          <div className='grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 '>
+          <div className='grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3'>
+            <div>
+              <h2 className='mb-6 text-sm font-semibold uppercase text-light-onSurface dark:text-dark-onSurface'>
+                Legal
+              </h2>
+              <ul className='font-medium '>
+                <li className='mb-4'>
+                  <Link
+                    href='/terms'
+                    className='hover:underline text-gray-500 dark:text-gray-400'
+                  >
+                    Terms
+                  </Link>
+                </li>
+              </ul>
+            </div>
             <div>
               <h2 className='mb-6 text-sm font-semibold uppercase text-light-onSurface dark:text-dark-onSurface'>
                 Social
@@ -100,21 +115,6 @@ export default function Footer() {
                         S O F T
                       </span>
                     </span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className='mb-6 text-sm font-semibold uppercase text-light-onSurface dark:text-dark-onSurface'>
-                Legal
-              </h2>
-              <ul className=''>
-                <li className='mb-4'>
-                  <Link
-                    href='/terms'
-                    className='hover:underline text-gray-500 dark:text-gray-400'
-                  >
-                    Terms
                   </Link>
                 </li>
               </ul>

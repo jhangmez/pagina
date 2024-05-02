@@ -45,7 +45,7 @@ export default function Home() {
         <Idiomas />
       </div>
       <div className='container mx-auto px-[20px] space-y-10 flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
-        <Objetivos />
+        {/* <Objetivos /> */}
         <Skills />
       </div>
     </section>

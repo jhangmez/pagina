@@ -35,7 +35,7 @@ export default function Idiomas() {
                     {idioma.institucion}
                   </Link>
                   <p className='font-semibold'>{idioma.nivel}</p>
-                  <p>{idioma.periodo}</p>
+                  <p className='font-medium'>{idioma.periodo}</p>
                 </div>
               </div>
             </li>
