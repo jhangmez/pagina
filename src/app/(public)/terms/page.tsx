@@ -23,7 +23,7 @@ export default function Terms() {
               Cuando usted llena un formulario en este sitio web para
               suscribirse a nuestro boletín informativo o para recibir
               actualizaciones sobre nuestros servicios o solicitar información,
-              podemos solicitarle cierta información personal, como su nombre y
+              podemos pedirle cierta información personal, como su nombre y
               dirección de correo electrónico. Esta información se utilizará
               únicamente para los fines específicos no comerciales y no se
               compartirá con terceros sin su consentimiento explícito.
