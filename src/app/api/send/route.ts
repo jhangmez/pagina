@@ -11,15 +11,21 @@ export async function POST(request: Request) {
     let subject = ''
     let template = null
     let attachments = undefined
-
+    let bcc = ''
+    let text = ''
     switch (emailType) {
       case 'contact':
         subject = 'Contacto'
         template = EmailTemplate({ firstName: name }) as React.ReactElement
+        bcc = 'jhangomez25@gmail.com'
+        text =
+          'Hola, este es un correo automatizado de jhangmez.xyz para contacto'
         break
       case 'cv':
         subject = 'Envío de CV'
         template = EmailCV({ firstName: name }) as React.ReactElement
+        text =
+          'Hola, este es un correo automatizado de jhangmez.xyz para envío de CV'
         attachments = [
           {
             filename: 'JhanGomezP-CV.pdf',
@@ -40,8 +46,8 @@ export async function POST(request: Request) {
     const { data, error } = await resend.emails.send({
       from: 'Jhan Gómez P. <noreplay-bot@jhangmez.xyz>',
       to: [email],
-      text: 'Hola, este es un correo automatizado de jhangmez.xyz',
-      // bcc: 'jhangomez25@gmail.com',
+      text: text,
+      bcc: bcc,
       subject: subject,
       react: template,
       attachments: attachments

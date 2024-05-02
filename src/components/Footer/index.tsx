@@ -220,7 +220,7 @@ export default function Footer() {
               <Link
                 href={MediumJhan}
                 isExternal
-                aria-label='Linkedin'
+                aria-label='medium'
                 className='text-light-onSurface dark:text-dark-onSurface'
               >
                 <svg
