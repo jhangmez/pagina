@@ -19,6 +19,7 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/d3-graphviz": "^2.6.10",
     "@types/file-saver": "^2.0.7",
+    "@types/react-google-recaptcha": "^2.1.9",
     "@vercel/analytics": "^1.2.2",
     "@vercel/og": "^0.6.2",
     "bcryptjs": "^2.4.3",
@@ -30,6 +31,7 @@
     "react": "^18.2.0",
     "react-colorful": "^5.6.1",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^3.1.0",
     "react-hot-toast": "^2.4.1",
     "resend": "^3.2.0",
     "zod": "^3.23.6"

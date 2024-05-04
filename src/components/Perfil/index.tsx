@@ -22,11 +22,13 @@ import { Input } from '@nextui-org/input'
 import InfiniteVertical from '@components/InfiniteVertical'
 import { Textarea } from '@nextui-org/react'
 import { useUwuMode } from '@contexts/uwu'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export default function PerfilPrueba() {
   const showCV = true
 
   const [copied, setCopied] = useState(false)
+  const [captcha, setCaptcha] = useState<string | null>()
   const [isOpen, setIsOpen] = useState(false)
   const [modalType, setModalType] = useState('')
   const email = 'jhangmez.pe@gmail.com'
@@ -75,6 +77,10 @@ export default function PerfilPrueba() {
 
     if (emailType === 'contact' && (!detalle || !asunto)) {
       toast.error('Por favor, introduce valores completos.')
+      return
+    }
+    if (!captcha) {
+      toast.error('Por favor, completa el captcha.')
       return
     }
 
@@ -439,6 +445,10 @@ export default function PerfilPrueba() {
                           />
                         </>
                       )}
+                      <ReCAPTCHA
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                        onChange={setCaptcha}
+                      />
                     </ModalBody>
                     <ModalFooter>
                       <Button
@@ -451,6 +461,7 @@ export default function PerfilPrueba() {
                         isDisabled={
                           !email1 ||
                           !name ||
+                          !captcha ||
                           !validateEmail(email) ||
                           (modalType === 'contact' && (!asunto || !detalle))
                         }

@@ -1,6 +1,6 @@
 // src/contexts/UwuModeContext.tsx
 
-import React, {
+import {
   createContext,
   useContext,
   useEffect,
@@ -15,7 +15,7 @@ interface UwuModeContextData {
 const UwuModeContext = createContext<UwuModeContextData>({ isUwuMode: false })
 
 interface UwuModeProviderProps {
-  children: ReactNode // Define el tipo de 'children' como ReactNode
+  children: ReactNode
 }
 
 export const UwuModeProvider: React.FC<UwuModeProviderProps> = ({
@@ -26,7 +26,7 @@ export const UwuModeProvider: React.FC<UwuModeProviderProps> = ({
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search)
     const uwuMode = searchParams.get('uwu')
-    setIsUwuMode(uwuMode === 'true')
+    setIsUwuMode(uwuMode !== null)
   }, [])
 
   return (

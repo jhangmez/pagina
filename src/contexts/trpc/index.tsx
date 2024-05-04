@@ -1,5 +1,5 @@
 import type { AppRouter } from '@server/routers'
-import { httpBatchLink } from '@trpc/client'
+import { httpBatchLink, loggerLink } from '@trpc/client'
 import { trpc } from '@src/utils/trpc'
 import { type inferRouterInputs, type inferRouterOutputs } from '@trpc/server'
 import { ReactNode, useState } from 'react'
@@ -24,6 +24,11 @@ export const TrpcProvider = ({ children }: { children: ReactNode }) => {
   const [trpcClient] = useState(() =>
     trpc.createClient({
       links: [
+        loggerLink({
+          enabled: (opts) =>
+            process.env.NODE_ENV === 'development' ||
+            (opts.direction === 'down' && opts.result instanceof Error)
+        }),
         httpBatchLink({
           url: `${getBaseUrl()}/api/trpc`
           // You can pass any HTTP headers you wish here
