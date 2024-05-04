@@ -1,0 +1,56 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                Int             @id @default(autoincrement())
+  createdAt         DateTime        @default(now())
+  email             String          @unique @db.VarChar(45)
+  username          String          @unique @db.VarChar(18)
+  password          String
+  firstname         String?         @db.VarChar(35)
+  lastname          String?         @db.VarChar(35)
+  profile           Profile?
+  TypeSuscriptionId Int
+  typeSuscription   TypeSuscription @relation(fields: [TypeSuscriptionId], references: [id])
+  TypeUserId        Int
+  typeUser          TypeUser        @relation(fields: [TypeUserId], references: [id])
+  markdowns         Markdown[]
+}
+
+model TypeUser {
+  id   Int    @id @default(autoincrement())
+  name String
+  User User[]
+}
+
+model TypeSuscription {
+  id   Int    @id @default(autoincrement())
+  name String
+  User User[]
+}
+
+model Profile {
+  id          Int     @id @default(autoincrement())
+  bio         String? @db.VarChar(255)
+  picture_url String?
+  user        User    @relation(fields: [userId], references: [id])
+  userId      Int     @unique
+}
+
+model Markdown {
+  id         Int      @id @default(autoincrement())
+  name       String   @db.VarChar(100)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  url        String // Esta será la URL del archivo
+  contentUrl String // Esta será la URL del contenido
+  userId     Int
+  user       User     @relation(fields: [userId], references: [id])
+}

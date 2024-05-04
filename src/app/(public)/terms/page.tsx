@@ -1,5 +1,3 @@
-import { Card, CardBody, CardFooter } from '@nextui-org/card'
-
 export default function Terms() {
   return (
     <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
