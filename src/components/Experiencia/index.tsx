@@ -20,7 +20,7 @@ export default function Experiencia() {
                     width={80}
                     height={80}
                     priority={true}
-                    className='w-full h-full'
+                    className='w-full h-full select-none'
                     src={experiencia.imagen}
                     alt={experiencia.empresa}
                   />
