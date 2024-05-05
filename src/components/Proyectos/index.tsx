@@ -25,7 +25,7 @@ export default function Proyectos() {
                     priority={true}
                     className='select-none'
                     src={proyectos.imagen}
-                    fallbackSrc='/api/img?width=280&height=140&title=Cargando&description=null&bg=C1C9BE&color=727970'
+                    fallbackSrc='/api/img?width=400&height=200&title=Cargando&description=null&bg=C1C9BE&color=727970'
                     alt={proyectos.empresa}
                   />
                   <div
