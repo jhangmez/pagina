@@ -32,8 +32,12 @@ export async function POST(request: Request) {
           'Hola, este es un correo automatizado de jhangmez.xyz para envío de CV'
         attachments = [
           {
-            filename: 'JhanGomezP-CV.pdf',
-            path: 'https://jhangmez.xyz/pdf/JhanGomezP-CV.pdf'
+            filename: 'JHANCARLOSGÓMEZPADILLA.pdf',
+            path: 'https://jhangmez.xyz/pdf/JHANCARLOSGÓMEZPADILLA.pdf'
+          },
+          {
+            filename: 'JHANCARLOSGÓMEZPADILLA-Español.pdf',
+            path: 'https://jhangmez.xyz/pdf/JHANCARLOSGÓMEZPADILLA-Español.pdf'
           }
         ]
         break

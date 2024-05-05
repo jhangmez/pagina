@@ -95,9 +95,10 @@ export const EmailCV: React.FC<Readonly<EmailTemplateProps>> = ({
             Agradezco la solicitud de mi CV.
             <br />
             Si mi perfil le resulta de interés, no dude en contactarme por
-            correo electrónico.
+            correo electrónico o Linkedin.
             <br />
-            Le adjunto el archivo pdf de mi cv a este correo.
+            Le adjunto el archivo pdf de mi cv, tanto en español e inglés a este
+            correo.
           </Text>
           <Text className='text-normal font-medium text-onSurface'>
             Gracias,
