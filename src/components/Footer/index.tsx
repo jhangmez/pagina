@@ -9,12 +9,15 @@ import {
   CoffeeJhan
 } from '@routes'
 import { Logo } from '@logo'
+import { LogoUwu } from '@src/app/LogoUwu'
 import localFont from 'next/font/local'
 import { Link } from '@nextui-org/link'
+import { useUwuMode } from '@contexts/uwu'
 
 const HarkaySoftFont = localFont({ src: '/Poppins-SemiBold.ttf' })
 
 export default function Footer() {
+  const { isUwuMode } = useUwuMode()
   return (
     <footer className='bg-light-surface dark:bg-dark-surface'>
       <div className='container mx-auto py-6 px-[20px] '>
@@ -22,13 +25,19 @@ export default function Footer() {
         <div className='w-full relative md:flex md:justify-between'>
           <div className='mb-6 md:mb-0'>
             <Link
-              href='/'
+              href={isUwuMode ? '/?uwu' : '/'}
               className='w-[230px] h-14 justify-start items-center gap-[5px] inline-flex text-light-onSurface dark:text-dark-onSurface'
             >
-              <Logo />
+              {isUwuMode ? <LogoUwu /> : <Logo />}
               <div>
                 <span className=' text-2xl font-bold leading-[44px]'>jhan</span>
-                <span className='text-light-primary dark:text-dark-primary text-2xl font-bold leading-[44px]'>
+                <span
+                  className={`${
+                    isUwuMode
+                      ? 'text-light-tertiary dark:text-dark-tertiary'
+                      : 'text-light-primary dark:text-dark-primary'
+                  } text-2xl font-bold leading-[44px]`}
+                >
                   gmez
                 </span>
               </div>
@@ -128,7 +137,13 @@ export default function Footer() {
             <Link href={GithubJhan} className='hover:underline'>
               <span className='text-black text-light-onSurface dark:text-dark-onSurface font-bold leading-[44px]'>
                 jhan
-                <span className='text-light-primary dark:text-dark-primary font-bold leading-[44px]'>
+                <span
+                  className={`${
+                    isUwuMode
+                      ? 'text-light-tertiary dark:text-dark-tertiary'
+                      : 'text-light-primary dark:text-dark-primary'
+                  } font-bold leading-[44px]`}
+                >
                   gmez
                 </span>
               </span>

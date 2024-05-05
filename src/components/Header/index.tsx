@@ -79,7 +79,7 @@ export default function Header() {
           />
           <NavbarBrand className='text-light-onSurface dark:text-dark-onSurface'>
             <Link
-              href='/'
+              href={isUwuMode ? '/?uwu' : '/'}
               className='gap-1 text-light-onSurface dark:text-dark-onSurface'
               onClick={() => setIsMenuOpen(false)}
             >

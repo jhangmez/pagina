@@ -23,7 +23,9 @@ export default function Proyectos() {
                     width={400}
                     height={200}
                     priority={true}
+                    className='select-none'
                     src={proyectos.imagen}
+                    fallbackSrc='/api/img?width=280&height=140&title=Cargando&description=null&bg=C1C9BE&color=727970'
                     alt={proyectos.empresa}
                   />
                   <div

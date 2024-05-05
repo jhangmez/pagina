@@ -2,7 +2,7 @@
   "proyectos": [
     {
       "empresa": "quaTu",
-      "imagen": "/quatu.webp",
+      "imagen": "/api/img?width=400&height=200&title=quaTu&description=null&bg=353FFD&color=FFFFFF",
       "enlace": "https://quatu.xyz",
       "status": true,
       "roles": [
@@ -15,7 +15,7 @@
     },
     {
       "empresa": "InDeportiva",
-      "imagen": "/indeportiva.webp",
+      "imagen": "/api/img?width=400&height=200&title=InDeportiva&description=null&bg=E3C600",
       "enlace": "https://deporte.vercel.app",
       "status": false,
       "roles": [

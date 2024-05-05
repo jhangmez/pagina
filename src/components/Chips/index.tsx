@@ -16,7 +16,7 @@ export const Graphql = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-graphql/90 text-light-onGraphql'
+    className='select-none bg-light-graphql/90 text-light-onGraphql'
   >
     Graphql
   </Chip>
@@ -38,7 +38,7 @@ export const Postgresql = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-postgresql/90 text-light-onPostgresql'
+    className='select-none bg-light-postgresql/90 text-light-onPostgresql'
   >
     Postgresql
   </Chip>
@@ -60,7 +60,7 @@ export const React = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-react/90 text-light-onReact'
+    className='select-none bg-light-react/90 text-light-onReact'
   >
     React
   </Chip>
@@ -88,7 +88,7 @@ export const Typescript = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-typescript/90 text-light-onTypescript'
+    className='select-none bg-light-typescript/90 text-light-onTypescript'
   >
     Typescript
   </Chip>
@@ -109,7 +109,7 @@ export const ReactNative = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-react/90 text-light-onReact'
+    className='select-none bg-light-react/90 text-light-onReact'
   >
     React Native
   </Chip>
@@ -131,7 +131,7 @@ export const Nodejs = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-node/90 text-light-onNode'
+    className='select-none bg-light-node/90 text-light-onNode'
   >
     Node.js
   </Chip>
@@ -153,7 +153,7 @@ export const Nextjs = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-next/90 text-light-onNext'
+    className='select-none bg-light-next/90 text-light-onNext'
   >
     Next.js
   </Chip>
@@ -175,7 +175,7 @@ export const API = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-secondary/90 text-light-onSecondary'
+    className='select-none bg-light-secondary/90 text-light-onSecondary'
   >
     API Web services
   </Chip>
@@ -202,7 +202,7 @@ export const Nexusjs = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-nexus/90 text-light-onNexus'
+    className='select-none bg-light-nexus/90 text-light-onNexus'
   >
     Nexus.js
   </Chip>
@@ -224,7 +224,7 @@ export const Prisma = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-prisma/90 text-light-onPrisma'
+    className='select-none bg-light-prisma/90 text-light-onPrisma'
   >
     Prisma
   </Chip>
@@ -246,7 +246,7 @@ export const Jira = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-jira/90 text-light-onJira'
+    className='select-none bg-light-jira/90 text-light-onJira'
   >
     Jira
   </Chip>
@@ -274,7 +274,7 @@ export const Documentacion = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-tertiary/90 text-light-onTertiary'
+    className='select-none bg-light-tertiary/90 text-light-onTertiary'
   >
     Documentación
   </Chip>
@@ -296,7 +296,7 @@ export const S3AWS = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-s3/90 text-light-onS3'
+    className='select-none bg-light-s3/90 text-light-onS3'
   >
     S3 AWS
   </Chip>
@@ -318,7 +318,7 @@ export const Planificacion = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-inverseSurface/90 text-light-inverseOnSurface'
+    className='select-none bg-light-inverseSurface/90 text-light-inverseOnSurface'
   >
     Planificación
   </Chip>
@@ -339,7 +339,7 @@ export const Autentificacion = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-errorContainer/90 text-light-onErrorContainer'
+    className='select-none bg-light-errorContainer/90 text-light-onErrorContainer'
   >
     Autentificación
   </Chip>
@@ -361,7 +361,7 @@ export const Koyeb = () => (
       </svg>
     }
     variant='flat'
-    className='bg-light-koyeb/90 text-light-onKoyeb'
+    className='select-none bg-light-koyeb/90 text-light-onKoyeb'
   >
     Koyeb
   </Chip>

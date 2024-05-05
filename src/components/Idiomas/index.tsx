@@ -17,6 +17,7 @@ export default function Idiomas() {
                   width={100}
                   isBlurred
                   height={100}
+                  className='select-none'
                   priority={true}
                   src={idioma.logo}
                   alt={idioma.institucion}

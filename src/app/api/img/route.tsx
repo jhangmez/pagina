@@ -1,29 +1,52 @@
 import { ImageResponse } from 'next/og'
-
 export const runtime = 'edge'
 
 export async function GET(request: Request) {
   const fontData = await fetch(
     new URL('/public/PlusJakartaSans-Bold.ttf', import.meta.url)
   ).then((res) => res.arrayBuffer())
+
+  function letterSize(
+    width: number,
+    maxSize: number,
+    percentage?: number
+  ): number {
+    const sizeFactor = percentage !== undefined ? percentage : 0.1
+    return Math.min(width * sizeFactor, maxSize)
+  }
   try {
     const { searchParams } = new URL(request.url)
 
     const hasTitle = searchParams.has('title')
-    const title = hasTitle
-      ? searchParams.get('title')?.slice(0, 100)
-      : 'Título por defecto'
+    const title =
+      searchParams.get('title')?.slice(0, 100) ?? 'Título por defecto'
 
     const hasDescription = searchParams.has('description')
     const description = hasDescription
-      ? searchParams.get('description')?.slice(0, 100)
+      ? searchParams.get('description') === 'null'
+        ? ''
+        : searchParams.get('description')?.slice(0, 100)
       : 'Descripción por defecto'
 
     const hasWidth = searchParams.has('width')
-    const width = hasWidth ? searchParams.get('width')?.slice(0, 100) : 1200
+    const width = hasWidth
+      ? Number(searchParams.get('width')?.slice(0, 100) ?? 1200)
+      : 1200
 
     const hasHeight = searchParams.has('height')
-    const height = hasHeight ? searchParams.get('height')?.slice(0, 100) : 630
+    const height = hasHeight
+      ? Number(searchParams.get('height')?.slice(0, 100) ?? 630)
+      : 630
+
+    const hasColor = searchParams.has('color')
+    const color = hasColor
+      ? '#' + (searchParams.get('color')?.slice(0, 6) ?? '000000')
+      : '#000000'
+
+    const hasBackground = searchParams.has('bg')
+    const background = hasBackground
+      ? '#' + (searchParams.get('bg')?.slice(0, 6) ?? 'A3F6AA')
+      : '#A3F6AA'
 
     return new ImageResponse(
       (
@@ -36,22 +59,23 @@ export async function GET(request: Request) {
             justifyContent: 'center',
             letterSpacing: '-.02em',
             fontWeight: 700,
-            background: '#A3F6AA'
+            background: background
           }}
         >
           <div
             style={{
-              left: 42,
-              top: 42,
+              left: 24,
+              top: 24,
               position: 'absolute',
               display: 'flex',
-              alignItems: 'center'
+              alignItems: 'center',
+              color: color
             }}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='64'
-              height='64'
+              width={letterSize(width, 48, 0.05) + 4}
+              height={letterSize(width, 48, 0.05) + 4}
               viewBox='0 0 24 24'
             >
               <path
@@ -61,8 +85,9 @@ export async function GET(request: Request) {
             </svg>
             <span
               style={{
-                marginLeft: 8,
-                fontSize: 48
+                marginLeft: 3,
+                fontSize: letterSize(width, 48, 0.05),
+                color: color
               }}
             >
               jhangmez.xyz
@@ -73,31 +98,29 @@ export async function GET(request: Request) {
               display: 'flex',
               flexWrap: 'wrap',
               justifyContent: 'center',
-              padding: '20px 50px',
-              margin: '0 42px',
-              fontSize: 64,
-              width: 'auto',
+              alignItems: 'center',
+              fontSize: letterSize(width, 64),
               maxWidth: 700,
-              textAlign: 'center',
-              backgroundColor: '#002108',
-              color: '#FFFFFF',
+              color: color,
               lineHeight: 1.4
             }}
           >
             {title}
           </div>
-          <div
-            style={{
-              left: 42,
-              top: 480,
-              position: 'absolute',
-              display: 'flex',
-              alignItems: 'center',
-              fontSize: 32
-            }}
-          >
-            {description}
-          </div>
+          {description && (
+            <div
+              style={{
+                left: 42,
+                top: 480,
+                position: 'absolute',
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: letterSize(width, 32)
+              }}
+            >
+              {description}
+            </div>
+          )}
         </div>
       ),
       {
