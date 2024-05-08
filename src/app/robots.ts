@@ -20,9 +20,11 @@ export default function robots(): MetadataRoute.Robots {
         '/experience',
         '/skills',
         '/projects',
-        '/mapaconceptual'
+        '/mapaconceptual',
+        '/cv',
+        '/generate/'
       ],
-      disallow: ['/api/', '/cv/', '/icons/', '/public/']
+      disallow: ['/api/', '/icons/', '/public/', '/pdf/', '/static/']
     },
     sitemap: 'https://jhangmez.xyz/sitemap.xml'
   }

@@ -33,11 +33,11 @@ export async function POST(request: Request) {
         attachments = [
           {
             filename: 'JHANCARLOSGÓMEZPADILLA.pdf',
-            path: 'https://jhangmez.xyz/pdf/JHANCARLOSGÓMEZPADILLA.pdf'
+            path: 'https://jhangmez.xyz/static/pdf/JHANCARLOSGÓMEZPADILLA.pdf'
           },
           {
             filename: 'JHANCARLOSGÓMEZPADILLA-Español.pdf',
-            path: 'https://jhangmez.xyz/pdf/JHANCARLOSGÓMEZPADILLA-Español.pdf'
+            path: 'https://jhangmez.xyz/static/pdf/JHANCARLOSGÓMEZPADILLA-Español.pdf'
           }
         ]
         break
