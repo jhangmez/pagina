@@ -1,33 +1,14 @@
 import { createCV } from '@components/generate/pdf'
 
-const shortTitle = 'CV Generator'
-const description = 'Genera tu cv'
-const jhangmez = ' | jhangmez'
-const title = `${shortTitle}${jhangmez}`
-const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
-
-export const metadata = {
-  title,
-  description,
-  openGraph: {
-    title,
-    description,
-    type: 'article',
-    url: 'https://jhangmez.xyz/',
-    images: [{ url: imageUrl }]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description,
-    images: [imageUrl]
-  }
-}
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const name = searchParams.get('name')
   const position = searchParams.get('position')
+  const country = searchParams.get('country')
+  const link1 = searchParams.get('link1')
+  const link2 = searchParams.get('link2')
+  const link3 = searchParams.get('link3')
+  const link4 = searchParams.get('link4')
 
   if (!name || !position) {
     return Response.json({ error: 'Datos incompletos' }, { status: 400 })
