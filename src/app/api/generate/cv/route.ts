@@ -1,43 +1,44 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
+import { createCV } from '@components/generate/pdf'
 
-export async function GET(request: NextRequest) {
+const shortTitle = 'CV Generator'
+const description = 'Genera tu cv'
+const jhangmez = ' | jhangmez'
+const title = `${shortTitle}${jhangmez}`
+const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
+
+export const metadata = {
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: 'article',
+    url: 'https://jhangmez.xyz/',
+    images: [{ url: imageUrl }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: [imageUrl]
+  }
+}
+
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const name = searchParams.get('name')
   const position = searchParams.get('position')
 
   if (!name || !position) {
-    return NextResponse.json(
-      { error: 'Name and position are required' },
-      { status: 400 }
-    )
+    return Response.json({ error: 'Datos incompletos' }, { status: 400 })
   }
 
-  const pdf = await PDFDocument.create()
-  const page = pdf.addPage()
-
-  const { width } = page.getSize()
-  const font = await pdf.embedFont(StandardFonts.Helvetica)
-
-  page.drawText(`CV for ${name}`, {
-    x: width / 2,
-    y: page.getHeight() - 100,
-    size: 24,
-    font
-  })
-
-  page.drawText(`Position: ${position}`, {
-    x: width / 2,
-    y: page.getHeight() - 150,
-    size: 18,
-    font
-  })
-
+  const pdf = await createCV(name, position)
   const pdfBytes = await pdf.save()
 
   const headers = new Headers()
   headers.set('Content-Type', 'application/pdf')
-  headers.set('Content-Disposition', 'inline; filename="cv.pdf"')
+  headers.set('Content-Disposition', `inline; filename="cv-${name}.pdf"`)
 
   return new Response(pdfBytes, { status: 200, headers })
 }
