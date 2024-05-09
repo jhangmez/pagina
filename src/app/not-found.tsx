@@ -53,7 +53,7 @@ export default function NotFound() {
           </li>
           <li className='w-full items-center flex justify-center pt-3'>
             <Button
-              href='/'
+              href={isUwuMode ? '/?uwu' : '/'}
               as={Link}
               className={`${
                 isUwuMode

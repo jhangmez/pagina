@@ -1,8 +1,19 @@
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 
-export async function createCV(name: string, position: string) {
+export async function createCV(
+  name: string,
+  ap: string | null,
+  am: string | null,
+  position: string | null,
+  country: string | null,
+  province: string | null,
+  link1: string | null,
+  link2: string | null,
+  link3: string | null,
+  link4: string | null
+) {
   const pdf = await PDFDocument.create()
-  const page = pdf.addPage([550, 750])
+  const page = pdf.addPage()
 
   const form = pdf.getForm()
 
@@ -11,7 +22,7 @@ export async function createCV(name: string, position: string) {
   pdf.setSubject(
     `CV de ${name}, generado en jhangmez (https://jhangmez.xyz/cv)`
   )
-  pdf.setKeywords(['cv', 'generator', 'jhan', 'gmez', 'jhangmez'])
+  pdf.setKeywords(['cv', 'generator', `${name}`, `${ap}`, `${country}`])
   pdf.setProducer('CV GENERATOR 100 🤖')
   pdf.setCreator('jhangmez (https://jhangmez.xyz/cv)')
   pdf.setCreationDate(new Date())

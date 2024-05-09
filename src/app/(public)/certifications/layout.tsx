@@ -1,5 +1,5 @@
-const shortTitle = 'APIs generate'
-const description = 'Generación de archivos a través de APIs'
+const shortTitle = 'Certificaciones'
+const description = 'Certificaciones de jhangmez'
 const jhangmez = ' | jhangmez'
 const title = `${shortTitle}${jhangmez}`
 const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
@@ -22,7 +22,7 @@ export const metadata = {
   }
 }
 
-export default function GenerateLayout({
+export default function CertsLayout({
   children
 }: {
   children: React.ReactNode

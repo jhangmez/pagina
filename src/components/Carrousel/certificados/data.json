@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "altura": 500,
+    "ancho": 385,
+    "url": "/api/img?width=500&height=385&title=qhola&description=null&bg=353FFD&color=FFFFFF",
+    "descripcion": "Description de la imagen 1",
+    "nombre": "Imagen 1"
+  },
+  {
+    "id": 2,
+    "altura": 500,
+    "ancho": 385,
+    "url": "/api/img?width=500&height=385&title=jijij&description=null&bg=523F6D&color=FFFFFF",
+    "descripcion": "Descripción de la imagen 2",
+    "nombre": "Imagen 2"
+  },
+  {
+    "id": 3,
+    "altura": 500,
+    "ancho": 385,
+    "url": "/api/img?width=500&height=385&title=quaTu&description=null&bg=393FDD&color=FFFFFF",
+    "descripcion": "Descripción de la imagen 3",
+    "nombre": "Imagen 3"
+  },
+  {
+    "id": 4,
+    "altura": 500,
+    "ancho": 385,
+    "url": "/api/img?width=500&height=385&title=jhancito&description=null&bg=393FDD&color=FFFFFF",
+    "descripcion": "Descripción de la imagen 4",
+    "nombre": "Imagen 4"
+  },
+  {
+    "id": 5,
+    "altura": 500,
+    "ancho": 385,
+    "url": "/api/img?width=500&height=385&title=jhancito&description=null&bg=393FDD&color=FFFFFF",
+    "descripcion": "Descripción de la imagen 4",
+    "nombre": "Imagen 4"
+  },
+  {
+    "id": 6,
+    "altura": 500,
+    "ancho": 385,
+    "url": "/api/img?width=500&height=385&title=jhancito&description=null&bg=393FDD&color=FFFFFF",
+    "descripcion": "Descripción de la imagen 4",
+    "nombre": "Imagen 4"
+  }
+]

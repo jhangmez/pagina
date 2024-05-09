@@ -433,6 +433,7 @@ export default function PerfilPrueba() {
                           <Textarea
                             isRequired
                             classNames={{
+                              input: 'resize-y min-h-[60px]',
                               mainWrapper: 'bg-light-primary',
                               description:
                                 'text-light-primary dark:text-dark-primary select-none'
@@ -441,7 +442,6 @@ export default function PerfilPrueba() {
                             name='detalle'
                             onChange={(e) => setDetalle(e.target.value)}
                             placeholder='Escribe el detalle del asunto.'
-                            className='max-w-xs'
                           />
                         </>
                       )}

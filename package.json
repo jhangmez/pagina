@@ -25,6 +25,8 @@
     "@vercel/og": "^0.6.2",
     "bcryptjs": "^2.4.3",
     "d3-graphviz": "^5.2.0",
+    "embla-carousel-autoplay": "^8.0.4",
+    "embla-carousel-react": "^8.0.4",
     "file-saver": "^2.0.5",
     "framer-motion": "^10.16.16",
     "next": "^14.0.4",

@@ -1,6 +1,7 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
+import Trabajando from '@components/Trabajando'
 
 export default function Roadmap() {
   const searchParams = useSearchParams()
@@ -52,9 +53,10 @@ export default function Roadmap() {
   return (
     <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
       <div className='container mx-auto px-[20px] pt-10 space-y-10'>
-        <h2 className='font-bold text-2xl text-light-onSurface dark:text-dark-onSurface'>
+        {/* <h2 className='font-bold text-2xl text-light-onSurface dark:text-dark-onSurface'>
           Esta es mi roadmap
-        </h2>
+        </h2> */}
+        <Trabajando />
 
         <ul className='flex flex-wrap gap-5'>
           <li className='text-light-onSurface dark:text-dark-onSurface'>
