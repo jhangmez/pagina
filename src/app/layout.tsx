@@ -6,6 +6,7 @@ import Loading from './loading'
 import localFont from 'next/font/local'
 import { Toaster } from 'react-hot-toast'
 const myFont = localFont({ src: '/PlusJakartaSans-VariableFont_wght.ttf' })
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const shortTitle = 'Portafolio'
 const description = 'Portafolio de Jhan Gómez'
@@ -48,8 +49,9 @@ export default function RootLayout({
             reverseOrder={false}
           />
           <noscript>Página realizada por Jhan Gómez P. @jhangmez</noscript>
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <Suspense fallback={<Loading />}>{children} </Suspense>
           <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
