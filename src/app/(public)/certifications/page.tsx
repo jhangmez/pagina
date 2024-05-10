@@ -29,9 +29,11 @@ export default function Certificaciones() {
         </h2>
         <ul className='container flex flex-wrap justify-center pt-10 gap-8'>
           {Data.map((dato, index) => (
-            <li className='cursor-pointer hover:opacity-hover pressed:scale-[0.97] select-none transition-transform-colors-opacity motion-reduce:transition-none'>
+            <li
+              key={index}
+              className='cursor-pointer hover:opacity-hover pressed:scale-[0.97] select-none transition-transform-colors-opacity motion-reduce:transition-none'
+            >
               <Card
-                key={index}
                 shadow='none'
                 className={`w-[${dato.ancho}px] h-[${dato.altura}px] p-2 bg-transparent`}
               >
