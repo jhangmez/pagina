@@ -101,7 +101,8 @@ export async function GET(request: Request) {
               fontSize: letterSize(width, 64),
               maxWidth: 700,
               color: color,
-              lineHeight: 1.4
+              lineHeight: 1.4,
+              padding: '30px'
             }}
           >
             {title}

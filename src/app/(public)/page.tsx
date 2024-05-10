@@ -3,32 +3,8 @@ import Perfil from '@components/Perfil'
 import Proyectos from '@components/Proyectos'
 import Educacion from '@components/Educacion'
 import Idiomas from '@components/Idiomas'
-import Objetivos from '@components/Objetivos'
+import CarrouselCertifications from '@components/Carrousel/certificados'
 import Skills from '@components/Skills'
-
-const shortTitle = 'Portafolio'
-const description = 'Bienvenidos a mi portafolio'
-const jhangmez = ' | jhangmez'
-const title = `${shortTitle}${jhangmez}`
-const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
-
-export const metadata = {
-  title,
-  description,
-  openGraph: {
-    title,
-    description,
-    type: 'article',
-    url: 'https://jhangmez.xyz/',
-    images: [{ url: imageUrl }]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description,
-    images: [imageUrl]
-  }
-}
 
 export default function Home() {
   return (
@@ -44,12 +20,11 @@ export default function Home() {
         <Educacion />
         <Idiomas />
       </div>
-      <div
-        // className='container mx-auto px-[20px] space-y-10 flex flex-col md:space-y-0 md:flex-row md:space-x-6'
-        className='container mx-auto px-[20px]'
-      >
-        {/* <Objetivos /> */}
+      <div className='container mx-auto px-[20px]'>
         <Skills />
+      </div>
+      <div className='container mx-auto px-[20px]'>
+        <CarrouselCertifications />
       </div>
     </section>
   )
