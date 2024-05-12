@@ -96,7 +96,7 @@ export const EmailContacto: React.FC<Readonly<EmailTemplateProps>> = ({
             Hola <strong>{firstName}</strong>,
           </Text>
           <Text className='text-normal font-medium text-onSurface'>
-            Agradezco la interés en contactarme.
+            Agradezco el interés en contactarme.
             <br />
             Próximamente estaré en contacto con usted.
           </Text>

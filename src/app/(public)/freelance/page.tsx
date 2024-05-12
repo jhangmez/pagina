@@ -1,5 +1,4 @@
 import FreelanceList from '@components/Freelance'
-import Trabajando from '@components/Trabajando'
 
 export default function Freelance() {
   return (

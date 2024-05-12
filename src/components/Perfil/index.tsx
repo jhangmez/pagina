@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Card, CardBody, CardFooter } from '@nextui-org/card'
 import { Listbox, ListboxItem } from '@nextui-org/listbox'
 import { Image } from '@nextui-org/image'
-import { GithubJhan, LinkedinJhan, URLCV, HugginFaceJhan } from '@routes'
+import { GithubJhan, LinkedinJhan, HugginFaceJhan } from '@routes'
 import NextImage from 'next/image'
 import { Link } from '@nextui-org/link'
 import { Button } from '@nextui-org/react'
@@ -15,11 +15,10 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
-  ModalFooter,
-  useDisclosure
+  ModalFooter
 } from '@nextui-org/modal'
-import { Input } from '@nextui-org/input'
 import InfiniteVertical from '@components/InfiniteVertical'
+import { Input } from '@nextui-org/input'
 import { Textarea } from '@nextui-org/react'
 import { useUwuMode } from '@contexts/uwu'
 import ReCAPTCHA from 'react-google-recaptcha'
@@ -56,6 +55,7 @@ export default function PerfilPrueba() {
     setDetalle('')
     setName('')
     setEmail1('')
+    setCaptcha('')
   }
 
   const submitCorreo = (
@@ -85,32 +85,36 @@ export default function PerfilPrueba() {
     }
 
     // Utiliza toast.promise para manejar la promesa de la petición
-    toast.promise(
-      fetch('/api/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email.toString(),
-          name: name.toString(),
-          emailType: emailType,
-          ...(emailType === 'contact' && {
-            detalle: detalle ? detalle.toString() : '',
-            asunto: asunto ? asunto.toString() : ''
+    toast
+      .promise(
+        fetch('/api/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: email.toString(),
+            name: name.toString(),
+            emailType: emailType,
+            ...(emailType === 'contact' && {
+              detalle: detalle ? detalle.toString() : '',
+              asunto: asunto ? asunto.toString() : ''
+            })
           })
-        })
-      }),
-      {
-        loading: 'Enviando correo...',
-        success: 'Correo enviado exitosamente!',
-        error: (
-          <b>
-            Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.
-          </b>
-        )
-      }
-    )
+        }),
+        {
+          loading: 'Enviando correo...',
+          success: 'Correo enviado exitosamente!',
+          error: (
+            <b>
+              Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.
+            </b>
+          )
+        }
+      )
+      .then(() => {
+        setCaptcha('')
+      })
   }
 
   // Función auxiliar para validar el correo electrónico
