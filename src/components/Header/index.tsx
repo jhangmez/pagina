@@ -84,7 +84,7 @@ export default function Header() {
     {
       key: 'pedircv',
       label: 'Descargar CV',
-      href: '/contacto#cv',
+      href: '/contact#cv',
       section: 'Contacto'
     },
     {
