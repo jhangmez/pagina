@@ -1,0 +1,35 @@
+[
+  {
+    "contratista": "Educa emprendedor",
+    "url": "https://educaemprendedor.pe",
+    "url_imagen": "/api/img?width=500&height=385&title=Educa emprendedor&description=null&bg=39656C&color=FFFFFF&date=Abr. 2024",
+    "altura": 500,
+    "ancho": 385,
+    "fecha": "Abr. 2024",
+    "funciones": [
+      "Landing page",
+      "Optimización de estilos",
+      "Inicialización de Backend",
+      "Inicialización de BD",
+      "SEO"
+    ]
+  },
+  {
+    "contratista": "Datrack",
+    "url": "https://datrack.vercel.app",
+    "url_imagen": "/api/img?width=500&height=385&title=Datrack.cl&description=null&bg=523F6D&color=FFFFFF&date=Ene. 2024",
+    "altura": 500,
+    "ancho": 385,
+    "fecha": "Ene. 2024",
+    "funciones": ["Landing page", "Optimización de estilos"]
+  },
+  {
+    "contratista": "Limby",
+    "url": "https://limby.vercel.app",
+    "url_imagen": "/api/img?width=500&height=385&title=Limby&description=null&bg=3A4B3A&color=D4E8D1&date=Sep. 2022",
+    "altura": 500,
+    "ancho": 385,
+    "fecha": "Sep. 2022",
+    "funciones": ["Landing page", "SEO"]
+  }
+]

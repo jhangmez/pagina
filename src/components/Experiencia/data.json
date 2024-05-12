@@ -24,22 +24,6 @@
       ]
     },
     {
-      "empresa": "Limby",
-      "imagen": "/nonfoundCompany.webp",
-      "enlace": "https://www.linkedin.com/search/results/all/?keywords=Limby",
-      "duracion": "Jornada parcial · 5 meses",
-      "ubicacion": "En remoto",
-      "roles": [
-        {
-          "titulo": "React Fronted Developer",
-          "periodo": "nov. 2022 - mar. 2023 · 5 meses",
-          "ubicacion": "Chiclayo, Lambayeque, Perú",
-          "descripcion": "",
-          "aptitudes": "React.js · Planificación de proyectos · Dirección y desarrollo de equipos de trabajo · Desarrollo de software"
-        }
-      ]
-    },
-    {
       "empresa": "Agencia Consigue Ventas Online",
       "imagen": "/consigueventasonline_logo.webp",
       "enlace": "https://www.linkedin.com/company/65487718/",

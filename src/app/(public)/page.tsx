@@ -5,6 +5,7 @@ import Educacion from '@components/Educacion'
 import Idiomas from '@components/Idiomas'
 import CarrouselCertifications from '@components/Carrousel/certificados'
 import Skills from '@components/Skills'
+import Freelance from '@components/Freelance'
 
 export default function Home() {
   return (
@@ -12,6 +13,9 @@ export default function Home() {
       <Perfil />
       <div className='container mx-auto px-[20px]'>
         <Experiencia />
+      </div>
+      <div className='container mx-auto px-[20px]'>
+        <Freelance />
       </div>
       <div className='container mx-auto px-[20px]'>
         <Proyectos />

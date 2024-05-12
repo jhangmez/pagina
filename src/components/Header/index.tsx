@@ -52,6 +52,12 @@ export default function Header() {
       section: 'Sobre mí'
     },
     {
+      key: 'freelance',
+      label: 'Freelance',
+      href: '/freelance',
+      section: 'Sobre mí'
+    },
+    {
       key: 'yo',
       label: 'Yo',
       href: '/me',
@@ -238,6 +244,14 @@ export default function Header() {
                 >
                   Certificaciones
                 </DropdownItem>
+                <DropdownItem
+                  aria-label='freelance'
+                  key='freelance'
+                  as={Link}
+                  href='/freelance'
+                >
+                  Freelance
+                </DropdownItem>
                 <DropdownItem aria-label='yo' key='yo' as={Link} href='/me'>
                   Yo
                 </DropdownItem>
@@ -283,6 +297,7 @@ export default function Header() {
                     <Divider className='shrink border-solid border-light-outline dark:border-dark-outline' />
                   </div>
                   <Link
+                    key={item.key}
                     className='w-full font-medium text-light-onSurface dark:text-dark-onSurface'
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
@@ -298,6 +313,7 @@ export default function Header() {
               <Link
                 className='w-full font-medium text-light-onSurface dark:text-dark-onSurface'
                 href={item.href}
+                key={item.key}
                 onClick={() => setIsMenuOpen(false)}
                 size='lg'
               >

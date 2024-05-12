@@ -20,6 +20,13 @@ export async function GET(request: Request) {
     const title =
       searchParams.get('title')?.slice(0, 100) ?? 'Título por defecto'
 
+    const hasDate = searchParams.has('date')
+    const date = hasDate
+      ? searchParams.get('date') === 'null'
+        ? ''
+        : searchParams.get('date')?.slice(0, 100)
+      : undefined
+
     const hasDescription = searchParams.has('description')
     const description = hasDescription
       ? searchParams.get('description') === 'null'
@@ -92,6 +99,28 @@ export async function GET(request: Request) {
               jhangmez.xyz
             </span>
           </div>
+          {date && (
+            <div
+              style={{
+                right: 24,
+                top: 24,
+                position: 'absolute',
+                display: 'flex',
+                alignItems: 'center',
+                color: color
+              }}
+            >
+              <span
+                style={{
+                  fontSize: letterSize(width, 48, 0.05),
+                  color: color
+                }}
+              >
+                {date}
+              </span>
+            </div>
+          )}
+
           <div
             style={{
               display: 'flex',
