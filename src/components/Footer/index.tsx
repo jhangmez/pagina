@@ -13,15 +13,15 @@ import { LogoUwu } from '@src/app/LogoUwu'
 import localFont from 'next/font/local'
 import { Link } from '@nextui-org/link'
 import { useUwuMode } from '@contexts/uwu'
-
+import { Divider } from '@nextui-org/divider'
 const HarkaySoftFont = localFont({ src: '/Poppins-SemiBold.ttf' })
 
 export default function Footer() {
   const { isUwuMode } = useUwuMode()
   return (
     <footer className='bg-light-surface dark:bg-dark-surface'>
-      <div className='container mx-auto py-6 px-[20px] '>
-        <hr className='my-6 border-gray-200 dark:border-gray-700 lg:my-8' />
+      <div className='container mx-auto py-6 px-[20px]'>
+        <Divider className='border-solid my-6 border-light-outline dark:border-dark-outline lg:my-8' />
         <div className='w-full relative md:flex md:justify-between'>
           <div className='mb-6 md:mb-0'>
             <Link
@@ -130,7 +130,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr className='my-6 border-gray-200 dark:border-gray-700 lg:my-8' />
+        <Divider className='border-solid my-6 border-light-outline dark:border-dark-outline lg:my-8' />
         <div className='sm:flex sm:items-center sm:justify-between'>
           <span className='text-sm text-gray-500 sm:text-center dark:text-gray-400'>
             © 2023{' '}
@@ -257,6 +257,15 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <p className='container mx-auto pb-6 px-[20px] text-sm text-center text-light-onSurface dark:text-dark-onSurface'>
+        Hecho con ❤️ por{' '}
+        <Link
+          href={LinkedinJhan}
+          className='text-sm text-light-onSurface dark:text-dark-onSurface hover:underline'
+        >
+          Jhan Gómez P.
+        </Link>
+      </p>
     </footer>
   )
 }

@@ -21,6 +21,7 @@ import {
   DropdownItem
 } from '@nextui-org/dropdown'
 import { useUwuMode } from '@contexts/uwu'
+import { Divider } from '@nextui-org/divider'
 
 export default function Header() {
   const showJob = false
@@ -29,42 +30,62 @@ export default function Header() {
     {
       key: 'educacion',
       label: 'Educación',
-      href: '/education'
+      href: '/education',
+      section: 'Sobre mí'
     },
     {
       key: 'skills',
       label: 'Skills',
-      href: '/skills'
+      href: '/skills',
+      section: 'Sobre mí'
     },
     {
       key: 'proyectos',
       label: 'Proyectos',
-      href: '/projects'
+      href: '/projects',
+      section: 'Sobre mí'
     },
     {
       key: 'certificaciones',
       label: 'Certificaciones',
-      href: '/certifications'
+      href: '/certifications',
+      section: 'Sobre mí'
+    },
+    {
+      key: 'yo',
+      label: 'Yo',
+      href: '/me',
+      section: 'Sobre mí'
     },
     {
       key: 'generadormapaconceptual',
       label: 'Mapa conceptual',
-      href: '/mapaconceptual'
+      href: '/mapaconceptual',
+      section: 'Herramientas'
     },
     {
       key: 'generadorcv',
       label: 'Currículum',
-      href: '/cv'
+      href: '/cv',
+      section: 'Herramientas'
     },
     {
       key: 'generadorroadmap',
       label: 'Roadmap',
-      href: '/roadmap'
+      href: '/roadmap',
+      section: 'Herramientas'
+    },
+    {
+      key: 'pedircv',
+      label: 'Descargar CV',
+      href: '/contacto#cv',
+      section: 'Contacto'
     },
     {
       key: 'contacto',
       label: 'Contacto',
-      href: '/contact'
+      href: '/contact',
+      section: 'Contacto'
     }
   ]
   const { isUwuMode } = useUwuMode()
@@ -217,6 +238,9 @@ export default function Header() {
                 >
                   Certificaciones
                 </DropdownItem>
+                <DropdownItem aria-label='yo' key='yo' as={Link} href='/me'>
+                  Yo
+                </DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </NavbarItem>
@@ -247,8 +271,30 @@ export default function Header() {
           </NavbarItem>
         </NavbarContent>
         <NavbarMenu className='bg-light-surface/50 dark:bg-dark-surface/50'>
-          {menuItems.map((item, index) => (
-            <NavbarMenuItem key={index}>
+          {menuItems.map((item, index) => {
+            // Verifica si el índice es 0 o si el section del elemento actual es diferente al del elemento anterior
+            if (index === 0 || item.section !== menuItems[index - 1].section) {
+              return (
+                <>
+                  <div className='flex items-center'>
+                    <p className='text-light-onSurface/80 dark:text-dark-onSurface/80 text-sm whitespace-nowrap pr-2'>
+                      {item.section}
+                    </p>
+                    <Divider className='shrink border-solid border-light-outline dark:border-dark-outline' />
+                  </div>
+                  <Link
+                    className='w-full font-medium text-light-onSurface dark:text-dark-onSurface'
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    size='lg'
+                  >
+                    {item.label}
+                  </Link>
+                </>
+              )
+            }
+            // Si el section es el mismo que el anterior, solo se renderiza el Link
+            return (
               <Link
                 className='w-full font-medium text-light-onSurface dark:text-dark-onSurface'
                 href={item.href}
@@ -257,8 +303,8 @@ export default function Header() {
               >
                 {item.label}
               </Link>
-            </NavbarMenuItem>
-          ))}
+            )
+          })}
         </NavbarMenu>
       </Navbar>
       {showJob && (
