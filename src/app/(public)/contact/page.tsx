@@ -1,5 +1,5 @@
 'use client'
-import Trabajando from '@components/Trabajando'
+import Trabajando from '@components/Trabajando/variant1'
 import { useState } from 'react'
 import { Button } from '@nextui-org/react'
 import { Input } from '@nextui-org/input'
@@ -19,6 +19,7 @@ export default function Contacto() {
   return (
     <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
       <div className='container mx-auto px-[20px] pt-10 space-y-4'>
+        <Trabajando />
         <ul className='bg-light-surfaceContainer dark:bg-light-secondaryContainer border rounded-xl shadow-md p-4'>
           <h1 className='font-bold text-xl '>Contacto</h1>
 
@@ -203,7 +204,6 @@ export default function Contacto() {
             </form>
           </li>
         </ul>
-        <Trabajando />
       </div>
     </section>
   )
