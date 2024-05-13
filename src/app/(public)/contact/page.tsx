@@ -36,50 +36,46 @@ export default function Contacto() {
               <Card className='bg-transparent shadow-none'>
                 <CardBody className='gap-4'>
                   <div className='space-y-3 flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
-                    <div className='w-full'>
-                      <Input
-                        isRequired
-                        classNames={{
-                          input: '',
-                          mainWrapper: 'bg-light-primary',
-                          description:
-                            'text-light-primary dark:text-dark-primary select-none'
-                        }}
-                        placeholder='Escribe tu nombre'
-                        name='name'
-                        label='Nombre'
-                        onChange={(e) => setName(e.target.value)}
-                      />
-                    </div>
-                    <div className='w-full'>
-                      <Input
-                        type='email'
-                        label='Email'
-                        name='email'
-                        isRequired
-                        classNames={{
-                          input: '',
-                          mainWrapper: 'bg-light-primary',
-                          description:
-                            'text-light-primary dark:text-dark-primary select-none'
-                        }}
-                        placeholder='Escribe tu correo'
-                        onChange={(e) => setEmail1(e.target.value)}
-                        description={
-                          <p className='text-light-onSurfaceContainer dark:text-light-onSecondaryContainer'>
-                            Al enviar aceptas el{' '}
-                            <Link
-                              href='/terms#correo'
-                              isExternal
-                              className='underline text-[12px] font-light text-light-onSurfaceContainer dark:text-light-onSecondaryContainer'
-                            >
-                              tratamiento de tu correo
-                            </Link>
-                            .
-                          </p>
-                        }
-                      />
-                    </div>
+                    <Input
+                      isRequired
+                      classNames={{
+                        input: '',
+                        mainWrapper: 'bg-light-primary w-full',
+                        description:
+                          'text-light-primary dark:text-dark-primary select-none'
+                      }}
+                      placeholder='Escribe tu nombre'
+                      name='name'
+                      label='Nombre'
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <Input
+                      type='email'
+                      label='Email'
+                      name='email'
+                      isRequired
+                      classNames={{
+                        input: '',
+                        mainWrapper: 'bg-light-primary  w-full',
+                        description:
+                          'text-light-primary dark:text-dark-primary select-none'
+                      }}
+                      placeholder='Escribe tu correo'
+                      onChange={(e) => setEmail1(e.target.value)}
+                      description={
+                        <p className='text-light-onSurfaceContainer dark:text-light-onSecondaryContainer'>
+                          Al enviar aceptas el{' '}
+                          <Link
+                            href='/terms#correo'
+                            isExternal
+                            className='underline text-[12px] font-light text-light-onSurfaceContainer dark:text-light-onSecondaryContainer'
+                          >
+                            tratamiento de tu correo
+                          </Link>
+                          .
+                        </p>
+                      }
+                    />
                   </div>
                   <Input
                     isRequired

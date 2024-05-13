@@ -55,7 +55,7 @@ export const submitCorreo = (
     )
     .then(() => {
       if (onSuccess) {
-        onSuccess() // Llama a la función de callback
+        onSuccess()
       }
     })
 }

@@ -50,11 +50,11 @@ export async function POST(request: Request) {
         attachments = [
           {
             filename: 'JHANCARLOSGOMEZPADILLA.pdf',
-            path: 'https://jhangmez.xyz/static/pdf/JHANCARLOSGOMEZPADILLA.pdf'
+            path: 'https://utfs.io/f/19bb47d7-f1b6-44eb-b3b0-a7d8235ff9c0-dauomg.pdf'
           },
           {
             filename: 'JHANCARLOSGOMEZPADILLA-Español.pdf',
-            path: 'https://jhangmez.xyz/static/pdf/JHANCARLOSGOMEZPADILLA-Español.pdf'
+            path: 'https://utfs.io/f/648c0807-8029-457f-9376-e8dedc9f1b14-otau4a.pdf'
           }
         ]
         tags = [
