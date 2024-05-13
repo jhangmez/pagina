@@ -25,7 +25,12 @@ export default function Contacto() {
           <li id='contacto'>
             <form
               onSubmit={(event) =>
-                submitCorreo(event, 'contact', !!captcha && captcha !== '')
+                submitCorreo(
+                  event,
+                  'contact',
+                  !!captcha && captcha !== '',
+                  () => setCaptcha('')
+                )
               }
             >
               <Card className='bg-transparent shadow-none'>
@@ -129,11 +134,12 @@ export default function Contacto() {
         </ul>
         <ul className='bg-light-surfaceContainer dark:bg-light-secondaryContainer border rounded-xl shadow-md p-4'>
           <h1 className='font-bold text-xl '>Solicitud de CV</h1>
-
           <li id='cv'>
             <form
               onSubmit={(event) =>
-                submitCorreo(event, 'cv', !!captcha && captcha !== '')
+                submitCorreo(event, 'cv', !!captcha && captcha !== '', () =>
+                  setCaptcha('')
+                )
               }
             >
               <Card className='bg-transparent shadow-none'>

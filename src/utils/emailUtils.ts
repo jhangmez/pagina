@@ -1,10 +1,10 @@
-import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
 export const submitCorreo = (
   event: React.FormEvent<HTMLFormElement>,
   emailType: string,
-  captcha: boolean
+  captcha: boolean,
+  onSuccess: () => void
 ) => {
   event.preventDefault() // Prevent the default form submission
 
@@ -29,28 +29,35 @@ export const submitCorreo = (
   }
 
   // Utiliza toast.promise para manejar la promesa de la petición
-  toast.promise(
-    fetch('/api/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: email.toString(),
-        name: name.toString(),
-        emailType: emailType,
-        ...(emailType === 'contact' && {
-          detalle: detalle ? detalle.toString() : '',
-          asunto: asunto ? asunto.toString() : ''
+  toast
+    .promise(
+      fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email.toString(),
+          name: name.toString(),
+          emailType: emailType,
+          ...(emailType === 'contact' && {
+            detalle: detalle ? detalle.toString() : '',
+            asunto: asunto ? asunto.toString() : ''
+          })
         })
-      })
-    }),
-    {
-      loading: 'Enviando correo...',
-      success: 'Correo enviado exitosamente!',
-      error: 'Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.'
-    }
-  )
+      }),
+      {
+        loading: 'Enviando correo...',
+        success: 'Correo enviado exitosamente!',
+        error:
+          'Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.'
+      }
+    )
+    .then(() => {
+      if (onSuccess) {
+        onSuccess() // Llama a la función de callback
+      }
+    })
 }
 
 // Función auxiliar para validar el correo electrónico

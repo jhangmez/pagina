@@ -312,7 +312,8 @@ export default function PerfilPrueba() {
                       submitCorreo(
                         event,
                         modalType,
-                        !!captcha && captcha !== ''
+                        !!captcha && captcha !== '',
+                        () => setCaptcha('')
                       )
                     }
                   >
