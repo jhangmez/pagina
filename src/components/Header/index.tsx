@@ -170,10 +170,10 @@ export default function Header() {
                   as={Link}
                   href='/mapaconceptual'
                 >
-                  Mapa conceptual
+                  <p className='font-medium'>Mapa conceptual</p>
                 </DropdownItem>
                 <DropdownItem aria-label='cv' key='cv' as={Link} href='/cv'>
-                  Currículum
+                  <p className='font-medium'>Currículum</p>
                 </DropdownItem>
                 <DropdownItem
                   aria-label='roadmap'
@@ -181,7 +181,7 @@ export default function Header() {
                   as={Link}
                   href='/roadmap'
                 >
-                  Roadmap
+                  <p className='font-medium'>Roadmap</p>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
@@ -218,7 +218,7 @@ export default function Header() {
                   as={Link}
                   href='/education'
                 >
-                  Educación
+                  <p className='font-medium'>Educación</p>
                 </DropdownItem>
                 <DropdownItem
                   aria-label='skills'
@@ -226,7 +226,7 @@ export default function Header() {
                   as={Link}
                   href='/skills'
                 >
-                  Skills
+                  <p className='font-medium'>Skills</p>
                 </DropdownItem>
                 <DropdownItem
                   aria-label='proyectos'
@@ -234,7 +234,7 @@ export default function Header() {
                   as={Link}
                   href='/projects'
                 >
-                  Proyectos
+                  <p className='font-medium'>Proyectos</p>
                 </DropdownItem>
                 <DropdownItem
                   aria-label='certificados'
@@ -242,7 +242,7 @@ export default function Header() {
                   as={Link}
                   href='/certifications'
                 >
-                  Certificaciones
+                  <p className='font-medium'>Certificaciones</p>
                 </DropdownItem>
                 <DropdownItem
                   aria-label='freelance'
@@ -250,10 +250,10 @@ export default function Header() {
                   as={Link}
                   href='/freelance'
                 >
-                  Freelance
+                  <p className='font-medium'>Freelance</p>
                 </DropdownItem>
                 <DropdownItem aria-label='yo' key='yo' as={Link} href='/me'>
-                  Yo
+                  <p className='font-medium'>Yo</p>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
