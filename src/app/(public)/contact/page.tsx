@@ -2,12 +2,12 @@
 import Trabajando from '@components/Trabajando'
 import { useState } from 'react'
 import { Button } from '@nextui-org/react'
-import { toast } from 'react-hot-toast'
 import { Input } from '@nextui-org/input'
 import { Textarea } from '@nextui-org/react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { Card, CardBody, CardFooter } from '@nextui-org/card'
 import { Link } from '@nextui-org/link'
+import { submitCorreo, validateEmail } from '@utils/emailUtils'
 
 export default function Contacto() {
   const [captcha, setCaptcha] = useState<string | null>()
@@ -15,71 +15,6 @@ export default function Contacto() {
   const [name, setName] = useState('')
   const [asunto, setAsunto] = useState('')
   const [detalle, setDetalle] = useState('')
-  const submitCorreo = (
-    event: React.FormEvent<HTMLFormElement>,
-    emailType: string
-  ) => {
-    event.preventDefault() // Prevent the default form submission
-
-    const formData = new FormData(event.currentTarget)
-    const email = formData.get('email')
-    const name = formData.get('name')
-    const detalle = formData.get('detalle')
-    const asunto = formData.get('asunto')
-
-    if (!email || !name || !emailType || !validateEmail(email.toString())) {
-      toast.error('Por favor, introduce valores correctos.')
-      return
-    }
-
-    if (emailType === 'contact' && (!detalle || !asunto)) {
-      toast.error('Por favor, introduce valores completos.')
-      return
-    }
-    if (!captcha) {
-      toast.error('Por favor, completa el captcha.')
-      return
-    }
-
-    // Utiliza toast.promise para manejar la promesa de la petición
-    toast
-      .promise(
-        fetch('/api/send', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            email: email.toString(),
-            name: name.toString(),
-            emailType: emailType,
-            ...(emailType === 'contact' && {
-              detalle: detalle ? detalle.toString() : '',
-              asunto: asunto ? asunto.toString() : ''
-            })
-          })
-        }),
-        {
-          loading: 'Enviando correo...',
-          success: 'Correo enviado exitosamente!',
-          error: (
-            <b>
-              Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.
-            </b>
-          )
-        }
-      )
-      .then(() => {
-        setCaptcha('')
-      })
-  }
-
-  // Función auxiliar para validar el correo electrónico
-  const validateEmail = (email: string) => {
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return re.test(String(email).toLowerCase())
-  }
 
   return (
     <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
@@ -88,7 +23,11 @@ export default function Contacto() {
           <h1 className='font-bold text-xl '>Contacto</h1>
 
           <li id='contacto'>
-            <form onSubmit={(event) => submitCorreo(event, 'contact')}>
+            <form
+              onSubmit={(event) =>
+                submitCorreo(event, 'contact', !!captcha && captcha !== '')
+              }
+            >
               <Card className='bg-transparent shadow-none'>
                 <CardBody className='gap-4'>
                   <div className='space-y-3 flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
@@ -172,7 +111,14 @@ export default function Contacto() {
                   <Button
                     type='submit'
                     className='font-semibold bg-light-primary text-light-onPrimary'
-                    isDisabled={!email1 || !name || !captcha}
+                    isDisabled={
+                      !email1 ||
+                      !name ||
+                      !captcha ||
+                      !asunto ||
+                      !detalle ||
+                      !validateEmail(email1)
+                    }
                   >
                     Enviar
                   </Button>
@@ -185,7 +131,11 @@ export default function Contacto() {
           <h1 className='font-bold text-xl '>Solicitud de CV</h1>
 
           <li id='cv'>
-            <form onSubmit={(event) => submitCorreo(event, 'cv')}>
+            <form
+              onSubmit={(event) =>
+                submitCorreo(event, 'cv', !!captcha && captcha !== '')
+              }
+            >
               <Card className='bg-transparent shadow-none'>
                 <CardBody className='gap-4'>
                   <div className='space-y-3 flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
@@ -240,7 +190,9 @@ export default function Contacto() {
                   <Button
                     type='submit'
                     className='font-semibold bg-light-primary text-light-onPrimary'
-                    isDisabled={!email1 || !name || !captcha}
+                    isDisabled={
+                      !email1 || !name || !captcha || !validateEmail(email1)
+                    }
                   >
                     Enviar
                   </Button>

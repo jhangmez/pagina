@@ -22,6 +22,7 @@ import { Input } from '@nextui-org/input'
 import { Textarea } from '@nextui-org/react'
 import { useUwuMode } from '@contexts/uwu'
 import ReCAPTCHA from 'react-google-recaptcha'
+import { submitCorreo, validateEmail } from '@utils/emailUtils'
 
 export default function PerfilPrueba() {
   const showCV = true
@@ -56,72 +57,6 @@ export default function PerfilPrueba() {
     setName('')
     setEmail1('')
     setCaptcha('')
-  }
-
-  const submitCorreo = (
-    event: React.FormEvent<HTMLFormElement>,
-    emailType: string
-  ) => {
-    event.preventDefault() // Prevent the default form submission
-
-    const formData = new FormData(event.currentTarget)
-    const email = formData.get('email')
-    const name = formData.get('name')
-    const detalle = formData.get('detalle')
-    const asunto = formData.get('asunto')
-
-    if (!email || !name || !emailType || !validateEmail(email.toString())) {
-      toast.error('Por favor, introduce valores correctos.')
-      return
-    }
-
-    if (emailType === 'contact' && (!detalle || !asunto)) {
-      toast.error('Por favor, introduce valores completos.')
-      return
-    }
-    if (!captcha) {
-      toast.error('Por favor, completa el captcha.')
-      return
-    }
-
-    // Utiliza toast.promise para manejar la promesa de la petición
-    toast
-      .promise(
-        fetch('/api/send', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            email: email.toString(),
-            name: name.toString(),
-            emailType: emailType,
-            ...(emailType === 'contact' && {
-              detalle: detalle ? detalle.toString() : '',
-              asunto: asunto ? asunto.toString() : ''
-            })
-          })
-        }),
-        {
-          loading: 'Enviando correo...',
-          success: 'Correo enviado exitosamente!',
-          error: (
-            <b>
-              Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.
-            </b>
-          )
-        }
-      )
-      .then(() => {
-        setCaptcha('')
-      })
-  }
-
-  // Función auxiliar para validar el correo electrónico
-  const validateEmail = (email: string) => {
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return re.test(String(email).toLowerCase())
   }
 
   return (
@@ -372,7 +307,15 @@ export default function PerfilPrueba() {
             >
               <ModalContent>
                 {(onClose) => (
-                  <form onSubmit={(event) => submitCorreo(event, modalType)}>
+                  <form
+                    onSubmit={(event) =>
+                      submitCorreo(
+                        event,
+                        modalType,
+                        !!captcha && captcha !== ''
+                      )
+                    }
+                  >
                     <ModalHeader className='flex flex-col gap-1'>
                       {modalType === 'contact' && <>Contacto</>}
                       {modalType === 'cv' && <>Solicitud de Currículum</>}
@@ -466,7 +409,7 @@ export default function PerfilPrueba() {
                           !email1 ||
                           !name ||
                           !captcha ||
-                          !validateEmail(email) ||
+                          !validateEmail(email1) ||
                           (modalType === 'contact' && (!asunto || !detalle))
                         }
                         type='submit'

@@ -2,6 +2,16 @@ import { EmailCV } from '@components/email/CV'
 import { EmailContacto } from '@components/email/Template'
 import { Resend } from 'resend'
 
+interface Attachment {
+  filename: string
+  path: string
+}
+
+interface Tag {
+  name: string
+  value: string
+}
+
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
@@ -10,7 +20,8 @@ export async function POST(request: Request) {
 
     let subject = ''
     let template = null
-    let attachments = undefined
+    let attachments: Attachment[] = []
+    let tags: Tag[] = []
     let bcc = ''
     let text = ''
     switch (emailType) {
@@ -24,6 +35,12 @@ export async function POST(request: Request) {
         bcc = 'jhangomez25@gmail.com'
         text =
           'Hola, este es un correo automatizado de jhangmez.xyz para contacto'
+        tags = [
+          {
+            name: 'contacto',
+            value: 'Contacto'
+          }
+        ]
         break
       case 'cv':
         subject = 'Envío de CV'
@@ -38,6 +55,12 @@ export async function POST(request: Request) {
           {
             filename: 'JHANCARLOSGÓMEZPADILLA-Español.pdf',
             path: 'https://jhangmez.xyz/static/pdf/JHANCARLOSGÓMEZPADILLA-Español.pdf'
+          }
+        ]
+        tags = [
+          {
+            name: 'solicitud',
+            value: 'Solicitud de cv'
           }
         ]
         break
