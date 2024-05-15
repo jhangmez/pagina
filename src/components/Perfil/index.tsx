@@ -60,7 +60,7 @@ export default function PerfilPrueba() {
   }
 
   return (
-    <div className='min-h-screen space-y-20 lg:pt-24 md:pt-16 pt-12 p-[20px]'>
+    <div className='min-h-screen print:min-h-none space-y-20 lg:pt-24 md:pt-16 pt-12 p-[20px]'>
       <ul className='flex lg:flex-row flex-col -mt-10 gap-10 justify-center'>
         <li className='flex justify-center items-center lg:max-w-[530px]'>
           <div className='max-w-[530px] w-full'>
@@ -176,7 +176,7 @@ export default function PerfilPrueba() {
                     endContent={
                       copied ? (
                         <>
-                          <span className='text-sm lg:flex md:flex hidden'>
+                          <span className='text-sm lg:flex md:flex hidden print:hidden'>
                             Copiado
                           </span>{' '}
                           <svg
@@ -193,7 +193,7 @@ export default function PerfilPrueba() {
                         </>
                       ) : (
                         <>
-                          <span className='text-sm lg:flex md:flex hidden'>
+                          <span className='text-sm lg:flex md:flex hidden print:hidden'>
                             Copiar
                           </span>{' '}
                           <svg
@@ -201,6 +201,7 @@ export default function PerfilPrueba() {
                             width='24'
                             height='24'
                             viewBox='0 0 24 24'
+                            className='print:hidden'
                           >
                             <path
                               fill='none'
@@ -240,7 +241,7 @@ export default function PerfilPrueba() {
           <h2 className='text-2xl md:text-3x1 lg:text-4x1 font-semibold text-light-onSurface dark:text-dark-onSurface'>
             Estudiante de Ingeniería de Sistemas y Desarrollador Front-end y QA.
           </h2>
-          <div className='flex flex-row gap-5'>
+          <div className='flex flex-row gap-5 print:hidden'>
             <Button
               as={Link}
               variant='flat'

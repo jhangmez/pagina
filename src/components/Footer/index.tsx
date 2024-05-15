@@ -19,7 +19,7 @@ const HarkaySoftFont = localFont({ src: '/Poppins-SemiBold.ttf' })
 export default function Footer() {
   const { isUwuMode } = useUwuMode()
   return (
-    <footer className='bg-light-surface dark:bg-dark-surface'>
+    <footer className='bg-light-surface dark:bg-dark-surface print:hidden'>
       <div className='container mx-auto py-6 px-[20px]'>
         <Divider className='border-solid my-6 border-light-outline dark:border-dark-outline lg:my-8' />
         <div className='w-full relative md:flex md:justify-between'>

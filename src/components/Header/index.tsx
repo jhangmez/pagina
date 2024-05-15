@@ -106,6 +106,7 @@ export default function Header() {
         }}
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
+        className='print:hidden'
         shouldHideOnScroll
       >
         <NavbarContent>

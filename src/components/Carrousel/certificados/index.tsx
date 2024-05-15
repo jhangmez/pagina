@@ -88,7 +88,7 @@ export default function CarrouselCertifications() {
         </Slider>
         <Link
           href='/certifications'
-          className='font-semibold lg:text-lg md:text-lg text-light-onSurface hover:underline active:underline flex items-center justify-end py-2'
+          className='font-semibold lg:text-lg md:text-lg text-light-onSurface hover:underline active:underline flex items-center justify-end py-2 print:hidden'
         >
           Mostrar completo
           <svg
