@@ -34,7 +34,7 @@ export default function Proyectos() {
                       ' lg:hidden md:hidden'
                     }`}
                   >
-                    <Divider orientation='vertical' />
+                    <Divider orientation='vertical' className='min-h-[40px]' />
                   </div>
                 </div>
                 <div className='flex flex-col w-full self-start space-y-4 md:space-x-4 pb-5'>

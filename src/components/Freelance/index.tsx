@@ -7,10 +7,10 @@ export default function Freelance() {
   return (
     <div className='bg-light-surfaceContainer dark:bg-light-secondaryContainer border rounded-xl shadow-md p-4'>
       <h1 className='font-bold text-2xl mb-4'>Experiencia freelance</h1>
-      <ul className='container flex flex-wrap justify-around  gap-8'>
+      <ul className='container flex flex-wrap justify-around gap-8 align-items-stretch'>
         {Data.map((dato, index) => (
           <li key={index}>
-            <Card className='w-[250px] h-[350px]'>
+            <Card className='w-[250px] flex flex-col h-full'>
               <CardHeader className='p-0 rounded-none'>
                 <Image
                   as={NextImage}
@@ -25,12 +25,15 @@ export default function Freelance() {
                   fallbackSrc='/api/img?width=385&height=500&title=Cargando&description=null&bg=C1C9BE&color=727970'
                 />
               </CardHeader>
-              <CardBody>
+              <CardBody className='flex-grow'>
                 <p className='font-semibold pb-1'>{dato.contratista}</p>
-                <ul className='overflow-y-auto'>
+                <ul className='mt-auto flex gap-1 flex-wrap'>
                   {dato.funciones.map((funcion, index) => (
-                    <li key={index}>
-                      <p>• {funcion}</p>
+                    <li
+                      className='inline-flex items-center rounded-md border font-medium text-nowrap border-transparent bg-light-secondaryContainer hover:bg-light-secondaryContainer/60 transition-colors text-light-onSecondaryContainer px-1 py-0 select-none text-xs'
+                      key={index}
+                    >
+                      {funcion}
                     </li>
                   ))}
                 </ul>

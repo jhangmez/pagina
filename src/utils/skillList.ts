@@ -14,7 +14,9 @@ import {
   ReactNative,
   S3AWS,
   Koyeb,
-  Postgresql
+  Postgresql,
+  Angular,
+  Html
 } from '@components/Chips'
 
 export const skillsComponents = [
@@ -33,7 +35,9 @@ export const skillsComponents = [
   Koyeb,
   S3AWS,
   React,
-  Typescript
+  Typescript,
+  Angular,
+  Html
 ]
 
 export const skillsMap: { [key: number]: React.ElementType } = {
@@ -52,5 +56,7 @@ export const skillsMap: { [key: number]: React.ElementType } = {
   13: Koyeb,
   14: S3AWS,
   15: React,
-  16: Typescript
+  16: Typescript,
+  17: Angular,
+  18: Html
 }

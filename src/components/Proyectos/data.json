@@ -1,6 +1,19 @@
 {
   "proyectos": [
     {
+      "empresa": "Currículum",
+      "imagen": "/api/img?width=400&height=200&title=Currículum&description=null&bg=3A4B3A&color=FFFFFF",
+      "enlace": "https://cv.jhangmez.xyz",
+      "status": true,
+      "roles": [
+        {
+          "descripcion": "Currículum listo para imprimir",
+          "aptitudes": " Typescript · Angular",
+          "stack": [16, 17]
+        }
+      ]
+    },
+    {
       "empresa": "quaTu",
       "imagen": "/api/img?width=400&height=200&title=quaTu&description=null&bg=353FFD&color=FFFFFF",
       "enlace": "https://quatu.xyz",
@@ -9,7 +22,7 @@
         {
           "descripcion": "Este proyecto forma parte de una iniciativa personal, para brindar tiendas virtuales según el tráfico y peso de tu tienda.",
           "aptitudes": " React Native · Expo",
-          "stack": [1, 4, 8, 9, 10, 11, 12, 13, 15, 16, 14, 2]
+          "stack": [1, 4, 8, 9, 11, 12, 15, 16]
         }
       ]
     },
@@ -22,7 +35,7 @@
         {
           "descripcion": "Este proyecto forma parte de una iniciativa grupal por desarrollar y apoyar el talento infantil en la industria deportiva. Actualmente se está planificando y realizando el prototipado del producto.",
           "aptitudes": "React.js · Planificación de proyectos · Dirección y desarrollo de equipos de trabajo · Desarrollo de software",
-          "stack": [1, 4, 8, 9, 10, 11, 12, 13, 15, 16]
+          "stack": [1, 4, 8, 9, 11, 12, 15, 16]
         }
       ]
     }

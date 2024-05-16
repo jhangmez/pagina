@@ -1,5 +1,27 @@
 import { Chip } from '@nextui-org/react'
 
+export const Html = () => (
+  <Chip
+    startContent={
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='1em'
+        height='1em'
+        viewBox='0 0 24 24'
+      >
+        <path
+          fill='currentColor'
+          d='m12 17.56l4.07-1.13l.55-6.1H9.38L9.2 8.3h7.6l.2-1.99H7l.56 6.01h6.89l-.23 2.58l-2.22.6l-2.22-.6l-.14-1.66h-2l.29 3.19zM4.07 3h15.86L18.5 19.2L12 21l-6.5-1.8z'
+        />
+      </svg>
+    }
+    variant='flat'
+    className='select-none bg-black/90 text-white'
+  >
+    HTML
+  </Chip>
+)
+
 export const Graphql = () => (
   <Chip
     startContent={
@@ -19,6 +41,28 @@ export const Graphql = () => (
     className='select-none bg-light-graphql/90 text-light-onGraphql'
   >
     Graphql
+  </Chip>
+)
+
+export const Angular = () => (
+  <Chip
+    startContent={
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+      >
+        <path
+          fill='currentColor'
+          d='m12 2.5l8.84 3.15l-1.34 11.7L12 21.5l-7.5-4.15l-1.34-11.7zm0 2L5 7l1.08 9.22L12 19.5l5.92-3.28L19 7zm0 1.22L16.58 16h-1.71l-.93-2.28h-3.9L9.12 16H7.41zm1.34 6.58L12 9.07l-1.34 3.23z'
+        />
+      </svg>
+    }
+    variant='flat'
+    className='select-none bg-light-angular/90 text-light-onAngular'
+  >
+    Angular
   </Chip>
 )
 
@@ -341,7 +385,7 @@ export const Autentificacion = () => (
     variant='flat'
     className='select-none bg-light-errorContainer/90 text-light-onErrorContainer'
   >
-    Autentificación
+    Next.auth
   </Chip>
 )
 

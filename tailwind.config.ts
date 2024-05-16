@@ -14,6 +14,8 @@ const config: Config = {
     extend: {
       colors: {
         light: {
+          angular: '#BA1A1A',
+          onAngular: '#ffffff',
           postgresql: '#00639a',
           onPostgresql: '#ffffff',
           koyeb: '#2b6b28',
