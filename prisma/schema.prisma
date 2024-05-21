@@ -10,9 +10,10 @@ generator client {
 
 model User {
   id                Int             @id @default(autoincrement())
-  createdAt         DateTime        @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   email             String          @unique @db.VarChar(45)
-    emailVerified DateTime?
+  emailVerified DateTime?
   username          String          @unique @db.VarChar(18)
   password          String
   firstname         String?         @db.VarChar(35)
@@ -23,35 +24,64 @@ model User {
   TypeUserId        Int
   typeUser          TypeUser        @relation(fields: [TypeUserId], references: [id])
   markdowns         Markdown[]
-    accounts      Account[]
-    sessions      Session[]
+  accounts      Account[]
+  sessions      Session[]
+  Authenticator Authenticator[]
 }
 
-// Necessary for Next auth
 model Account {
-    id                String  @id @default(cuid())
-    userId            Int
-    type              String
-    provider          String
-    providerAccountId String
-    refresh_token     String? // @db.Text
-    access_token      String? // @db.Text
-    expires_at        Int?
-    token_type        String?
-    scope             String?
-    id_token          String? // @db.Text
-    session_state     String?
-    user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-    @@unique([provider, providerAccountId])
+  userId            Int
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+ 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+ 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  @@id([provider, providerAccountId])
 }
 
 model Session {
-    id           String   @id @default(cuid())
-    sessionToken String   @unique
-    userId       Int
-    expires      DateTime
-    user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionToken String   @unique
+  userId       Int
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+ 
+  @@id([identifier, token])
+}
+
+// Optional for WebAuthn support
+model Authenticator {
+  credentialID         String  @unique
+  userId               Int
+  providerAccountId    String
+  credentialPublicKey  String
+  counter              Int
+  credentialDeviceType String
+  credentialBackedUp   Boolean
+  transports           String?
+ 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  @@id([userId, credentialID])
 }
 
 model TypeUser {
