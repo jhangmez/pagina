@@ -7,7 +7,7 @@
       "status": true,
       "roles": [
         {
-          "descripcion": "Currículum listo para imprimir",
+          "descripcion": "Currículum listo para imprimir.",
           "aptitudes": " Typescript · Angular",
           "stack": [16, 17]
         }
