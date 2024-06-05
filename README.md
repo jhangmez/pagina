@@ -28,4 +28,4 @@ Para aprender maás sobre el proyecto, hecha un vistaso a los siguientes recurso
 - [Vercel OP](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image)
 - [ORM Prisma](https://www.prisma.io/docs/orm)
 - [Resend](https://resend.com/docs/introduction)
-- [Next.auth](https://next-auth.js.org/getting-started/introduction)
+- [Auth.js](https://authjs.dev/getting-started)
