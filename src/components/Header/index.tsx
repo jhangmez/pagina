@@ -57,30 +57,30 @@ export default function Header() {
       href: '/freelance',
       section: 'Sobre mí'
     },
-    {
-      key: 'yo',
-      label: 'Yo',
-      href: '/me',
-      section: 'Sobre mí'
-    },
+    // {
+    //   key: 'yo',
+    //   label: 'Yo',
+    //   href: '/me',
+    //   section: 'Sobre mí'
+    // },
     {
       key: 'generadormapaconceptual',
       label: 'Mapa conceptual',
       href: '/mapaconceptual',
       section: 'Herramientas'
     },
-    {
-      key: 'generadorcv',
-      label: 'Currículum',
-      href: '/cv',
-      section: 'Herramientas'
-    },
-    {
-      key: 'generadorroadmap',
-      label: 'Roadmap',
-      href: '/roadmap',
-      section: 'Herramientas'
-    },
+    // {
+    //   key: 'generadorcv',
+    //   label: 'Currículum',
+    //   href: '/cv',
+    //   section: 'Herramientas'
+    // },
+    // {
+    //   key: 'generadorroadmap',
+    //   label: 'Roadmap',
+    //   href: '/roadmap',
+    //   section: 'Herramientas'
+    // },
     {
       key: 'pedircv',
       label: 'Descargar CV',
@@ -173,7 +173,7 @@ export default function Header() {
                 >
                   <p className='font-medium'>Mapa conceptual</p>
                 </DropdownItem>
-                <DropdownItem aria-label='cv' key='cv' as={Link} href='/cv'>
+                {/* <DropdownItem aria-label='cv' key='cv' as={Link} href='/cv'>
                   <p className='font-medium'>Currículum</p>
                 </DropdownItem>
                 <DropdownItem
@@ -183,7 +183,7 @@ export default function Header() {
                   href='/roadmap'
                 >
                   <p className='font-medium'>Roadmap</p>
-                </DropdownItem>
+                </DropdownItem> */}
               </DropdownMenu>
             </Dropdown>
           </NavbarItem>
@@ -253,9 +253,9 @@ export default function Header() {
                 >
                   <p className='font-medium'>Freelance</p>
                 </DropdownItem>
-                <DropdownItem aria-label='yo' key='yo' as={Link} href='/me'>
+                {/* <DropdownItem aria-label='yo' key='yo' as={Link} href='/me'>
                   <p className='font-medium'>Yo</p>
-                </DropdownItem>
+                </DropdownItem> */}
               </DropdownMenu>
             </Dropdown>
           </NavbarItem>
