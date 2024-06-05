@@ -148,7 +148,7 @@ export default function Footer() {
                 </span>
               </span>
             </Link>
-            . Todos los derechos reservados.
+            .
           </span>
           <div className='flex mt-4 space-x-5 sm:justify-center sm:mt-0'>
             <div className=' hover:text-gray-900 dark:hover:text-white'>
