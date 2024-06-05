@@ -60,7 +60,7 @@ export default function PerfilPrueba() {
   }
 
   return (
-    <div className='min-h-screen print:min-h-none space-y-20 lg:pt-24 md:pt-16 pt-12 p-[20px]'>
+    <div className='min-h-screen print:min-h-none space-y-32 lg:pt-24 md:pt-16 pt-12 p-[20px]'>
       <ul className='flex lg:flex-row flex-col -mt-10 gap-10 justify-center'>
         <li className='flex justify-center items-center lg:max-w-[530px]'>
           <div className='max-w-[530px] w-full'>
