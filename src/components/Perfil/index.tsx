@@ -239,8 +239,7 @@ export default function PerfilPrueba() {
             </span>
           </h1>
           <h2 className='text-2xl md:text-3x1 lg:text-4x1 font-semibold text-light-onSurface dark:text-dark-onSurface'>
-            Estudiante de Ingeniería de Sistemas y Desarrollador Front-end +1
-            año experiencia.
+            Estudiante de Ingeniería de Sistemas y Desarrollador Front-end
           </h2>
           <div className='flex flex-row gap-5 print:hidden'>
             <Button
