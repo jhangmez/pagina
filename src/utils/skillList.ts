@@ -16,7 +16,8 @@ import {
   Koyeb,
   Postgresql,
   Angular,
-  Html
+  Html,
+  Astro
 } from '@components/Chips'
 
 export const skillsComponents = [
@@ -37,7 +38,8 @@ export const skillsComponents = [
   React,
   Typescript,
   Angular,
-  Html
+  Html,
+  Astro
 ]
 
 export const skillsMap: { [key: number]: React.ElementType } = {
@@ -58,5 +60,6 @@ export const skillsMap: { [key: number]: React.ElementType } = {
   15: React,
   16: Typescript,
   17: Angular,
-  18: Html
+  18: Html,
+  19: Astro
 }

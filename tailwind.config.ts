@@ -14,6 +14,8 @@ const config: Config = {
     extend: {
       colors: {
         light: {
+          astro: '#17191E',
+          onAstro: '#FFFFFF',
           angular: '#BA1A1A',
           onAngular: '#ffffff',
           postgresql: '#00639a',
