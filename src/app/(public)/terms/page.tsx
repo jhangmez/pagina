@@ -5,7 +5,7 @@ export default function Terms() {
         <ul className='bg-light-surfaceContainer dark:bg-light-secondaryContainer border rounded-xl shadow-md p-4'>
           <h1 className='font-bold text-xl '>Política de Privacidad</h1>
           <li className='px-2' id='correo'>
-            <h2 className='font-semibold text-lg text-light-onPrimary dark:text-dark-onPrimary pt-4'>
+            <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary pt-4'>
               Recolección de Correos Electrónicos
             </h2>
             <p className='font-medium  pt-1'>
@@ -14,7 +14,7 @@ export default function Terms() {
             </p>
           </li>
           <li className='px-2' id='recoleccion'>
-            <h2 className='font-semibold text-lg text-light-onPrimary dark:text-dark-onPrimary pt-4'>
+            <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary pt-4'>
               Recolección de Información Personal
             </h2>
             <p className='font-medium  pt-1'>
@@ -28,7 +28,7 @@ export default function Terms() {
             </p>
           </li>
           <li className='px-2' id='uso'>
-            <h2 className='font-semibold text-lg text-light-onPrimary dark:text-dark-onPrimary pt-4'>
+            <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary pt-4'>
               Uso de la Información
             </h2>
             <p className='font-medium  pt-1'>
@@ -41,7 +41,7 @@ export default function Terms() {
             </p>
           </li>
           <li className='px-2' id='consentimiento'>
-            <h2 className='font-semibold text-lg text-light-onPrimary dark:text-dark-onPrimary pt-4'>
+            <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary pt-4'>
               Consentimiento
             </h2>
             <p className='font-medium  pt-1'>
@@ -52,7 +52,7 @@ export default function Terms() {
             </p>
           </li>
           <li className='px-2' id='noparticipacion'>
-            <h2 className='font-semibold text-lg text-light-onPrimary dark:text-dark-onPrimary pt-4'>
+            <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary pt-4'>
               Optar por no Participar
             </h2>
             <p className='font-medium  pt-1'>
@@ -65,7 +65,7 @@ export default function Terms() {
             </p>
           </li>
           <li className='px-2' id='seguridad'>
-            <h2 className='font-semibold text-lg text-light-onPrimary dark:text-dark-onPrimary pt-4'>
+            <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary pt-4'>
               Seguridad de la Información
             </h2>
             <p className='font-medium  pt-1'>
@@ -77,7 +77,7 @@ export default function Terms() {
             </p>
           </li>
           <li className='px-2' id='cambios'>
-            <h2 className='font-semibold text-lg text-light-onPrimary dark:text-dark-onPrimary pt-4'>
+            <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary pt-4'>
               Cambios en la Política de Privacidad
             </h2>
             <p className='font-medium  pt-1'>
@@ -88,7 +88,7 @@ export default function Terms() {
             </p>
           </li>
           <li className='px-2' id='contacto'>
-            <h2 className='font-semibold text-lg text-light-onPrimary dark:text-dark-onPrimary pt-4'>
+            <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary pt-4'>
               Contacto
             </h2>
             <p className='font-medium pt-1'>
@@ -97,7 +97,7 @@ export default function Terms() {
               contacto con nosotros a través de{' '}
               <a
                 href='mailto:jhangmez.pe@gmail.com'
-                className='text-light-onPrimary dark:text-dark-onPrimary underline'
+                className='text-light-primary dark:text-dark-onPrimary underline'
               >
                 jhangmez.pe@gmail.com
               </a>
