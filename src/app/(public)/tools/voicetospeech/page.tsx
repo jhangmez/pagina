@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from '@nextui-org/react'
 import { useVoiceToText } from 'react-speakup'
 
-export default function Educacion() {
+export default function SpeechtoText() {
   const { startListening, stopListening, transcript } = useVoiceToText({
     lang: 'en-US'
   })
@@ -93,6 +93,16 @@ export default function Educacion() {
               {transcript}
             </span>
           )}
+        </section>
+        <section className='flex gap-1 flex-col bg-light-primaryContainer dark:bg-dark-onSurfaceVariant text-sm w-fit p-2  font-medium rounded-xl'>
+          <h1 className='font-semibold'>Sugerencias</h1>
+          <p className='text-sm py-1 px-2 font-medium'>
+            • Algunos navegadores no son compatibles, como Opera.
+          </p>
+          <p className='text-sm py-1 px-2 font-medium'>
+            • Esta herramienta trabaja localmente en tu dispositivo, ninguna
+            grabación es guardada.
+          </p>
         </section>
       </div>
     </section>
