@@ -1,23 +1,40 @@
 'use client'
 
+import { useState } from 'react'
 import { Button } from '@nextui-org/react'
 import { useVoiceToText } from 'react-speakup'
 
 export default function Educacion() {
-  const { startListening, stopListening, transcript } = useVoiceToText()
+  const { startListening, stopListening, transcript } = useVoiceToText({
+    lang: 'en-US'
+  })
+  const [isRecording, setIsRecording] = useState(false)
 
+  // Función para manejar el inicio de la grabación
+  const handleStartListening = () => {
+    startListening()
+    setIsRecording(true) // Activa el estado de grabación
+  }
+
+  // Función para manejar el fin de la grabación
+  const handleStopListening = () => {
+    stopListening()
+    setIsRecording(false) // Desactiva el estado de grabación
+  }
   return (
     <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
       <div className='container mx-auto px-[20px] pt-10 space-y-10'>
         <div className='flex gap-2'>
           <Button
-            onClick={startListening}
+            onClick={handleStartListening}
+            isDisabled={isRecording}
             className='bg-light-primaryContainer text-light-onPrimaryContainer dark:bg-dark-primaryContainer dark:text-dark-onPrimaryContainer'
           >
             Grabar
           </Button>
           <Button
-            onClick={stopListening}
+            onClick={handleStopListening}
+            isDisabled={!isRecording}
             className='bg-light-secondaryContainer text-light-onSecondaryContainer dark:bg-dark-secondaryContainer dark:text-dark-onSecondaryContainer'
           >
             Detener
