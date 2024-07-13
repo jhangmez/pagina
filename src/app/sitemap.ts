@@ -27,7 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3
     },
     {
-      url: 'https://jhangmez.xyz/mapaconceptual',
+      url: 'https://jhangmez.xyz/tools/mapaconceptual',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: 'https://jhangmez.xyz/tools/voicetospeech',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6

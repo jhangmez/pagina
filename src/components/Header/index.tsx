@@ -66,7 +66,13 @@ export default function Header() {
     {
       key: 'generadormapaconceptual',
       label: 'Mapa conceptual',
-      href: '/mapaconceptual',
+      href: '/tools/apaconceptual',
+      section: 'Herramientas'
+    },
+    {
+      key: 'voicetospeech',
+      label: 'De tu voz a texto',
+      href: '/tools/voicetospeech',
       section: 'Herramientas'
     },
     // {
@@ -169,9 +175,17 @@ export default function Header() {
                   aria-label='mapaconceptual'
                   key='mapaconceptual'
                   as={Link}
-                  href='/mapaconceptual'
+                  href='/tools/mapaconceptual'
                 >
                   <p className='font-medium'>Mapa conceptual</p>
+                </DropdownItem>
+                <DropdownItem
+                  aria-label='voicetospeech'
+                  key='voicetospeech'
+                  as={Link}
+                  href='/tools/voicetospeech'
+                >
+                  <p className='font-medium'>De tu voz a texto</p>
                 </DropdownItem>
                 {/* <DropdownItem aria-label='cv' key='cv' as={Link} href='/cv'>
                   <p className='font-medium'>Currículum</p>
