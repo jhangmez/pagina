@@ -66,7 +66,7 @@ export default function Header() {
     {
       key: 'generadormapaconceptual',
       label: 'Mapa conceptual',
-      href: '/tools/apaconceptual',
+      href: '/tools/mapaconceptual',
       section: 'Herramientas'
     },
     {
