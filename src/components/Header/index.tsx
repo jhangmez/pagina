@@ -279,6 +279,7 @@ export default function Header() {
               className='text-light-onSurface dark:text-dark-onSurface font-semibold'
               href='/contact'
               variant='light'
+              key='contacto'
             >
               Contacto
             </Button>

@@ -143,7 +143,7 @@ export default function CarrouselCertifications() {
                     href={selectedCardData?.url_empresa || '#'}
                     className='font-semibold text-xl text-light-surface dark:text-dark-onSurface underline'
                   >
-                    {selectedCardData?.empresa || 'No empresa'}
+                    {selectedCardData?.empresa || 'No existe empresa'}
                   </Link>
 
                   <ul className='pb-1'>
