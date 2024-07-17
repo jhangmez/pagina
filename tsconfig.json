@@ -27,7 +27,8 @@
       "@lib/*": ["./src/lib/*"],
       "@contexts/*": ["./src/contexts/*"],
       "@server/*": ["./src/server/*"],
-      "@logo": ["./src/app/Logo.tsx"]
+      "@logo": ["./src/app/Logo.tsx"],
+      "@typescustom/*": ["./src/types/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

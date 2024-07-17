@@ -261,6 +261,7 @@ export default function Footer() {
         Hecho con ❤️ por{' '}
         <Link
           href={LinkedinJhan}
+          isExternal
           className='text-sm text-light-onSurface dark:text-dark-onSurface hover:underline'
         >
           Jhan Gómez P.

@@ -10,33 +10,20 @@ import { Link } from '@nextui-org/link'
 import { Button } from '@nextui-org/react'
 import data from './data.json'
 import { toast } from 'react-hot-toast'
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from '@nextui-org/modal'
 import InfiniteVertical from '@components/InfiniteVertical'
-import { Input } from '@nextui-org/input'
-import { Textarea } from '@nextui-org/react'
 import { useUwuMode } from '@contexts/uwu'
-import ReCAPTCHA from 'react-google-recaptcha'
-import { submitCorreo, validateEmail } from '@utils/emailUtils'
+import ContactModal from '@components/ContactModal'
+import { ModalType } from '@typescustom/modalTypes'
 
-export default function PerfilPrueba() {
+export default function Perfil() {
   const showCV = true
 
   const [copied, setCopied] = useState(false)
-  const [captcha, setCaptcha] = useState<string | null>()
-  const [isOpen, setIsOpen] = useState(false)
-  const [modalType, setModalType] = useState('')
   const email = 'jhangmez.pe@gmail.com'
-  const [email1, setEmail1] = useState('')
-  const [name, setName] = useState('')
-  const [asunto, setAsunto] = useState('')
-  const [detalle, setDetalle] = useState('')
+
   const { isUwuMode } = useUwuMode()
+  const [isOpen, setIsOpen] = useState(false)
+  const [modalType, setModalType] = useState<ModalType>('')
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email)
@@ -45,18 +32,13 @@ export default function PerfilPrueba() {
     toast.success('Correo copiado!')
   }
 
-  const onOpen = (type: string) => {
+  const onOpen = (type: ModalType) => {
     setModalType(type)
     setIsOpen(true)
   }
 
   const onClose = () => {
     setIsOpen(false)
-    setAsunto('')
-    setDetalle('')
-    setName('')
-    setEmail1('')
-    setCaptcha('')
   }
 
   return (
@@ -193,7 +175,7 @@ export default function PerfilPrueba() {
                         </>
                       ) : (
                         <>
-                          <span className='text-sm lg:flex md:flex hidden print:hidden'>
+                          <span className='text-sm lg:flex md:flex hidden print:hidden mr-3'>
                             Copiar
                           </span>{' '}
                           <svg
@@ -248,7 +230,6 @@ export default function PerfilPrueba() {
           </div>
           <div className='flex flex-row gap-5 print:hidden'>
             <Button
-              as={Link}
               variant='flat'
               className={`${
                 isUwuMode
@@ -298,138 +279,11 @@ export default function PerfilPrueba() {
                 Descargar CV
               </Button>
             )}
-            <Modal
-              className='bg-light-background dark:bg-dark-background'
-              classNames={{
-                base: 'lg:min-h-screen md:min-h-screen lg:w-auto lg:rounded-none md:rounded-none rounded-b-none mx-0 sm:mx-0',
-                wrapper: 'flex justify-end',
-                backdrop: 'bg-light-surface/50 dark:bg-dark-surface/50',
-                header:
-                  'text-light-onBackground dark:text-dark-onBackground font-bold',
-                body: 'text-light-onBackground dark:text-dark-onBackground'
-              }}
+            <ContactModal
               isOpen={isOpen}
-              onOpenChange={onClose}
-            >
-              <ModalContent>
-                {(onClose) => (
-                  <form
-                    onSubmit={(event) =>
-                      submitCorreo(
-                        event,
-                        modalType,
-                        !!captcha && captcha !== '',
-                        () => setCaptcha('')
-                      )
-                    }
-                  >
-                    <ModalHeader className='flex flex-col gap-1'>
-                      {modalType === 'contact' && <>Contacto</>}
-                      {modalType === 'cv' && <>Solicitud de Currículum</>}
-                    </ModalHeader>
-                    <ModalBody>
-                      {/* <p className='font-bold text-white'>{modalType}</p> */}
-                      <Input
-                        isRequired
-                        classNames={{
-                          input: '',
-                          mainWrapper: 'bg-light-primary',
-                          description:
-                            'text-light-primary dark:text-dark-primary select-none'
-                        }}
-                        placeholder='Escribe tu nombre'
-                        name='name'
-                        label='Nombre'
-                        onChange={(e) => setName(e.target.value)}
-                      />
-                      <Input
-                        type='email'
-                        label='Email'
-                        name='email'
-                        isRequired
-                        classNames={{
-                          input: '',
-                          mainWrapper: 'bg-light-primary',
-                          description:
-                            'text-light-primary dark:text-dark-primary select-none'
-                        }}
-                        placeholder='Escribe tu correo'
-                        onChange={(e) => setEmail1(e.target.value)}
-                        description={
-                          <p>
-                            Al enviar aceptas el{' '}
-                            <Link
-                              href='/terms#correo'
-                              isExternal
-                              className='underline text-[12px] font-light text-light-primary dark:text-dark-primary'
-                            >
-                              tratamiento de tu correo
-                            </Link>
-                            .
-                          </p>
-                        }
-                      />
-                      {modalType === 'contact' && (
-                        <>
-                          <Input
-                            isRequired
-                            classNames={{
-                              input: '',
-                              mainWrapper: 'bg-light-primary',
-                              description:
-                                'text-light-primary dark:text-dark-primary select-none'
-                            }}
-                            placeholder='Escribe el asunto'
-                            onChange={(e) => setAsunto(e.target.value)}
-                            name='asunto'
-                            label='Asunto'
-                          />
-                          <Textarea
-                            isRequired
-                            classNames={{
-                              input: 'resize-y min-h-[60px]',
-                              mainWrapper: 'bg-light-primary',
-                              description:
-                                'text-light-primary dark:text-dark-primary select-none'
-                            }}
-                            label='Detalle'
-                            name='detalle'
-                            onChange={(e) => setDetalle(e.target.value)}
-                            placeholder='Escribe el detalle del asunto.'
-                          />
-                        </>
-                      )}
-                      <ReCAPTCHA
-                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                        onChange={setCaptcha}
-                      />
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button
-                        onPress={onClose}
-                        className='font-semibold text-dark-error bg-dark-onError/50 dark:bg-dark-onError/80'
-                      >
-                        Cancelar
-                      </Button>
-                      <Button
-                        isDisabled={
-                          !email1 ||
-                          !name ||
-                          !captcha ||
-                          !validateEmail(email1) ||
-                          (modalType === 'contact' && (!asunto || !detalle))
-                        }
-                        type='submit'
-                        onPress={onClose}
-                        className='font-semibold bg-light-primary text-light-onPrimary'
-                      >
-                        Solicitar
-                      </Button>
-                    </ModalFooter>
-                  </form>
-                )}
-              </ModalContent>
-            </Modal>
+              onClose={onClose}
+              modalType={modalType}
+            />
           </div>
         </li>
       </ul>

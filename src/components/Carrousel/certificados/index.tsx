@@ -63,7 +63,7 @@ export default function CarrouselCertifications() {
           {Data.map((dato, index) => (
             <Card
               key={index}
-              isPressable
+              // isPressable
               shadow='none'
               className={`w-[${dato.ancho}px] h-[${dato.altura}px] p-2 select-none bg-transparent cursor-pointer hover:opacity-hover pressed:scale-[0.97] select-none transition-transform-colors-opacity motion-reduce:transition-none`}
             >

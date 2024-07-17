@@ -55,9 +55,19 @@ export default function Proyectos() {
                     <li className='flex gap-2 items-center'>
                       <p className='font-bold'>
                         {proyectos.status ? (
-                          <span className='text-light-primary'>🟢 Live</span>
+                          <span className='text-light-primary'>
+                            <span className='text-green-500 text-xl animate-pulse'>
+                              &nbsp;•&nbsp;
+                            </span>{' '}
+                            Live
+                          </span>
                         ) : (
-                          <span className='text-light-error'>🔴 Offline</span>
+                          <span className='text-light-error'>
+                            <span className='text-red-500 text-xl '>
+                              &nbsp;•&nbsp;
+                            </span>{' '}
+                            Offline
+                          </span>
                         )}
                       </p>
 

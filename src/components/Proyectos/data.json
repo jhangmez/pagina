@@ -36,8 +36,8 @@
       "inWorking": true,
       "roles": [
         {
-          "descripcion": "Este proyecto forma parte de una iniciativa personal, para brindar tiendas virtuales según el tráfico y peso de tu tienda.",
-          "aptitudes": " React Native · Expo",
+          "descripcion": "Plataforma backend de e-commerce enfocado en MYPES, ofreciendo la creación de infraestructura robusta, flexible y escalable.",
+          "aptitudes": "React.js · Next.js",
           "stack": [1, 4, 8, 9, 11, 12, 15, 16]
         }
       ]
@@ -50,7 +50,7 @@
       "inWorking": false,
       "roles": [
         {
-          "descripcion": "Este proyecto forma parte de una iniciativa grupal por desarrollar y apoyar el talento infantil en la industria deportiva. Actualmente se está planificando y realizando el prototipado del producto.",
+          "descripcion": "Desarrollo y apoyo a talento infantil en la industria deportiva a través de tecnología",
           "aptitudes": "React.js · Planificación de proyectos · Dirección y desarrollo de equipos de trabajo · Desarrollo de software",
           "stack": [1, 4, 8, 9, 11, 12, 15, 16]
         }
