@@ -32,36 +32,42 @@ export default function Header() {
       label: 'Educación',
       href: '/education',
       section: 'Sobre mí'
+      //   visible: true,
     },
     {
       key: 'skills',
       label: 'Skills',
       href: '/skills',
       section: 'Sobre mí'
+      //   visible: true,
     },
     {
       key: 'proyectos',
       label: 'Proyectos',
       href: '/projects',
+      //   visible: true,
       section: 'Sobre mí'
     },
     {
       key: 'certificaciones',
       label: 'Certificaciones',
       href: '/certifications',
+      //   visible: true,
       section: 'Sobre mí'
     },
     {
       key: 'freelance',
       label: 'Freelance',
       href: '/freelance',
+      //   visible: true,
       section: 'Sobre mí'
     },
     // {
     //   key: 'yo',
     //   label: 'Yo',
     //   href: '/me',
-    //   section: 'Sobre mí'
+    //   section: 'Sobre mí',
+    //   visible: false,
     // },
     {
       key: 'generadormapaconceptual',
@@ -279,7 +285,6 @@ export default function Header() {
               className='text-light-onSurface dark:text-dark-onSurface font-semibold'
               href='/contact'
               variant='light'
-              key='contacto'
             >
               Contacto
             </Button>
