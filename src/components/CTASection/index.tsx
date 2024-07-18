@@ -21,11 +21,10 @@ export default function Contactame() {
   }
 
   return (
-    <section className='flex lg:flex-row flex-col py-10  py-48 justify-between items-center gap-4 lg:pr-24'>
-      <h1 className='text-light-onSurface dark:text-light-onPrimary font-bold lg:text-6xl md:text-4xl text-3xl'>
+    <section className='flex lg:flex-row flex-col py-10  py-48 justify-between items-center gap-4 lg:pr-20'>
+      <h1 className='text-light-onSurface dark:text-light-onPrimary font-bold lg:text-6xl md:text-6xl text-5xl lg:pb-0 md:pb-10 pb-10'>
         ¿Necesitas apoyo en tu equipo?
       </h1>
-
       <Button
         variant='flat'
         size='lg'

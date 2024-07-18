@@ -1,20 +1,6 @@
 {
   "proyectos": [
     {
-      "empresa": "AI",
-      "imagen": "/api/img?width=400&height=200&title=AI%20 page&description=null&bg=9DD49E&color=002108",
-      "enlace": "https://ai.jhangmez.xyz",
-      "status": true,
-      "inWorking": true,
-      "roles": [
-        {
-          "descripcion": "Página donde se presentarán todos mis proyectos relacionado a la IA. ",
-          "aptitudes": " Typescript · Astro",
-          "stack": [16, 19]
-        }
-      ]
-    },
-    {
       "empresa": "Currículum",
       "imagen": "/api/img?width=400&height=200&title=Currículum&description=null&bg=3A4B3A&color=FFFFFF",
       "enlace": "https://cv.jhangmez.xyz",
