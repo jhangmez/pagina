@@ -10,7 +10,8 @@ import { Link } from '@nextui-org/link'
 import { submitCorreo, validateEmail } from '@utils/emailUtils'
 
 export default function Contacto() {
-  const [captcha, setCaptcha] = useState<string | null>()
+  const [contactCaptcha, setContactCaptcha] = useState<string | null>(null)
+  const [cvCaptcha, setCvCaptcha] = useState<string | null>(null)
   const [email1, setEmail1] = useState('')
   const [name, setName] = useState('')
   const [asunto, setAsunto] = useState('')
@@ -29,8 +30,8 @@ export default function Contacto() {
                 submitCorreo(
                   event,
                   'contact',
-                  !!captcha && captcha !== '',
-                  () => setCaptcha('')
+                  !!contactCaptcha && contactCaptcha !== '',
+                  () => setContactCaptcha(null)
                 )
               }
             >
@@ -106,7 +107,7 @@ export default function Contacto() {
                   />
                   <ReCAPTCHA
                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                    onChange={setCaptcha}
+                    onChange={setContactCaptcha}
                   />
                 </CardBody>
                 <CardFooter>
@@ -116,7 +117,7 @@ export default function Contacto() {
                     isDisabled={
                       !email1 ||
                       !name ||
-                      !captcha ||
+                      !contactCaptcha ||
                       !asunto ||
                       !detalle ||
                       !validateEmail(email1)
@@ -134,8 +135,8 @@ export default function Contacto() {
           <li id='cv'>
             <form
               onSubmit={(event) =>
-                submitCorreo(event, 'cv', !!captcha && captcha !== '', () =>
-                  setCaptcha('')
+                submitCorreo(event, 'cv', !!cvCaptcha && cvCaptcha !== '', () =>
+                  setCvCaptcha(null)
                 )
               }
             >
@@ -186,7 +187,7 @@ export default function Contacto() {
 
                   <ReCAPTCHA
                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                    onChange={setCaptcha}
+                    onChange={setCvCaptcha}
                   />
                 </CardBody>
                 <CardFooter>
@@ -194,7 +195,7 @@ export default function Contacto() {
                     type='submit'
                     className='font-semibold bg-light-primary text-light-onPrimary'
                     isDisabled={
-                      !email1 || !name || !captcha || !validateEmail(email1)
+                      !email1 || !name || !cvCaptcha || !validateEmail(email1)
                     }
                   >
                     Enviar
