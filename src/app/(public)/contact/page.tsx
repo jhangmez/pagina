@@ -12,10 +12,55 @@ import { submitCorreo, validateEmail } from '@utils/emailUtils'
 export default function Contacto() {
   const [contactCaptcha, setContactCaptcha] = useState<string | null>(null)
   const [cvCaptcha, setCvCaptcha] = useState<string | null>(null)
-  const [email1, setEmail1] = useState('')
-  const [name, setName] = useState('')
+  const [contactEmail, setContactEmail] = useState('')
+  const [cvEmail, setCvEmail] = useState('')
+  const [contactName, setContactName] = useState('')
+  const [cvName, setCvName] = useState('')
   const [asunto, setAsunto] = useState('')
   const [detalle, setDetalle] = useState('')
+
+  const resetContactForm = () => {
+    setContactCaptcha(null)
+    setContactEmail('')
+    setContactName('')
+    setAsunto('')
+    setDetalle('')
+  }
+
+  const resetCvForm = () => {
+    setCvCaptcha(null)
+    setCvEmail('')
+    setCvName('')
+  }
+
+  const handleSubmitContact = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault()
+    try {
+      await submitCorreo(
+        event,
+        'contact',
+        !!contactCaptcha && contactCaptcha !== '',
+        () => setContactCaptcha(null)
+      )
+      resetContactForm()
+    } catch (error) {
+      console.error('Error al enviar el formulario de contacto:', error)
+    }
+  }
+
+  const handleSubmitCv = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    try {
+      await submitCorreo(event, 'cv', !!cvCaptcha && cvCaptcha !== '', () =>
+        setCvCaptcha(null)
+      )
+      resetCvForm()
+    } catch (error) {
+      console.error('Error al enviar el formulario de CV:', error)
+    }
+  }
 
   return (
     <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
@@ -25,16 +70,7 @@ export default function Contacto() {
           <h1 className='font-bold text-xl '>Contacto</h1>
 
           <li id='contacto'>
-            <form
-              onSubmit={(event) =>
-                submitCorreo(
-                  event,
-                  'contact',
-                  !!contactCaptcha && contactCaptcha !== '',
-                  () => setContactCaptcha(null)
-                )
-              }
-            >
+            <form onSubmit={handleSubmitContact}>
               <Card className='bg-transparent shadow-none'>
                 <CardBody className='gap-4'>
                   <div className='space-y-3 flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
@@ -47,14 +83,14 @@ export default function Contacto() {
                           'text-light-primary dark:text-dark-primary select-none'
                       }}
                       placeholder='Escribe tu nombre'
-                      name='name'
+                      name='contactName'
                       label='Nombre'
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(e) => setContactName(e.target.value)}
                     />
                     <Input
                       type='email'
                       label='Email'
-                      name='email'
+                      name='contactEmail'
                       isRequired
                       classNames={{
                         input: '',
@@ -63,7 +99,7 @@ export default function Contacto() {
                           'text-light-primary dark:text-dark-primary select-none'
                       }}
                       placeholder='Escribe tu correo'
-                      onChange={(e) => setEmail1(e.target.value)}
+                      onChange={(e) => setContactEmail(e.target.value)}
                       description={
                         <p className='text-light-onSurfaceContainer dark:text-light-onSecondaryContainer'>
                           Al enviar aceptas el{' '}
@@ -115,12 +151,12 @@ export default function Contacto() {
                     type='submit'
                     className='font-semibold bg-light-primary text-light-onPrimary'
                     isDisabled={
-                      !email1 ||
-                      !name ||
+                      !contactEmail ||
+                      !contactName ||
                       !contactCaptcha ||
                       !asunto ||
                       !detalle ||
-                      !validateEmail(email1)
+                      !validateEmail(contactEmail)
                     }
                   >
                     Enviar
@@ -133,13 +169,7 @@ export default function Contacto() {
         <ul className='bg-light-surfaceContainer dark:bg-light-secondaryContainer border rounded-xl shadow-md p-4'>
           <h1 className='font-bold text-xl '>Solicitud de CV</h1>
           <li id='cv'>
-            <form
-              onSubmit={(event) =>
-                submitCorreo(event, 'cv', !!cvCaptcha && cvCaptcha !== '', () =>
-                  setCvCaptcha(null)
-                )
-              }
-            >
+            <form onSubmit={handleSubmitCv}>
               <Card className='bg-transparent shadow-none'>
                 <CardBody className='gap-4'>
                   <div className='space-y-3 flex flex-col md:space-y-0 md:flex-row md:space-x-6'>
@@ -152,9 +182,9 @@ export default function Contacto() {
                           'text-light-primary dark:text-dark-primary select-none'
                       }}
                       placeholder='Escribe tu nombre'
-                      name='name'
+                      name='cvName'
                       label='Nombre'
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(e) => setCvName(e.target.value)}
                     />
                     <Input
                       type='email'
@@ -168,7 +198,7 @@ export default function Contacto() {
                           'text-light-primary dark:text-dark-primary select-none'
                       }}
                       placeholder='Escribe tu correo'
-                      onChange={(e) => setEmail1(e.target.value)}
+                      onChange={(e) => setCvEmail(e.target.value)}
                       description={
                         <p className='text-light-onSurfaceContainer dark:text-light-onSecondaryContainer'>
                           Al enviar aceptas el{' '}
@@ -195,7 +225,10 @@ export default function Contacto() {
                     type='submit'
                     className='font-semibold bg-light-primary text-light-onPrimary'
                     isDisabled={
-                      !email1 || !name || !cvCaptcha || !validateEmail(email1)
+                      !cvEmail ||
+                      !cvName ||
+                      !cvCaptcha ||
+                      !validateEmail(cvEmail)
                     }
                   >
                     Enviar
