@@ -1,0 +1,22 @@
+{
+  "herramientas": [
+    {
+      "nombre": "Generador de mapas conceptuales",
+      "imagen": "/api/img?width=260&height=200&title=Mapas%20Conceptuales&description=null&bg=181211&color=D1D0CF",
+      "enlace": "/tools/mapaconceptual",
+      "bg": "181211",
+      "status": true,
+      "inWorking": false,
+      "descripción": "Crea un mapa conceptual, según las celdas completadas en el formulario, además permite cambiar el color de la celda de cada elemento."
+    },
+    {
+      "nombre": "Voice to text",
+      "imagen": "/api/img?width=260&height=200&title=Voice%20to%20Text&description=null&bg=0F1A1F&color=8ECEF9",
+      "enlace": "/tools/voicetospeech",
+      "bg": "0F1A1F",
+      "status": true,
+      "inWorking": false,
+      "descripción": "Utiliza una API que traslada tu voz a texto, actualmente disponible en inglés."
+    }
+  ]
+}

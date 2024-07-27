@@ -25,9 +25,9 @@ export default function Home() {
       <div className='container mx-auto px-[20px]'>
         <CTASection />
       </div>
-      {/* <div className='container mx-auto px-[20px]'>
+      <div className='container mx-auto px-[20px]'>
         <Tools />
-      </div> */}
+      </div>
       <div className='container mx-auto px-[20px] flex lg:flex-row md:flex-row flex-col  gap-4'>
         <Educacion />
         <Idiomas />

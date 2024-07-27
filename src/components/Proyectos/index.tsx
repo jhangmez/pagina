@@ -17,6 +17,7 @@ export default function Proyectos() {
             >
               <div className='flex flex-col items-center'>
                 <Image
+                  classNames={{ blurredImg: 'max-h-[200px] max-w-[400px]' }}
                   as={NextImage}
                   isBlurred
                   width={400}
