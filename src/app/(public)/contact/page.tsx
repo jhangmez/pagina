@@ -10,27 +10,46 @@ import { Link } from '@nextui-org/link'
 import { submitCorreo, validateEmail } from '@utils/emailUtils'
 
 export default function Contacto() {
-  const [contactCaptcha, setContactCaptcha] = useState<string | null>(null)
-  const [cvCaptcha, setCvCaptcha] = useState<string | null>(null)
-  const [contactEmail, setContactEmail] = useState('')
-  const [cvEmail, setCvEmail] = useState('')
-  const [contactName, setContactName] = useState('')
-  const [cvName, setCvName] = useState('')
-  const [asunto, setAsunto] = useState('')
-  const [detalle, setDetalle] = useState('')
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    asunto: '',
+    detalle: '',
+    captcha: null as string | null
+  })
+
+  const [cvForm, setCvForm] = useState({
+    name: '',
+    email: '',
+    captcha: null as string | null
+  })
 
   const resetContactForm = () => {
-    setContactCaptcha(null)
-    setContactEmail('')
-    setContactName('')
-    setAsunto('')
-    setDetalle('')
+    setContactForm((prevState) => ({
+      ...prevState,
+      name: '',
+      email: '',
+      asunto: '',
+      detalle: ''
+    }))
   }
 
   const resetCvForm = () => {
-    setCvCaptcha(null)
-    setCvEmail('')
-    setCvName('')
+    setCvForm((prevState) => ({
+      ...prevState,
+      name: '',
+      email: ''
+    }))
+  }
+
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setContactForm((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleCvChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setCvForm((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmitContact = async (
@@ -38,11 +57,8 @@ export default function Contacto() {
   ) => {
     event.preventDefault()
     try {
-      await submitCorreo(
-        event,
-        'contact',
-        !!contactCaptcha && contactCaptcha !== '',
-        () => setContactCaptcha(null)
+      submitCorreo(event, 'contact', !!contactForm.captcha, () =>
+        setContactForm((prev) => ({ ...prev }))
       )
       resetContactForm()
     } catch (error) {
@@ -53,8 +69,8 @@ export default function Contacto() {
   const handleSubmitCv = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     try {
-      await submitCorreo(event, 'cv', !!cvCaptcha && cvCaptcha !== '', () =>
-        setCvCaptcha(null)
+      submitCorreo(event, 'cv', !!cvForm.captcha, () =>
+        setCvForm((prev) => ({ ...prev }))
       )
       resetCvForm()
     } catch (error) {
@@ -65,7 +81,6 @@ export default function Contacto() {
   return (
     <section className='min-h-screen bg-light-surface dark:bg-dark-surface'>
       <div className='container mx-auto px-[20px] pt-10 space-y-4'>
-        <Trabajando />
         <ul className='bg-light-surfaceContainer dark:bg-light-secondaryContainer border rounded-xl shadow-md p-4'>
           <h1 className='font-bold text-xl'>Contacto</h1>
 
@@ -85,7 +100,8 @@ export default function Contacto() {
                       placeholder='Escribe tu nombre'
                       name='name'
                       label='Nombre'
-                      onChange={(e) => setContactName(e.target.value)}
+                      value={contactForm.name}
+                      onChange={handleContactChange}
                     />
                     <Input
                       type='email'
@@ -99,7 +115,8 @@ export default function Contacto() {
                           'text-light-primary dark:text-dark-primary select-none'
                       }}
                       placeholder='Escribe tu correo'
-                      onChange={(e) => setContactEmail(e.target.value)}
+                      value={contactForm.email}
+                      onChange={handleContactChange}
                       description={
                         <p className='text-light-onSurfaceContainer dark:text-light-onSecondaryContainer'>
                           Al enviar aceptas el{' '}
@@ -124,7 +141,8 @@ export default function Contacto() {
                         'text-light-primary dark:text-dark-primary select-none'
                     }}
                     placeholder='Escribe el asunto'
-                    onChange={(e) => setAsunto(e.target.value)}
+                    value={contactForm.asunto}
+                    onChange={handleContactChange}
                     name='asunto'
                     label='Asunto'
                   />
@@ -138,12 +156,15 @@ export default function Contacto() {
                     }}
                     label='Detalle'
                     name='detalle'
-                    onChange={(e) => setDetalle(e.target.value)}
+                    value={contactForm.detalle}
+                    onChange={handleContactChange}
                     placeholder='Escribe el detalle del asunto.'
                   />
                   <ReCAPTCHA
                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                    onChange={setContactCaptcha}
+                    onChange={(value) =>
+                      setContactForm((prev) => ({ ...prev, captcha: value }))
+                    }
                   />
                 </CardBody>
                 <CardFooter>
@@ -151,12 +172,12 @@ export default function Contacto() {
                     type='submit'
                     className='font-semibold bg-light-primary text-light-onPrimary'
                     isDisabled={
-                      !contactEmail ||
-                      !contactName ||
-                      !contactCaptcha ||
-                      !asunto ||
-                      !detalle ||
-                      !validateEmail(contactEmail)
+                      !contactForm.email ||
+                      !contactForm.name ||
+                      !contactForm.captcha ||
+                      !contactForm.asunto ||
+                      !contactForm.detalle ||
+                      !validateEmail(contactForm.email)
                     }
                   >
                     Enviar
@@ -184,7 +205,8 @@ export default function Contacto() {
                       placeholder='Escribe tu nombre'
                       name='name'
                       label='Nombre'
-                      onChange={(e) => setCvName(e.target.value)}
+                      value={cvForm.name}
+                      onChange={handleCvChange}
                     />
                     <Input
                       type='email'
@@ -198,7 +220,8 @@ export default function Contacto() {
                           'text-light-primary dark:text-dark-primary select-none'
                       }}
                       placeholder='Escribe tu correo'
-                      onChange={(e) => setCvEmail(e.target.value)}
+                      value={cvForm.email}
+                      onChange={handleCvChange}
                       description={
                         <p className='text-light-onSurfaceContainer dark:text-light-onSecondaryContainer'>
                           Al enviar aceptas el{' '}
@@ -214,10 +237,11 @@ export default function Contacto() {
                       }
                     />
                   </div>
-
                   <ReCAPTCHA
                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                    onChange={setCvCaptcha}
+                    onChange={(value) =>
+                      setCvForm((prev) => ({ ...prev, captcha: value }))
+                    }
                   />
                 </CardBody>
                 <CardFooter>
@@ -225,10 +249,10 @@ export default function Contacto() {
                     type='submit'
                     className='font-semibold bg-light-primary text-light-onPrimary'
                     isDisabled={
-                      !cvEmail ||
-                      !cvName ||
-                      !cvCaptcha ||
-                      !validateEmail(cvEmail)
+                      !cvForm.email ||
+                      !cvForm.name ||
+                      !cvForm.captcha ||
+                      !validateEmail(cvForm.email)
                     }
                   >
                     Enviar

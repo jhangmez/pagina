@@ -1,6 +1,20 @@
 {
   "proyectos": [
     {
+      "empresa": "Ronal Tienda",
+      "imagen": "/api/img?width=400&height=200&title=Ronal%20Tienda&description=null&bg=181211&color=D1D0CF",
+      "enlace": "https://ronal.quatu.xyz",
+      "status": true,
+      "inWorking": true,
+      "roles": [
+        {
+          "descripcion": "Página extensión de Quatu, tienda virtual donde se exponen productos a la venta.",
+          "aptitudes": " Typescript · Astro",
+          "stack": [1, 8, 15, 16]
+        }
+      ]
+    },
+    {
       "empresa": "Currículum",
       "imagen": "/api/img?width=400&height=200&title=Currículum&description=null&bg=3A4B3A&color=FFFFFF",
       "enlace": "https://cv.jhangmez.xyz",
