@@ -32,7 +32,10 @@ export default function PublicLayout({
   children: React.ReactNode
 }) {
   return (
-    <main className='min-h-screen bg-light-surface dark:bg-dark-surface'>
+    <main
+      className='min-h-screen bg-light-surface dark:bg-dark-surface bg-[radial-gradient(100%_50%_at_50%_0%,rgba(137,179,146,0.086)_0,rgba(137,179,146,0.02)_50%,rgba(137,179,146,0)_100%)]
+  dark:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(93,135,96,0.108)_0,rgba(93,135,96,0.04)_50%,rgba(93,135,96,0)_100%)]'
+    >
       <Header />
       <Suspense fallback={<Loading />}>{children}</Suspense>
       <Footer />
