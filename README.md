@@ -28,10 +28,12 @@ Para aprender maás sobre el proyecto, hecha un vistaso a los siguientes recurso
 - [Tailwind](https://tailwindcss.com/docs/installation)
 - [NextUI](https://nextui.org/docs/guide/introduction)
 - [tRPC](https://trpc.io/docs)
-- [Vercel OP](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image)
+- [Vercel OG](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image)
 - [ORM Prisma](https://www.prisma.io/docs/orm)
 - [Resend](https://resend.com/docs/introduction)
 - [Auth.js](https://authjs.dev/getting-started)
+- [Framer motion](https://www.framer.com/motion/)
+- [Zod](https://zod.dev)
 
 ---
 ## Portafolio web de [@jhangmez](https://www.linkedin.com/in/jhangmez/)
