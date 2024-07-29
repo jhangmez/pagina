@@ -34,6 +34,7 @@ Para aprender maás sobre el proyecto, hecha un vistaso a los siguientes recurso
 - [Auth.js](https://authjs.dev/getting-started)
 - [Framer motion](https://www.framer.com/motion/)
 - [Zod](https://zod.dev)
+- [React hot toast](https://react-hot-toast.com/docs)
 
 ---
 ## Portafolio web de [@jhangmez](https://www.linkedin.com/in/jhangmez/)
