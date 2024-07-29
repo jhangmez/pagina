@@ -17,6 +17,15 @@
       "status": true,
       "inWorking": false,
       "descripción": "Utiliza una API que traslada tu voz a texto, actualmente disponible en inglés."
+    },
+    {
+      "nombre": "Generador de gradientes para backgrounds",
+      "imagen": "/api/img?width=260&height=200&title=Generador%20de%20gradientes&description=null&bg=2d089a&color=ffffff",
+      "enlace": "/tools/gradientcolor",
+      "bg": "2d089a",
+      "status": true,
+      "inWorking": false,
+      "descripción": "Genera gradientes para agregar a tu fondo, según el color de tu preferencia y el porcentaje de opacidad."
     }
   ]
 }

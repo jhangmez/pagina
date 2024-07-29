@@ -28,35 +28,35 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuItems = [
     {
-      key: 'educacion',
+      key: 'educacion1',
       label: 'Educación',
       href: '/education',
       section: 'Sobre mí'
       //   visible: true,
     },
     {
-      key: 'skills',
+      key: 'skills1',
       label: 'Skills',
       href: '/skills',
       section: 'Sobre mí'
       //   visible: true,
     },
     {
-      key: 'proyectos',
+      key: 'proyectos1',
       label: 'Proyectos',
       href: '/projects',
       //   visible: true,
       section: 'Sobre mí'
     },
     {
-      key: 'certificaciones',
+      key: 'certificaciones1',
       label: 'Certificaciones',
       href: '/certifications',
       //   visible: true,
       section: 'Sobre mí'
     },
     {
-      key: 'freelance',
+      key: 'freelance1',
       label: 'Freelance',
       href: '/freelance',
       //   visible: true,
@@ -70,23 +70,23 @@ export default function Header() {
     //   visible: false,
     // },
     {
-      key: 'generadormapaconceptual',
+      key: 'generadormapaconceptual1',
       label: 'Mapa conceptual',
       href: '/tools/mapaconceptual',
       section: 'Herramientas'
     },
     {
-      key: 'voicetospeech',
+      key: 'generadorvoicetospeec1',
       label: 'De tu voz a texto',
       href: '/tools/voicetospeech',
       section: 'Herramientas'
     },
-    // {
-    //   key: 'generadorcv',
-    //   label: 'Currículum',
-    //   href: '/cv',
-    //   section: 'Herramientas'
-    // },
+    {
+      key: 'generadorgradiente',
+      label: 'Gradientes background',
+      href: '/tools/gradientcolor',
+      section: 'Herramientas'
+    },
     // {
     //   key: 'generadorroadmap',
     //   label: 'Roadmap',
@@ -94,13 +94,13 @@ export default function Header() {
     //   section: 'Herramientas'
     // },
     {
-      key: 'pedircv',
+      key: 'pedircv1',
       label: 'Descargar CV',
       href: '/contact#cv',
       section: 'Contacto'
     },
     {
-      key: 'contacto',
+      key: 'contacto1',
       label: 'Contacto',
       href: '/contact',
       section: 'Contacto'
@@ -192,6 +192,14 @@ export default function Header() {
                   href='/tools/voicetospeech'
                 >
                   <p className='font-medium'>De tu voz a texto</p>
+                </DropdownItem>
+                <DropdownItem
+                  aria-label='gradientes'
+                  key='gradientes'
+                  as={Link}
+                  href='/tools/gradientcolor'
+                >
+                  <p className='font-medium'>Gradientes background</p>
                 </DropdownItem>
                 {/* <DropdownItem aria-label='cv' key='cv' as={Link} href='/cv'>
                   <p className='font-medium'>Currículum</p>
