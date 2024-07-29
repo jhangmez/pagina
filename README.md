@@ -1,6 +1,6 @@
 # Portafolio web de @jhangmez
 
-![image](https://github.com/user-attachments/assets/e738560b-d34a-465d-8f2b-5b8f3c641aba)
+![image](https://github.com/user-attachments/assets/913e1856-75a5-4193-abe7-029763269652)
 
 Revisa los features de la nueva version [(🚀Ver nueva versión 2.5)](https://github.com/jhangmez/pagina/releases/tag/2.5)
 
@@ -30,6 +30,8 @@ Para aprender maás sobre el proyecto, hecha un vistaso a los siguientes recurso
 - [ORM Prisma](https://www.prisma.io/docs/orm)
 - [Resend](https://resend.com/docs/introduction)
 - [Auth.js](https://authjs.dev/getting-started)
+
+---
 
 <div style="display: flex; align-items: center; height: fit-content;">
   <img src="https://avatars.githubusercontent.com/u/60937214?v=4" width="40" style="margin-right: 10px;"/>
