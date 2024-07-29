@@ -1,8 +1,8 @@
-# Portafolio web de [@jhangmez](https://www.linkedin.com/in/jhangmez/)
+# Portafolio web de [jhangmez](https://www.linkedin.com/in/jhangmez/)
 
 ![image](https://github.com/user-attachments/assets/913e1856-75a5-4193-abe7-029763269652)
 
-Revisa los features de la nueva version [(🚀Ver nueva versión 2.5)](https://github.com/jhangmez/pagina/releases/tag/2.5)
+Revisa los features de la nueva versión [(🚀Ver nueva versión 2.5)](https://github.com/jhangmez/pagina/releases/tag/2.5)
 
 ---
 
