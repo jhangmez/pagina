@@ -1,7 +1,10 @@
-# Portafolio web Jhangmez
+# Portafolio web de @jhangmez
+
+![image](https://github.com/user-attachments/assets/e738560b-d34a-465d-8f2b-5b8f3c641aba)
+
+Revisa los features de la nueva version [(🚀Ver nueva versión 2.5)](https://github.com/jhangmez/pagina/releases/tag/2.5)
 
 Este es un repositorio donde se ubica el código fuente, este es realizado con [Next.js](https://nextjs.org/)
-
 
 ## Para comenzar
 
@@ -9,8 +12,6 @@ Primero, ejecuta el servidor:
 
 ```bash
 npm run dev
-# or
-pnpm dev
 ```
 
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
@@ -29,3 +30,8 @@ Para aprender maás sobre el proyecto, hecha un vistaso a los siguientes recurso
 - [ORM Prisma](https://www.prisma.io/docs/orm)
 - [Resend](https://resend.com/docs/introduction)
 - [Auth.js](https://authjs.dev/getting-started)
+
+<div style="display: flex; align-items: center; height: fit-content;">
+  <img src="https://avatars.githubusercontent.com/u/60937214?v=4" width="40" style="margin-right: 10px;"/>
+  <span>Hecho con ❤️ por Jhan Gómez P.</span>
+</div>
