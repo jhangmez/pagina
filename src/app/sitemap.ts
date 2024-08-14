@@ -51,7 +51,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6
     },
     {
-      url: 'https://jhangmez.xyz/terms',
+      url: 'https://jhangmez.xyz/contact',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: 'https://jhangmez.xyz/certifications',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6

@@ -5,7 +5,8 @@ Autor: Jhan Gómez P.
 Sitio web: http://www.jhangmez.xyz
 LinkedIn: http://www.linkedin.com/in/jhangomez
 GitHub: http://www.github.com/jhangomez
-
+HuggingFace: https://huggingface.co/jhangmez
+Medium: https://medium.com/@jhangmez
 
 /* SITE */
-Última actualización: Mayo 2024
+Última actualización: Agosto 2024

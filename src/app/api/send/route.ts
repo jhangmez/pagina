@@ -54,7 +54,7 @@ export async function POST(request: Request) {
           },
           {
             filename: 'JHANCARLOSGOMEZPADILLA-Español.pdf',
-            path: 'https://utfs.io/f/648c0807-8029-457f-9376-e8dedc9f1b14-otau4a.pdf'
+            path: 'https://utfs.io/f/13ce89aa-b941-415c-98a2-30edf62b5cf8-edpmeh.pdf'
           }
         ]
         tags = [
