@@ -166,6 +166,15 @@ export default function Contacto() {
                       setContactForm((prev) => ({ ...prev, captcha: value }))
                     }
                   />
+                  <div className='space-y-2'>
+                    <p className='text-tiny text-light-primary dark:text-dark-secondaryContainer'>
+                      * El correo y archivo adjunto están verificados y no
+                      contienen virus.
+                    </p>
+                    <p className='text-tiny text-light-primary dark:text-dark-secondaryContainer'>
+                      * Es posible que llegue a la carpeta de SPAM.
+                    </p>
+                  </div>
                 </CardBody>
                 <CardFooter>
                   <Button
@@ -243,6 +252,15 @@ export default function Contacto() {
                       setCvForm((prev) => ({ ...prev, captcha: value }))
                     }
                   />
+                  <div className='space-y-2'>
+                    <p className='text-tiny text-light-primary dark:text-dark-secondaryContainer'>
+                      * El correo y archivo adjunto están verificados y no
+                      contienen virus.
+                    </p>
+                    <p className='text-tiny text-light-primary dark:text-dark-secondaryContainer'>
+                      * Es posible que llegue a la carpeta de SPAM.
+                    </p>
+                  </div>
                 </CardBody>
                 <CardFooter>
                   <Button

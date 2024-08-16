@@ -133,6 +133,13 @@ const ContactModal: React.FC<ContactModalProps> = ({
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                 onChange={setCaptcha}
               />
+              <p className='text-tiny text-light-primary dark:text-dark-primary leading-5'>
+                * El correo y archivo adjunto están verificados <br /> y no
+                contienen virus.
+              </p>
+              <p className='text-tiny text-light-primary dark:text-dark-primary w-fit'>
+                * Es posible que llegue a la carpeta de SPAM.
+              </p>
             </ModalBody>
             <ModalFooter>
               <Button
