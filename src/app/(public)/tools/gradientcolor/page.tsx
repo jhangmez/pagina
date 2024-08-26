@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { Input } from '@nextui-org/input'
 import { Slider } from '@nextui-org/slider'
-import { Snippet } from '@nextui-org/snippet'
 import { HexColorPicker } from 'react-colorful'
 import { Popover, PopoverTrigger, PopoverContent } from '@nextui-org/popover'
 import { Button } from '@nextui-org/button'

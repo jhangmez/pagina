@@ -87,6 +87,12 @@ export default function Header() {
       href: '/tools/gradientcolor',
       section: 'Herramientas'
     },
+    {
+      key: 'generadordataset',
+      label: 'Generador de Dataset',
+      href: '/tools/dataset',
+      section: 'Herramientas'
+    },
     // {
     //   key: 'generadorroadmap',
     //   label: 'Roadmap',
@@ -200,6 +206,14 @@ export default function Header() {
                   href='/tools/gradientcolor'
                 >
                   <p className='font-medium'>Gradientes background</p>
+                </DropdownItem>
+                <DropdownItem
+                  aria-label='datasetgenerator'
+                  key='dataset'
+                  as={Link}
+                  href='/tools/dataset'
+                >
+                  <p className='font-medium'>Generador de Dataset</p>
                 </DropdownItem>
                 {/* <DropdownItem aria-label='cv' key='cv' as={Link} href='/cv'>
                   <p className='font-medium'>Currículum</p>
