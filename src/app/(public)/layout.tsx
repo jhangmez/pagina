@@ -3,11 +3,12 @@ import Loading from '../loading'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 
-const shortTitle = 'Portafolio'
-const description = 'Bienvenidos a mi portafolio'
+const shortTitle = 'Portafolio de @jhangmez'
+const description =
+  'Bienvenidos a mi portafolio, en el cual presento mis desarrollos y logros académicos, personales y profesionales'
 const jhangmez = ' | jhangmez'
 const title = `${shortTitle}${jhangmez}`
-const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
+const imageUrl = `https://jhangmez.vercel.app/api/og2?title=${shortTitle}&description=${description}`
 
 export const metadata = {
   title,

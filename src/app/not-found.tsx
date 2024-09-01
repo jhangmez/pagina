@@ -6,11 +6,11 @@ import Header from '@components/Header'
 import Footer from '@components/Footer'
 import { useUwuMode } from '@contexts/uwu'
 
-const shortTitle = 'Portafolio'
-const description = 'Bienvenidos a mi portafolio'
+const shortTitle = 'Página no encontrada 🤔'
+const description = 'No se ha encontrado esta página, intenta con otra.'
 const jhangmez = ' | jhangmez'
 const title = `${shortTitle}${jhangmez}`
-const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
+const imageUrl = `https://jhangmez.vercel.app/api/og2?title=${shortTitle}&description=${description}`
 
 export const metadata = {
   title,

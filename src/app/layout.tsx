@@ -9,10 +9,10 @@ const myFont = localFont({ src: '/PlusJakartaSans-VariableFont_wght.ttf' })
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const shortTitle = 'Portafolio de Jhan Gómez P.'
-const description = 'Portafolio de Jhan Gómez P.'
+const description = 'Esta página contiene el portafolio de @jhangmez'
 const jhangmez = ' | jhangmez'
 const title = `${shortTitle}${jhangmez}`
-const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
+const imageUrl = `https://jhangmez.vercel.app/api/og2?title=${shortTitle}&description=${description}`
 
 export const metadata = {
   title,
