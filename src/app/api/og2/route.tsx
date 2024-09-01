@@ -145,12 +145,15 @@ export async function GET(request: NextRequest) {
     const hasHeight = searchParams.has('height')
     const height = hasHeight ? Number(searchParams.get('height')) : 630
 
-    // Generar colores pastel oscuros basados en el título
-    const baseColor = stringToColor(title || '')
-    const colors = getDarkPastelComplementaryColors(baseColor)
+    // Generate colors for two circles
+    const baseColor1 = stringToColor(title || '')
+    const colors1 = getDarkPastelComplementaryColors(baseColor1)
+    const baseColor2 = stringToColor(description || title || '')
+    const colors2 = getDarkPastelComplementaryColors(baseColor2)
 
-    // Generar posición del círculo basada en el título
-    const position = stringToPosition(title || '')
+    // Generate positions for two circles
+    const position1 = stringToPosition(title || '')
+    const position2 = stringToPosition(description || '')
 
     return new ImageResponse(
       (
@@ -163,25 +166,40 @@ export async function GET(request: NextRequest) {
             alignItems: 'center',
             justifyContent: 'center',
             fontFamily: 'PlusJakartaSans, sans-serif',
-            background: colors[0],
+            background: colors1[0],
             position: 'relative',
             overflow: 'hidden'
           }}
         >
-          {/* Círculo de fondo con desenfoque */}
+          {/* First blurred circle */}
           <div
             style={{
               position: 'absolute',
-              top: position.y,
-              left: position.x,
-              width: '70%',
-              height: '70%',
-              borderRadius: '50%',
-              background: `radial-gradient(circle at center, ${colors[1]} 0%, ${colors[2]} 50%, ${colors[3]} 100%)`,
+              top: position1.y,
+              left: position1.x,
+              width: '100%',
+              height: '100%',
+              background: `radial-gradient(circle at ${position1.x} ${position1.y}, ${colors1[1]} 0%, ${colors1[2]} 30%, ${colors1[3]} 60%, transparent 70%)`,
               filter: 'blur(60px)',
               opacity: 0.7
             }}
           />
+
+          {/* Second blurred circle */}
+          <div
+            style={{
+              position: 'absolute',
+              top: position2.y,
+              left: position2.x,
+              width: '100%',
+              height: '100%',
+              background: `radial-gradient(circle at ${position2.x} ${position2.y}, ${colors2[1]} 0%, ${colors2[2]} 30%, ${colors2[3]} 60%, transparent 70%)`,
+              filter: 'blur(60px)',
+              opacity: 0.7,
+              mixBlendMode: 'overlay'
+            }}
+          />
+
           <div
             style={{
               position: 'absolute',
