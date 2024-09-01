@@ -8,8 +8,8 @@ import { Toaster } from 'react-hot-toast'
 const myFont = localFont({ src: '/PlusJakartaSans-VariableFont_wght.ttf' })
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
-const shortTitle = 'Portafolio'
-const description = 'Portafolio de Jhan Gómez'
+const shortTitle = 'Portafolio de Jhan Gómez P.'
+const description = 'Portafolio de Jhan Gómez P.'
 const jhangmez = ' | jhangmez'
 const title = `${shortTitle}${jhangmez}`
 const imageUrl = `https://jhangmez.vercel.app/api/og?title=${shortTitle}&description=${description}`
