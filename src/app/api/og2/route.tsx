@@ -137,7 +137,13 @@ export async function GET(request: NextRequest) {
     const hasDescription = searchParams.has('description')
     const description = hasDescription
       ? searchParams.get('description')?.slice(0, 100)
-      : 'Descripción por defecto'
+      : ''
+
+    const hasWidth = searchParams.has('width')
+    const width = hasWidth ? Number(searchParams.get('width')) : 1200
+
+    const hasHeight = searchParams.has('height')
+    const height = hasHeight ? Number(searchParams.get('height')) : 630
 
     // Generar colores pastel oscuros basados en el título
     const baseColor = stringToColor(title || '')
@@ -235,8 +241,8 @@ export async function GET(request: NextRequest) {
         </div>
       ),
       {
-        width: 1200,
-        height: 630,
+        width: Number(width),
+        height: Number(height),
         fonts: [
           {
             name: 'PlusJakartaSans',

@@ -189,7 +189,9 @@ export default function Header() {
                   as={Link}
                   href='/tools/mapaconceptual'
                 >
-                  <p className='font-medium'>Mapa conceptual</p>
+                  <p className='font-medium hover:text-light-tertiary'>
+                    Mapa conceptual
+                  </p>
                 </DropdownItem>
                 <DropdownItem
                   aria-label='voicetospeech'
@@ -197,7 +199,9 @@ export default function Header() {
                   as={Link}
                   href='/tools/voicetospeech'
                 >
-                  <p className='font-medium'>De tu voz a texto</p>
+                  <p className='font-medium hover:text-light-tertiary'>
+                    De tu voz a texto
+                  </p>
                 </DropdownItem>
                 <DropdownItem
                   aria-label='gradientes'
@@ -205,7 +209,9 @@ export default function Header() {
                   as={Link}
                   href='/tools/gradientcolor'
                 >
-                  <p className='font-medium'>Gradientes background</p>
+                  <p className='font-medium hover:text-light-tertiary'>
+                    Gradientes background
+                  </p>
                 </DropdownItem>
                 <DropdownItem
                   aria-label='datasetgenerator'
@@ -213,7 +219,9 @@ export default function Header() {
                   as={Link}
                   href='/tools/dataset'
                 >
-                  <p className='font-medium'>Generador de Dataset</p>
+                  <p className='font-medium hover:text-light-tertiary'>
+                    Generador de Dataset
+                  </p>
                 </DropdownItem>
                 {/* <DropdownItem aria-label='cv' key='cv' as={Link} href='/cv'>
                   <p className='font-medium'>Currículum</p>
