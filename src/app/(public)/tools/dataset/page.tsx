@@ -14,7 +14,7 @@ import {
   DropdownItem
 } from '@nextui-org/dropdown'
 import { toast } from 'react-hot-toast'
-const initialValue = 'You are a helpful AI assistant.'
+// const initialValue = 'You are a helpful AI assistant.'
 import { preguntas } from '@src/utils/preguntasVarias'
 
 export default function GeneratorDataset() {
@@ -28,6 +28,13 @@ export default function GeneratorDataset() {
   const hasAnswer = searchParams.has('answer')
   const answer = hasAnswer ? searchParams.get('answer')?.slice(0, 100) : ''
 
+  const initialValue =
+    searchParams.get('value')?.slice(0, 100) ||
+    'You are a helpful AI assistant.'
+
+  const finalquestions =
+    searchParams.get('finalquestions') !== 'false' ? true : false
+
   const [inputValue, setInputValue] = useState(initialValue)
   const [pregunta, setPregunta] = useState(question)
   const [respuesta, setRespuesta] = useState(answer)
@@ -38,6 +45,7 @@ export default function GeneratorDataset() {
   const [randomPregunta, setRandomPregunta] = useState('')
   const [savedConversations, setSavedConversations] = useState('')
   const [rememberConversations, setRememberConversations] = useState(false)
+  const [rememberQuestion, setRememberQuestion] = useState(finalquestions)
 
   useEffect(() => {
     const storedValue = localStorage.getItem('generator_dataset_value')
@@ -94,7 +102,8 @@ export default function GeneratorDataset() {
             { from: 'human', value: pregunta },
             {
               from: 'gpt',
-              value: respuesta + ', ' + newRandomPregunta
+              value:
+                respuesta + (rememberQuestion ? ', ' + newRandomPregunta : '')
             }
           ]
         }
@@ -105,7 +114,7 @@ export default function GeneratorDataset() {
     }
 
     updateResultado()
-  }, [inputValue, pregunta, respuesta])
+  }, [inputValue, pregunta, respuesta, rememberQuestion])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
@@ -210,6 +219,10 @@ export default function GeneratorDataset() {
     setRememberConversations(checked)
   }
 
+  const handleSwitchChangeQuestion = (checked: boolean) => {
+    setRememberQuestion(checked)
+  }
+
   const copyToClipboard = async (text: string, isConversations: boolean) => {
     try {
       await navigator.clipboard.writeText(text)
@@ -261,6 +274,16 @@ export default function GeneratorDataset() {
               onChange={handleRespuestaChange}
             />
           </CardBody>
+          <CardFooter>
+            <Switch
+              isSelected={rememberQuestion}
+              size='sm'
+              onValueChange={handleSwitchChangeQuestion}
+              classNames={{ label: 'inline-flex gap-1' }}
+            >
+              Agregar finales preguntas
+            </Switch>
+          </CardFooter>
         </Card>
         <Card>
           <CardHeader className='font-bold text-large'>Resultado</CardHeader>
@@ -668,7 +691,7 @@ export default function GeneratorDataset() {
                           Cambia el valor por defecto de utf-8
                         </td>
                         <td className='border border-light-outline p-2'>
-                          true
+                          <code>true</code>
                         </td>
                       </tr>
                       <tr>
@@ -683,7 +706,22 @@ export default function GeneratorDataset() {
                           salida tendrá formato json.
                         </td>
                         <td className='border border-light-outline p-2'>
-                          false
+                          <code>false</code>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className='border border-light-outline p-2'>
+                          <code>finalquestions</code>
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          boolean
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          Si esta en <code className='mx-1'>false</code> las
+                          preguntas fianles no aparecerán.
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          <code>true</code>
                         </td>
                       </tr>
                     </tbody>

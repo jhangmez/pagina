@@ -20,9 +20,9 @@ export async function GET(request: Request) {
     ? searchParams.get('json') === 'true'
     : false
 
-  const utf8 = searchParams.has('utf8')
-    ? searchParams.get('utf8') === 'true'
-    : true
+  const utf8 = searchParams.get('utf8') !== 'false'
+
+  const finalquestions = searchParams.get('finalquestions') !== 'false'
 
   if (!question || !answer) {
     return Response.json(
@@ -44,7 +44,10 @@ export async function GET(request: Request) {
     conversations: [
       { from: 'system', value: value + '\n' },
       { from: 'human', value: question },
-      { from: 'gpt', value: answer + ', ' + newRandomPregunta }
+      {
+        from: 'gpt',
+        value: answer + (finalquestions ? ', ' + newRandomPregunta : '')
+      }
     ]
   })
 
