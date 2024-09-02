@@ -1,14 +1,14 @@
 {
   "proyectos": [
     {
-      "empresa": "Ronal Tienda",
-      "imagen": "/api/img?width=400&height=200&title=Ronal%20Tienda&description=null&bg=181211&color=D1D0CF",
-      "enlace": "https://ronal.quatu.xyz",
+      "empresa": "Gotec Store",
+      "imagen": "/api/img?width=400&height=200&title=GOTEC%20Store&description=null&bg=001F26&color=ABEDFF",
+      "enlace": "https://gotec.quatu.xyz",
       "status": true,
       "inWorking": true,
       "roles": [
         {
-          "descripcion": "Página extensión de Quatu, tienda virtual donde se exponen productos a la venta.",
+          "descripcion": "Página extensión de Quatu, tienda especializada en venta de productos tecnológicos al por mayor de INGO TECHNOLOGIES S.A.C.",
           "aptitudes": " Typescript · Astro",
           "stack": [1, 8, 15, 16]
         }

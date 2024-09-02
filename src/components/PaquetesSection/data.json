@@ -1,0 +1,14 @@
+{
+  "herramientas": [
+    {
+      "nombre": "Carrito de compras",
+      "imagen": "/api/img?width=260&height=200&title=Carrito%20de%20Compras&description=null&bg=af0808&color=ffffff",
+      "enlace": "https://www.npmjs.com/package/carrito-de-compras",
+      "bg": "af0808",
+      "status": true,
+      "store": "npm",
+      "inWorking": true,
+      "descripción": "Crea un carrito de compras para tu tienda virtual, optimizado para Next.js, renderizando del lado del cliente CSR."
+    }
+  ]
+}

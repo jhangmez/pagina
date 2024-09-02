@@ -26,6 +26,15 @@
       "status": true,
       "inWorking": false,
       "descripción": "Genera gradientes para agregar a tu fondo, según el color de tu preferencia y el porcentaje de opacidad."
+    },
+    {
+      "nombre": "Generador de conversaciones para Datasets",
+      "imagen": "/api/img?width=260&height=200&title=Generador%20de%20conversaciones%20ShareGPT&description=null&bg=3F4565&color=ffffff",
+      "enlace": "/tools/dataset",
+      "bg": "3F4565",
+      "status": true,
+      "inWorking": true,
+      "descripción": "Generador de conversaciones para entrenar modelos generativos de textos según estilo ShareGPT."
     }
   ]
 }

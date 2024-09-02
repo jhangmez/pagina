@@ -7,6 +7,7 @@ import CarrouselCertifications from '@components/Carrousel/certificados'
 import Skills from '@components/Skills'
 import CTASection from '@components/CTASection'
 import Tools from '@components/ToolsSection'
+import Package from '@components/PaquetesSection'
 import Freelance from '@components/Freelance'
 
 export default function Home() {
@@ -30,6 +31,9 @@ export default function Home() {
       </div>
       <div className='container mx-auto px-[20px]'>
         <Tools />
+      </div>
+      <div className='container mx-auto px-[20px]'>
+        <Package />
       </div>
       <div className='container mx-auto px-[20px] flex lg:flex-row md:flex-row flex-col  gap-4'>
         <Educacion />

@@ -6,8 +6,7 @@ import {
   NavbarContent,
   NavbarMenuToggle,
   NavbarMenu,
-  NavbarItem,
-  NavbarMenuItem
+  NavbarItem
 } from '@nextui-org/navbar'
 import { useState } from 'react'
 import { Button } from '@nextui-org/button'
