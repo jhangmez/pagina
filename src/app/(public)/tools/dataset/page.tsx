@@ -14,90 +14,8 @@ import {
   DropdownItem
 } from '@nextui-org/dropdown'
 import { toast } from 'react-hot-toast'
-
 const initialValue = 'You are a helpful AI assistant.'
-const preguntas = [
-  '¿Hay algún detalle que quieras conocer más a fondo?',
-  '¿Puedo ofrecerte más información sobre esto?',
-  '¿Tienes alguna otra duda relacionada con esto?',
-  '¿Hay algún aspecto que quieras profundizar más?',
-  '¿Te gustaría que te amplíe información sobre esto?',
-  '¿Puedo aclarar algún otro punto sobre este tema?',
-  '¿Tienes alguna otra pregunta que te gustaría hacer sobre esto?',
-  '¿Hay algún detalle adicional que te gustaría conocer?',
-  '¿Puedo asistirte con alguna otra consulta sobre esto?',
-  '¿Hay algo más que te cause curiosidad sobre este tema?',
-  '¿Tienes algún otro aspecto en mente que quieras explorar más?',
-  '¿Hay algún otro asunto relacionado que te gustaría tratar?',
-  '¿Te gustaría más información sobre algún detalle de esto?',
-  '¿Puedo ayudarte con alguna otra pregunta sobre este tema?',
-  '¿Hay algo más que te gustaría preguntar sobre esto?',
-  '¿Te gustaría seguir hablando de algún aspecto de esto?',
-  '¿Puedo proporcionarte más detalles sobre este punto?',
-  '¿Hay algún aspecto adicional que quieras discutir?',
-  '¿Tienes alguna otra duda relacionada con este tema?',
-  '¿Puedo ayudarte con algún otro aspecto de esto?',
-  '¿Te gustaría saber más sobre algún detalle de esto?',
-  '¿Hay algún punto adicional que te gustaría revisar?',
-  '¿Tienes alguna otra consulta que te gustaría hacer sobre esto?',
-  '¿Puedo brindarte más información sobre este tema?',
-  '¿Hay algún otro aspecto que quieras investigar más a fondo?',
-  '¿Te gustaría seguir explorando algún punto de esto?',
-  '¿Puedo ayudarte con alguna otra cuestión relacionada con esto?',
-  '¿Hay algo más relacionado con este tema que te interese saber?',
-  '¿Tienes alguna otra pregunta que quieras hacer sobre este asunto?',
-  '¿Hay algún aspecto de esto que te gustaría abordar más?',
-  '¿Te gustaría que aclare algún punto relacionado con esto?',
-  '¿Hay algún aspecto adicional en el que pueda asistirte?',
-  '¿Tienes alguna otra consulta relacionada con esto?',
-  '¿Hay algún punto de esto que te gustaría entender mejor?',
-  '¿Puedo ofrecerte más información sobre este detalle?',
-  '¿Te gustaría seguir explorando este tema?',
-  '¿Tienes alguna otra inquietud relacionada con esto que quieras resolver?',
-  '¿Hay algún detalle adicional de esto que te gustaría conocer mejor?',
-  '¿Puedo ayudarte con alguna otra cuestión sobre este tema?',
-  '¿Te interesa saber algo más sobre este aspecto?',
-  '¿Hay algún otro detalle sobre esto que te interese explorar?',
-  '¿Puedo darte más información relacionada con este tema?',
-  '¿Tienes alguna otra duda específica sobre esto?',
-  '¿Hay algún punto que te gustaría analizar más en profundidad?',
-  '¿Te gustaría conocer más sobre este aspecto en particular?',
-  '¿Puedo ayudarte a aclarar algún otro punto de este tema?',
-  '¿Tienes alguna otra pregunta que te gustaría formular sobre esto?',
-  '¿Hay algún detalle que aún no esté claro y te gustaría saber más?',
-  '¿Puedo asistirte con más información sobre este tema?',
-  '¿Hay algo más sobre este asunto que te cause curiosidad?',
-  '¿Tienes algún otro aspecto de esto en mente que quieras discutir?',
-  '¿Hay algún otro punto relacionado con esto que te gustaría tratar?',
-  '¿Te gustaría saber más sobre un aspecto específico de esto?',
-  '¿Puedo ayudarte a resolver alguna otra duda sobre este tema?',
-  '¿Hay algo más que te gustaría preguntar sobre este asunto?',
-  '¿Te gustaría que continuemos hablando sobre algún punto de esto?',
-  '¿Puedo proporcionarte más detalles sobre este tema?',
-  '¿Hay algún aspecto adicional que quieras entender mejor?',
-  '¿Tienes alguna otra duda en relación a esto que quieras aclarar?',
-  '¿Puedo ayudarte con más información sobre este asunto?',
-  '¿Te gustaría saber más sobre algún detalle específico de esto?',
-  '¿Hay algún punto adicional que te gustaría conocer más a fondo?',
-  '¿Tienes alguna otra consulta específica sobre este tema?',
-  '¿Puedo brindarte más información que te ayude con esto?',
-  '¿Hay algo más que te gustaría investigar dentro de este tema?',
-  '¿Te gustaría seguir explorando algún aspecto de esto?',
-  '¿Puedo ayudarte a profundizar en algún otro detalle relacionado?',
-  '¿Hay algún aspecto relacionado que aún no hayamos cubierto?',
-  '¿Tienes alguna otra pregunta específica sobre este tema?',
-  '¿Hay algún aspecto de esto que te gustaría entender mejor?',
-  '¿Te gustaría que aclare algún otro detalle relacionado con esto?',
-  '¿Hay algún aspecto más en el que pueda asistirte?',
-  '¿Tienes alguna otra consulta que quieras hacer sobre este tema?',
-  '¿Hay algo más de esto que te gustaría discutir?',
-  '¿Puedo ofrecerte más información sobre este punto?',
-  '¿Te gustaría seguir profundizando en este tema?',
-  '¿Tienes alguna otra inquietud relacionada con esto?',
-  '¿Hay algún detalle adicional de este tema que te gustaría conocer?',
-  '¿Puedo ayudarte a resolver alguna otra cuestión sobre este asunto?',
-  '¿Te interesa saber algo más sobre este aspecto en particular?'
-]
+import { preguntas } from '@src/utils/preguntasVarias'
 
 export default function GeneratorDataset() {
   const searchParams = useSearchParams()
@@ -482,8 +400,8 @@ export default function GeneratorDataset() {
               Recordar <span className='lg:flex hidden'>conversaciones</span>
             </Switch>
           </CardFooter>
-          <CardFooter className='gap-2'>
-            <Button className='bg-light-primary text-light-onPrimary dark:bg-dark-primary dark:text-dark-onPrimary font-semibold gap-1'>
+          <CardFooter className='gap-2 lg:flex-row md:flex-row flex-col'>
+            <Button className='bg-light-primary text-light-onPrimary dark:bg-dark-primary dark:text-dark-onPrimary font-semibold gap-1 w-full'>
               <label
                 htmlFor='fileInput'
                 className='cursor-pointer flex flex-row gap-1'
@@ -514,7 +432,7 @@ export default function GeneratorDataset() {
                       />
                     </svg>
                   }
-                  className='bg-light-primary text-light-onPrimary dark:bg-dark-primary dark:text-dark-onPrimary font-semibold'
+                  className='bg-light-primary text-light-onPrimary dark:bg-dark-primary dark:text-dark-onPrimary font-semibold w-full'
                 >
                   Descargar como
                 </Button>
@@ -541,10 +459,9 @@ export default function GeneratorDataset() {
               </DropdownMenu>
             </Dropdown>
             <Button
+              variant='light'
               onClick={deleteConversations}
-              variant='bordered'
-              color='danger'
-              className='font-medium'
+              className='font-medium border-light-error text-light-error border-2 rounded-xl w-full'
             >
               Borrar conversaciones
             </Button>
@@ -596,18 +513,158 @@ export default function GeneratorDataset() {
           </AccordionItem>
         </Accordion>
 
-        {/* <Card>
-          <CardHeader className='font-bold text-large'>
+        <Card className='bg-light-surfaceContainer dark:bg-light-secondaryContainer'>
+          <CardHeader as={'h1'} className='font-bold text-large'>
             Documentación
           </CardHeader>
           <CardBody>
-            <CardHeader className='font-semibold text-large'>Manual</CardHeader>
-            <CardBody></CardBody>
+            <p className='font-medium'>
+              Esta herramienta te permite generar conversaciones simuladas al
+              estilo de ShareGPT. Solo necesitas ingresar una pregunta y una
+              respuesta, y la herramienta te entregará la conversación en un
+              formato JSON estructurado y listo para usar.
+            </p>
+            <div className='py-2'>
+              <h2 className='font-semibold text-large py-2'>
+                Funcionalidades principales
+              </h2>
+              <ul className='mx-2 space-y-3'>
+                <li id='generar'>
+                  <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary'>
+                    Generador de Conversaciones
+                  </h2>
+                  <p className='font-medium pt-1'>
+                    Para generar una conversación, simplemente ingresa tu
+                    pregunta y la respuesta correspondiente. El resultado
+                    aparecerá en el cuadro de abajo, el cual se puede modificar
+                    y copiar.
+                  </p>
+                </li>
+                <li id='cargar'>
+                  <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary'>
+                    Cargar Conversaciones
+                  </h2>
+                  <p className='font-medium pt-1'>
+                    Si tienes conversaciones guardadas, puedes cargarlas desde
+                    un arhcivo utilizando la función de carga. Este solo
+                    aceptará formatos que hayan sido descargados desde esta
+                    página.
+                  </p>
+                </li>
+                <li id='descargar'>
+                  <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary'>
+                    Descargar Conversaciones
+                  </h2>
+                  <p className='font-medium pt-1'>
+                    También puedes descargar tus conversaciones en varios
+                    formatos: JSON, JSONL o TXT. Esto te permite guardar tus
+                    conversaciones y usarlas cuando las necesites.
+                  </p>
+                </li>
+                <li id='acceso'>
+                  <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary'>
+                    Acceso a Conversaciones a través de URL
+                  </h2>
+                  <p className='font-medium py-1'>
+                    Puedes acceder directamente a una conversación específica
+                    utilizando la siguiente estructura de URL:
+                  </p>
+                  <code className='bg-light-surface p-2 rounded-md'>
+                    /tools/dataset?question=tu_pregunta_aqui&answer=tu_respuesta_aqui
+                  </code>
+                  <p className='font-medium py-1'>Ejemplo:</p>
+                  <code className='bg-light-surface p-2 rounded-md'>
+                    https://jhangmez.xyz/tools/dataset?question=Cuanto%20es%202%20más%202&answer=Es%204
+                  </code>
+                </li>
+              </ul>
+            </div>
+            <div className='py-2'>
+              <h2 className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary'>
+                Acceso a Conversaciones a través de la API
+              </h2>
+              <p className='mt-2 font-medium'>
+                Si necesitas integrar esta funcionalidad en otra aplicación,
+                puedes hacerlo utilizando la API que proporciona la herramienta.
+                La estructura es similar a la de las URLs directas.
+              </p>
+              <ul className='mx-2 space-y-3'>
+                <li id='ejemplo_api'>
+                  <p className='font-semibold text-lg text-light-primary dark:text-dark-onPrimary my-3'>
+                    Ejemplo de Endpoint API:
+                  </p>
+                  <code className='bg-light-surface p-2 rounded-md'>
+                    GET
+                    https://jhangmez.xyz/api/dataset?question=tu_pregunta_aqui&answer=tu_respuesta_aqui
+                  </code>
+                </li>
+                <li id='parametros'>
+                  <p className='font-bold mt-4'>Parámetros:</p>
+                  <table className='w-full border-collapse border border-light-outline mt-2 mb-4'>
+                    <thead>
+                      <tr>
+                        <th className='border border-light-outline p-2 bg-dark-surface/10'>
+                          Attribute
+                        </th>
+                        <th className='border border-light-outline p-2 bg-dark-surface/10'>
+                          Type
+                        </th>
+                        <th className='border border-light-outline p-2 bg-dark-surface/10'>
+                          Description
+                        </th>
+                        <th className='border border-light-outline p-2 bg-dark-surface/10'>
+                          Default
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className='bg-light-background'>
+                      <tr>
+                        <td className='border border-light-outline p-2'>
+                          <code>question</code>
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          string
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          La pregunta que deseas convertir en una conversación.
+                        </td>
+                        <td className='border border-light-outline p-2'>N/A</td>
+                      </tr>
+                      <tr>
+                        <td className='border border-light-outline p-2'>
+                          <code>answer</code>
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          string
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          La respuesta a la pregunta, que se integrará en la
+                          conversación.
+                        </td>
+                        <td className='border border-light-outline p-2'>N/A</td>
+                      </tr>
+                      <tr>
+                        <td className='border border-light-outline p-2'>
+                          <code>json</code>
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          boolean
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          Si esta en <code className='mx-1'>true</code> la
+                          salida tendrá formato json.
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          false
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li>
+              </ul>
+            </div>
           </CardBody>
-          <CardBody>
-            <CardHeader className='font-semibold text-large'>API</CardHeader>
-          </CardBody>
-        </Card> */}
+        </Card>
       </div>
     </section>
   )
