@@ -20,6 +20,10 @@ export async function GET(request: Request) {
     ? searchParams.get('json') === 'true'
     : false
 
+  const utf8 = searchParams.has('utf8')
+    ? searchParams.get('utf8') === 'true'
+    : true
+
   if (!question || !answer) {
     return Response.json(
       {
@@ -44,12 +48,11 @@ export async function GET(request: Request) {
     ]
   })
 
+  const contentType = json ? 'application/json' : 'text/plain'
+  const charset = utf8 ? '; charset=utf-8' : ''
+
   return new Response(responseData, {
     status: 200,
-    headers: new Headers({
-      'Content-Type': json
-        ? 'application/json; charset=utf-8'
-        : 'text/plain; charset=utf-8'
-    })
+    headers: new Headers({ 'Content-Type': contentType + charset })
   })
 }

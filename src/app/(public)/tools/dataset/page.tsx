@@ -397,7 +397,7 @@ export default function GeneratorDataset() {
               onValueChange={handleSwitchChangeConversations}
               classNames={{ label: 'inline-flex gap-1' }}
             >
-              Recordar <span className='lg:flex hidden'>conversaciones</span>
+              Recordar conversaciones
             </Switch>
           </CardFooter>
           <CardFooter className='gap-2 lg:flex-row md:flex-row flex-col'>
@@ -406,7 +406,7 @@ export default function GeneratorDataset() {
                 htmlFor='fileInput'
                 className='cursor-pointer flex flex-row gap-1'
               >
-                Cargar<span className='lg:block hidden'>conversaciones</span>
+                Cargar conversaciones
               </label>
               <input
                 id='fileInput'
@@ -642,6 +642,34 @@ export default function GeneratorDataset() {
                           conversación.
                         </td>
                         <td className='border border-light-outline p-2'>N/A</td>
+                      </tr>
+                      <tr>
+                        <td className='border border-light-outline p-2'>
+                          <code>value</code>
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          string
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          Cambia el valor de system.
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          You are a helpful AI assistant.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className='border border-light-outline p-2'>
+                          <code>utf8</code>
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          boolean
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          Cambia el valor por defecto de utf-8
+                        </td>
+                        <td className='border border-light-outline p-2'>
+                          true
+                        </td>
                       </tr>
                       <tr>
                         <td className='border border-light-outline p-2'>
