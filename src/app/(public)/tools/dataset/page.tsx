@@ -274,7 +274,10 @@ export default function GeneratorDataset() {
               onChange={handleRespuestaChange}
             />
           </CardBody>
-          <CardFooter>
+          <CardFooter className='gap-2 flex-col sm:flex-row'>
+            <Button className='bg-light-primary text-light-onPrimary dark:bg-dark-primary dark:text-dark-onPrimary font-semibold'>
+              Agregar pregunta
+            </Button>
             <Switch
               isSelected={rememberQuestion}
               size='sm'
@@ -718,7 +721,7 @@ export default function GeneratorDataset() {
                         </td>
                         <td className='border border-light-outline p-2'>
                           Si esta en <code className='mx-1'>false</code> las
-                          preguntas fianles no aparecerán.
+                          preguntas finales no aparecerán.
                         </td>
                         <td className='border border-light-outline p-2'>
                           <code>true</code>
