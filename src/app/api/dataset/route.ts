@@ -34,11 +34,11 @@ function processConversation(
 
   conversation.forEach((item) => {
     processedConversation.push(
-      { from: 'human', value: item.question.slice(0, 100) },
+      { from: 'human', value: item.question.slice(0, 500) },
       {
         from: 'gpt',
         value:
-          item.answer.slice(0, 100) +
+          item.answer.slice(0, 500) +
           (finalquestions ? ', ' + getRandomPregunta() : '')
       }
     )
@@ -50,9 +50,9 @@ function processConversation(
 function getParamsFromUrl(url: string): RequestParams {
   const { searchParams } = new URL(url)
   return {
-    question: searchParams.get('question')?.slice(0, 100) || undefined,
-    answer: searchParams.get('answer')?.slice(0, 100) || undefined,
-    value: searchParams.get('value')?.slice(0, 100) || undefined,
+    question: searchParams.get('question')?.slice(0, 500) || undefined,
+    answer: searchParams.get('answer')?.slice(0, 500) || undefined,
+    value: searchParams.get('value')?.slice(0, 500) || undefined,
     json: searchParams.get('json') === 'true',
     utf8: searchParams.get('utf8') !== 'false',
     finalquestions: searchParams.get('finalquestions') !== 'false'
@@ -64,15 +64,15 @@ export async function GET(request: Request) {
 
   const hasQuestion = searchParams.has('question')
   const question = hasQuestion
-    ? searchParams.get('question')?.slice(0, 100)
+    ? searchParams.get('question')?.slice(0, 500)
     : ''
 
   const hasAnswer = searchParams.has('answer')
-  const answer = hasAnswer ? searchParams.get('answer')?.slice(0, 100) : ''
+  const answer = hasAnswer ? searchParams.get('answer')?.slice(0, 500) : ''
 
   const hasValue = searchParams.has('value')
   const value = hasValue
-    ? searchParams.get('value')?.slice(0, 100)
+    ? searchParams.get('value')?.slice(0, 500)
     : 'You are a helpful AI assistant.'
 
   const json = searchParams.has('json')
@@ -156,8 +156,8 @@ export async function POST(request: Request) {
       .join('\n')
   } else {
     // Manejar una sola conversación
-    const question = urlParams.question || body.question?.slice(0, 100) || ''
-    const answer = urlParams.answer || body.answer?.slice(0, 100) || ''
+    const question = urlParams.question || body.question?.slice(0, 500) || ''
+    const answer = urlParams.answer || body.answer?.slice(0, 500) || ''
 
     if (!question || !answer) {
       return Response.json(
