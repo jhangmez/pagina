@@ -222,10 +222,10 @@ export default function Perfil() {
           </h1>
           <div>
             <h2 className='text-2xl md:text-3x1 lg:text-4x1 font-semibold text-light-onSurface dark:text-dark-onSurface'>
-              Estudiante de Ingeniería de Sistemas y Desarrollador Front-end.
+              Egresado de Ingeniería de Sistemas y Desarrollador Front-end.
             </h2>
             <h3 className='text-base md:text-lg lg:text-xl lg:mt-2 md:mt-1.5 sm:mt-1 font-medium text-light-onSurfac/90 dark:text-dark-onSurface/90'>
-              Orientado a desarrollo web con +1 año de experiencia
+              Orientado a desarrollo web con +1.5 años de experiencia
             </h3>
           </div>
           <div className='flex flex-row gap-5 print:hidden'>

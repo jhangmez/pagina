@@ -17,6 +17,11 @@ import { toast } from 'react-hot-toast'
 // const initialValue = 'You are a helpful AI assistant.'
 import { preguntas } from '@src/utils/preguntasVarias'
 
+interface Conversation {
+  from: string
+  value: string
+}
+
 export default function GeneratorDataset() {
   const searchParams = useSearchParams()
 
@@ -46,6 +51,9 @@ export default function GeneratorDataset() {
   const [savedConversations, setSavedConversations] = useState('')
   const [rememberConversations, setRememberConversations] = useState(false)
   const [rememberQuestion, setRememberQuestion] = useState(finalquestions)
+  const [currentConversation, setCurrentConversation] = useState<
+    Conversation[]
+  >([])
 
   useEffect(() => {
     const storedValue = localStorage.getItem('generator_dataset_value')
@@ -90,6 +98,32 @@ export default function GeneratorDataset() {
     }
   }, [rememberConversations, savedConversations])
 
+  // useEffect(() => {
+  //   const updateResultado = async () => {
+  //     try {
+  //       const newRandomPregunta =
+  //         preguntas[Math.floor(Math.random() * preguntas.length)]
+  //       setRandomPregunta(newRandomPregunta)
+  //       const resultadoObj = {
+  //         conversations: [
+  //           { from: 'system', value: inputValue + '\n' },
+  //           { from: 'human', value: pregunta },
+  //           {
+  //             from: 'gpt',
+  //             value:
+  //               respuesta + (rememberQuestion ? ', ' + newRandomPregunta : '')
+  //           }
+  //         ]
+  //       }
+  //       setResultado(JSON.stringify(resultadoObj))
+  //     } catch (error) {
+  //       console.error('Error al actualizar resultado:', error)
+  //     }
+  //   }
+
+  //   updateResultado()
+  // }, [inputValue, pregunta, respuesta, rememberQuestion])
+
   useEffect(() => {
     const updateResultado = async () => {
       try {
@@ -99,7 +133,7 @@ export default function GeneratorDataset() {
         const resultadoObj = {
           conversations: [
             { from: 'system', value: inputValue + '\n' },
-            { from: 'human', value: pregunta },
+            ...currentConversation,
             {
               from: 'gpt',
               value:
@@ -114,7 +148,7 @@ export default function GeneratorDataset() {
     }
 
     updateResultado()
-  }, [inputValue, pregunta, respuesta, rememberQuestion])
+  }, [inputValue, currentConversation, respuesta, rememberQuestion])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
@@ -139,6 +173,33 @@ export default function GeneratorDataset() {
     }
   }
 
+  // const saveResult = () => {
+  //   const newConversation = resultado + '\n'
+  //   setSavedConversations((prev) => prev + newConversation)
+  //   if (rememberConversations) {
+  //     localStorage.setItem(
+  //       'saved_conversations',
+  //       savedConversations + newConversation
+  //     )
+  //   }
+  //   toast.success('Resultado guardado exitosamente')
+  // }
+
+  const addQuestion = () => {
+    if (pregunta && respuesta) {
+      setCurrentConversation([
+        ...currentConversation,
+        { from: 'human', value: pregunta },
+        { from: 'gpt', value: respuesta }
+      ])
+      setPregunta('')
+      setRespuesta('')
+      toast.success('Pregunta y respuesta agregadas')
+    } else {
+      toast.error('Por favor, ingrese tanto la pregunta como la respuesta')
+    }
+  }
+
   const saveResult = () => {
     const newConversation = resultado + '\n'
     setSavedConversations((prev) => prev + newConversation)
@@ -148,6 +209,8 @@ export default function GeneratorDataset() {
         savedConversations + newConversation
       )
     }
+    setCurrentConversation([])
+    setResultado('')
     toast.success('Resultado guardado exitosamente')
   }
 
@@ -275,7 +338,10 @@ export default function GeneratorDataset() {
             />
           </CardBody>
           <CardFooter className='gap-2 flex-col sm:flex-row'>
-            <Button className='bg-light-primary text-light-onPrimary dark:bg-dark-primary dark:text-dark-onPrimary font-semibold'>
+            <Button
+              onClick={addQuestion}
+              className='bg-light-primary text-light-onPrimary dark:bg-dark-primary dark:text-dark-onPrimary font-semibold'
+            >
               Agregar pregunta
             </Button>
             <Switch
