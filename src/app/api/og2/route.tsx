@@ -231,7 +231,7 @@ export async function GET(request: NextRequest) {
               justifyContent: 'center',
               padding: '20px 50px',
               margin: '0 42px',
-              fontSize: 64,
+              fontSize: title && title.length < 8 ? 128 : 72,
               width: 'auto',
               maxWidth: 700,
               textAlign: 'center',

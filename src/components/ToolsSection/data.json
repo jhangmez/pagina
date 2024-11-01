@@ -33,7 +33,7 @@
       "enlace": "/tools/dataset",
       "bg": "3F4565",
       "status": true,
-      "inWorking": true,
+      "inWorking": false,
       "descripción": "Generador de conversaciones para entrenar modelos generativos de textos según estilo ShareGPT."
     }
   ]

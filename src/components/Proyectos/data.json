@@ -5,7 +5,7 @@
       "imagen": "/api/img?width=400&height=200&title=GOTEC%20Store&description=null&bg=001F26&color=ABEDFF",
       "enlace": "https://gotec.quatu.xyz",
       "status": true,
-      "inWorking": true,
+      "inWorking": false,
       "roles": [
         {
           "descripcion": "Página extensión de Quatu, tienda especializada en venta de productos tecnológicos al por mayor de INGO TECHNOLOGIES S.A.C.",
